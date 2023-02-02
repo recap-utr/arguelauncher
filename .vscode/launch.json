@@ -5,20 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Server",
+      "name": "App",
       "type": "python",
       "request": "launch",
       "console": "integratedTerminal",
-      "module": "arguequery.server",
-      "env": { "DYNACONF_DEBUG": "true" }
-    },
-    {
-      "name": "Client",
-      "type": "python",
-      "request": "launch",
-      "console": "integratedTerminal",
-      "module": "arguequery.client",
-      "env": { "DYNACONF_DEBUG": "true" }
+      "module": "arguelauncher"
     }
   ]
 }
