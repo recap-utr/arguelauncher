@@ -10,12 +10,12 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-from arg_services.retrieval.v1 import retrieval_pb2
+from arg_services.cbr.v1beta import retrieval_pb2
 
-from arguequery.services.evaluation import Evaluation
+from arguelauncher.config import PathConfig
+from arguelauncher.services.evaluation import Evaluation
 
 logger = logging.getLogger(__name__)
-from arguequery.config import config
 
 
 def get_results(
@@ -39,22 +39,17 @@ def export_results(
     mac_results: Optional[List[Dict[str, Any]]],
     fac_results: Optional[List[Dict[str, Any]]],
     evaluation: Optional[Evaluation],
+    path_config: PathConfig,
+    output_folder: Path,
 ) -> None:
     """Write the results to csv files
 
     The files will have mac, fac and eval appended to differentiate.
     """
 
-    timestamp = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+    folder = output_folder / query_file.relative_to(Path(path_config.queries))
+    folder.mkdir(parents=True)
 
-    results_path = Path(config.client.path.evaluation_output)
-    results_path.mkdir(parents=True, exist_ok=True)
-
-    folder = (
-        results_path
-        / timestamp
-        / query_file.relative_to(Path(config.client.path.queries))
-    )
     fieldnames = ["name", "rank", "similarity", "text"]
 
     if mac_results:
@@ -117,15 +112,13 @@ def export_results_aggregated(
     evaluation: t.Mapping[str, t.Mapping[str, float]],
     duration: float,
     parameters: t.Mapping[str, t.Any],
+    path_config: PathConfig,
+    output_folder: Path,
 ) -> None:
     """Write the results to file"""
 
-    timestamp = time.strftime("%Y%m%d-%H%M%S", time.localtime())
-
-    results_path = Path(config.client.path.evaluation_output)
-    results_path.mkdir(parents=True, exist_ok=True)
-
-    file = (results_path / timestamp).with_suffix(".json")
+    file = (output_folder / "evaluation").with_suffix(".json")
+    file.parent.mkdir()
 
     with file.open("w") as f:
         json_out = {

@@ -5,8 +5,7 @@ random.seed(0)
 
 import arguebuf as ag
 
-from arguequery.config import config
-from arguequery.types import Graph2TextAlgorithm
+from arguelauncher.config import Graph2TextAlgorithm
 
 SCHEME_RECONSTRUCTION: dict[t.Type[ag.Scheme], str] = {
     ag.Support: "This is true because",
@@ -34,9 +33,13 @@ def _random(g: ag.Graph) -> str:
 def _traverse_nodes(
     g: ag.Graph,
     func: t.Callable[
-        [ag.Node, t.Callable[[ag.Node], t.AbstractSet[ag.Node]]], t.List[ag.Node]
+        [
+            ag.AbstractNode,
+            t.Callable[[ag.AbstractNode], t.AbstractSet[ag.AbstractNode]],
+        ],
+        t.List[ag.AbstractNode],
     ],
-) -> t.List[ag.Node]:
+) -> t.List[ag.AbstractNode]:
     start = g.major_claim or g.root_node
     assert start is not None
 
@@ -48,7 +51,11 @@ def _traverse_nodes(
 def _traverse_texts(
     g: ag.Graph,
     func: t.Callable[
-        [ag.Node, t.Callable[[ag.Node], t.AbstractSet[ag.Node]]], t.List[ag.Node]
+        [
+            ag.AbstractNode,
+            t.Callable[[ag.AbstractNode], t.AbstractSet[ag.AbstractNode]],
+        ],
+        t.List[ag.AbstractNode],
     ],
 ) -> t.List[str]:
     nodes = _traverse_nodes(g, func)
@@ -57,18 +64,14 @@ def _traverse_texts(
 
 
 def _dfs(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.traversal.dfs(
-        start, connections, include_start=False
-    )
+    func = lambda start, connections: ag.dfs(start, connections, include_start=False)
     texts = _traverse_texts(g, func)
 
     return " ".join(texts)
 
 
 def _dfs_reconstruction(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.traversal.dfs(
-        start, connections, include_start=False
-    )
+    func = lambda start, connections: ag.dfs(start, connections, include_start=False)
     nodes = _traverse_nodes(g, func)
     texts = []
 
@@ -86,21 +89,19 @@ def _dfs_reconstruction(g: ag.Graph) -> str:
 
 
 def _bfs(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.traversal.bfs(
-        start, connections, include_start=False
-    )
+    func = lambda start, connections: ag.bfs(start, connections, include_start=False)
     texts = _traverse_texts(g, func)
 
     return " ".join(texts)
 
 
 algorithm_map: dict[Graph2TextAlgorithm, t.Callable[[ag.Graph], str]] = {
-    "node_id": _node_id,
-    "original_resource": _original_resource,
-    "random": _random,
-    "bfs": _bfs,
-    "dfs": _dfs,
-    "dfs_reconstruction": _dfs_reconstruction,
+    Graph2TextAlgorithm.NODE_ID: _node_id,
+    Graph2TextAlgorithm.ORIGINAL_RESOURCE: _original_resource,
+    Graph2TextAlgorithm.RANDOM: _random,
+    Graph2TextAlgorithm.BFS: _bfs,
+    Graph2TextAlgorithm.DFS: _dfs,
+    Graph2TextAlgorithm.DFS_RECONSTRUCTION: _dfs_reconstruction,
 }
 
 

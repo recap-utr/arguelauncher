@@ -8,12 +8,12 @@ from pathlib import Path
 from typing import Dict, List
 
 import arguebuf as ag
-from arg_services.retrieval.v1 import retrieval_pb2
+from arg_services.cbr.v1beta import retrieval_pb2
 
-from arguequery.libs.ndcg import ndcg
+from arguelauncher.config import EvaluationConfig, PathConfig
+from arguelauncher.libs.ndcg import ndcg
 
 logger = logging.getLogger(__name__)
-from arguequery.config import config
 
 
 class Evaluation:
@@ -34,18 +34,20 @@ class Evaluation:
     correctness: float
     completeness: float
     ndcg: float
+    max_user_rank: int
 
     def __init__(
         self,
         cases: t.Mapping[Path, ag.Graph],
         results: t.Sequence[retrieval_pb2.RetrievedCase],
         query_file: Path,
+        path_config: PathConfig,
+        eval_config: EvaluationConfig,
     ) -> None:
-        benchmark_file = Path(
-            config.client.path.benchmark_rankings
-        ) / query_file.relative_to(Path(config.client.path.queries)).with_suffix(
-            ".json"
-        )
+        self.max_user_rank = eval_config.max_user_rank
+        benchmark_file = Path(path_config.benchmarks) / query_file.relative_to(
+            Path(path_config.queries)
+        ).with_suffix(".json")
 
         with benchmark_file.open("r") as f:
             data = json.load(f)
@@ -149,7 +151,7 @@ class Evaluation:
 
     def _ndcg(self) -> None:
         ranking_inv = {
-            name: config.client.evaluation.max_user_rank + 1 - rank
+            name: self.max_user_rank + 1 - rank
             for name, rank in self.user_rankings.items()
         }
         results_ratings = [
