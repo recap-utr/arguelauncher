@@ -1,0 +1,129 @@
+{
+  "nodes": {
+    "6f254050-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "German students should not pay any kind of fee for their education."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:19:29Z",
+        "updated": "2022-04-19T10:19:29Z"
+      }
+    },
+    "b6d35180-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:21:29Z",
+        "updated": "2022-04-19T10:21:29Z"
+      }
+    },
+    "6fb3c4b0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Studying and taking higher degrees has to be a basic right for everyone. What is our society without constant learning?"
+      },
+      "metadata": {
+        "created": "2022-04-19T10:19:30Z",
+        "updated": "2022-04-19T10:19:30Z"
+      }
+    },
+    "701ebb80-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "They hinder students from studying by forcing them to work."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:19:31Z",
+        "updated": "2022-04-19T10:19:31Z"
+      }
+    },
+    "6fe0ef30-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": { "text": "Tuition fees limit the access to education." },
+      "metadata": {
+        "created": "2022-04-19T10:19:30Z",
+        "updated": "2022-04-19T10:19:30Z"
+      }
+    },
+    "b2fcce10-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:21:23Z",
+        "updated": "2022-04-19T10:21:23Z"
+      }
+    },
+    "b5880cd0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:21:27Z",
+        "updated": "2022-04-19T10:21:27Z"
+      }
+    }
+  },
+  "edges": {
+    "b2fcce11-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "6fb3c4b0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "b2fcce10-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307821Z",
+        "updated": "2022-07-14T13:15:02.307821Z"
+      }
+    },
+    "b6d35182-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "b6d35180-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "6fe0ef30-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307913Z",
+        "updated": "2022-07-14T13:15:02.307913Z"
+      }
+    },
+    "b58833e0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "6fe0ef30-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "b5880cd0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307860Z",
+        "updated": "2022-07-14T13:15:02.307860Z"
+      }
+    },
+    "b2fcce12-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "b2fcce10-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "6f254050-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307843Z",
+        "updated": "2022-07-14T13:15:02.307843Z"
+      }
+    },
+    "b58833e1-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "b5880cd0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "6f254050-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307882Z",
+        "updated": "2022-07-14T13:15:02.307882Z"
+      }
+    },
+    "b6d35181-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "701ebb80-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "b6d35180-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.307898Z",
+        "updated": "2022-07-14T13:15:02.307898Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.307016Z",
+    "updated": "2022-07-14T13:15:02.307016Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6381": 1,
+          "nodeset6388": 2,
+          "nodeset6394": 2,
+          "nodeset6407": 2,
+          "nodeset6447": 3,
+          "nodeset6456": 2
+        }
+      }
+    ]
+  }
+}

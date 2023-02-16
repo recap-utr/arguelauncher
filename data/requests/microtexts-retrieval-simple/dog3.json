@@ -1,0 +1,35 @@
+{
+  "nodes": {
+    "276979": {
+      "atom": {
+        "text": "higher fines for dog owners are unnecessary"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:49:25Z",
+        "updated": "2017-05-02T12:49:25Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.629790Z",
+    "updated": "2023-02-07T15:53:14.629790Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6362": 2,
+          "microtexts/nodeset6367": 3,
+          "microtexts/nodeset6371": 2,
+          "microtexts/nodeset6392": 2,
+          "microtexts/nodeset6400": 2,
+          "microtexts/nodeset6420": 1,
+          "microtexts/nodeset6452": 2,
+          "microtexts/nodeset6468": 2
+        }
+      }
+    ]
+  }
+}

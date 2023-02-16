@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f47660ce-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should all educational institution in Germany charge fees from persons or helpers?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.857098Z",
+        "updated": "2023-02-10T09:47:38.857098Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.857064Z",
+    "updated": "2023-02-10T09:47:38.857064Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6394": {
+            "citizens/noun": "persons/noun",
+            "sponsors/noun": "helpers/noun",
+            "universities/noun": "educational institution/noun",
+            "tuition fees/noun": "fees/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 2.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 2.0,
+          "microtexts/nodeset6394": 1.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

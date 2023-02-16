@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "277010": {
+      "atom": {
+        "text": "everybody should be able to decide weather he wants to pay for tv licenses or not"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:12:55Z",
+        "updated": "2017-05-02T23:12:55Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.650294Z",
+    "updated": "2023-02-07T15:53:14.650294Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6364": 2,
+          "microtexts/nodeset6374": 2,
+          "microtexts/nodeset6389": 3,
+          "microtexts/nodeset6446": 1,
+          "microtexts/nodeset6454": 2,
+          "microtexts/nodeset6463": 2,
+          "microtexts/nodeset6470": 2
+        }
+      }
+    ]
+  }
+}

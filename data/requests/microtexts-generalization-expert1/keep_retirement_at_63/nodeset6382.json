@@ -1,0 +1,41 @@
+{
+  "nodes": {
+    "f4728206-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should the statutory ending period remain at 63 time periods in the future?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.831735Z",
+        "updated": "2023-02-10T09:47:38.831735Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.831698Z",
+    "updated": "2023-02-10T09:47:38.831698Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6382": {
+            "seniors/noun": "persons/noun",
+            "age/noun": "period/noun",
+            "retirement/noun": "ending/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6409": 2.0,
+          "microtexts/nodeset6382": 1.0,
+          "microtexts/nodeset6416": 2.0,
+          "microtexts/nodeset6411": 2.0,
+          "microtexts/nodeset6421": 2.0,
+          "microtexts/nodeset6461": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

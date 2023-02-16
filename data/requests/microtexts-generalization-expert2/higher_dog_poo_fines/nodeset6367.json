@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f458eb70-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Can animal dirt be a hindrance in traffic?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.664038Z",
+        "updated": "2023-02-10T09:47:38.664038Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.663990Z",
+    "updated": "2023-02-10T09:47:38.663990Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6367": {
+            "dog/noun": " animal/noun",
+            "obstacle/noun": " hindrance/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6400": 2.0,
+          "microtexts/nodeset6367": 1.0,
+          "microtexts/nodeset6452": 2.0,
+          "microtexts/nodeset6371": 2.0,
+          "microtexts/nodeset6362": 2.0,
+          "microtexts/nodeset6420": 2.0,
+          "microtexts/nodeset6468": 2.0,
+          "microtexts/nodeset6392": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

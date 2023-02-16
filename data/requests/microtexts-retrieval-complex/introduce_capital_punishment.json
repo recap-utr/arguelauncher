@@ -1,0 +1,163 @@
+{
+  "nodes": {
+    "a9b7ea80-ebea-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "Many people would say, that a murderer already gave up the right of choice over his own life, since he took the choice over anothers life."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:02:44Z",
+        "updated": "2022-06-14T16:02:44Z"
+      }
+    },
+    "99fc34c0-ebea-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "Eitherway, who has the right to decide about anothers death anyway."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:02:17Z",
+        "updated": "2022-06-14T16:02:17Z"
+      }
+    },
+    "b2157cb0-ebea-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:02:58Z",
+        "updated": "2022-06-14T16:02:58Z"
+      }
+    },
+    "9b6820d0-ebea-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "The death penalty is illegal in Germany." },
+      "metadata": {
+        "created": "2022-06-14T16:02:20Z",
+        "updated": "2022-06-14T16:02:20Z"
+      }
+    },
+    "96f92df0-ebea-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:02:12Z",
+        "updated": "2022-06-14T16:02:12Z"
+      }
+    },
+    "a73202f0-ebea-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "This is liable since the dignity of the human is our highest value in the constitution."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:02:40Z",
+        "updated": "2022-06-14T16:02:40Z"
+      }
+    },
+    "aeacfd50-ebea-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:02:52Z",
+        "updated": "2022-06-14T16:02:52Z"
+      }
+    },
+    "a60b3630-ebea-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "But since we are better than the murderer, we should not do the same as him and take the choice over anothers life as well."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:02:38Z",
+        "updated": "2022-06-14T16:02:38Z"
+      }
+    },
+    "b2ecf0f0-ebea-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:02:59Z",
+        "updated": "2022-06-14T16:02:59Z"
+      }
+    }
+  },
+  "edges": {
+    "de88baa0-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "a60b3630-ebea-11ec-bc75-5d1586fcf929",
+      "target": "b2ecf0f0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341473Z",
+        "updated": "2022-07-14T13:15:02.341473Z"
+      }
+    },
+    "e3e8eb50-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "96f92df0-ebea-11ec-bc75-5d1586fcf929",
+      "target": "9b6820d0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341543Z",
+        "updated": "2022-07-14T13:15:02.341543Z"
+      }
+    },
+    "dfb4b780-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "a9b7ea80-ebea-11ec-bc75-5d1586fcf929",
+      "target": "aeacfd50-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341493Z",
+        "updated": "2022-07-14T13:15:02.341493Z"
+      }
+    },
+    "e163a000-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "a73202f0-ebea-11ec-bc75-5d1586fcf929",
+      "target": "b2157cb0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341510Z",
+        "updated": "2022-07-14T13:15:02.341510Z"
+      }
+    },
+    "e4f83870-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "b2157cb0-ebea-11ec-bc75-5d1586fcf929",
+      "target": "9b6820d0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341559Z",
+        "updated": "2022-07-14T13:15:02.341559Z"
+      }
+    },
+    "dbec3dd0-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "aeacfd50-ebea-11ec-bc75-5d1586fcf929",
+      "target": "9b6820d0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341382Z",
+        "updated": "2022-07-14T13:15:02.341382Z"
+      }
+    },
+    "dd4c1bf0-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "b2ecf0f0-ebea-11ec-bc75-5d1586fcf929",
+      "target": "aeacfd50-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341445Z",
+        "updated": "2022-07-14T13:15:02.341445Z"
+      }
+    },
+    "e2b24010-ebea-11ec-bc75-5d1586fcf929": {
+      "source": "99fc34c0-ebea-11ec-bc75-5d1586fcf929",
+      "target": "96f92df0-ebea-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.341526Z",
+        "updated": "2022-07-14T13:15:02.341526Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.325762Z",
+    "updated": "2022-07-14T13:15:02.325762Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6366": 1,
+          "nodeset6383": 2,
+          "nodeset6387": 3,
+          "nodeset6391": 2,
+          "nodeset6450": 2,
+          "nodeset6453": 3,
+          "nodeset6464": 3,
+          "nodeset6469": 3
+        }
+      }
+    ]
+  }
+}

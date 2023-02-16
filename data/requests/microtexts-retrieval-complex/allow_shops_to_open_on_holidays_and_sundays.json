@@ -1,0 +1,150 @@
+{
+  "nodes": {
+    "ec92fd30-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Even the government wants me to spend my money in those shops to get taxes."
+      },
+      "metadata": {
+        "created": "2022-04-19T09:40:03Z",
+        "updated": "2022-04-19T09:40:03Z"
+      }
+    },
+    "b4f3a3c0-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T09:38:29Z",
+        "updated": "2022-04-19T09:38:29Z"
+      }
+    },
+    "c4ea8dc0-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "But they can have their freetime, when I am at work."
+      },
+      "metadata": {
+        "created": "2022-04-19T09:38:56Z",
+        "updated": "2022-04-19T09:38:56Z"
+      }
+    },
+    "9a23ee60-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Of course, people will then have to work in those shops.\n"
+      },
+      "metadata": {
+        "created": "2022-04-19T09:37:44Z",
+        "updated": "2022-04-19T09:37:44Z"
+      }
+    },
+    "f72b3d20-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T09:40:20Z",
+        "updated": "2022-04-19T09:40:20Z"
+      }
+    },
+    "793fac70-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Shops should be allowed to get my money at least in some way."
+      },
+      "metadata": {
+        "created": "2022-04-19T09:36:49Z",
+        "updated": "2022-04-19T09:36:49Z"
+      }
+    },
+    "decf1fd0-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T09:39:39Z",
+        "updated": "2022-04-19T09:39:39Z"
+      }
+    },
+    "021ff4f0-bfb4-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "I cannot spend my money, when the shops are closed at the weekends."
+      },
+      "metadata": {
+        "created": "2022-04-19T09:40:39Z",
+        "updated": "2022-04-19T09:40:39Z"
+      }
+    }
+  },
+  "edges": {
+    "decf46e0-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "c4ea8dc0-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "decf1fd0-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295640Z",
+        "updated": "2022-07-14T13:15:02.295640Z"
+      }
+    },
+    "1aabfbe0-bfb4-11ec-865c-8d2d7bc8b0fd": {
+      "source": "021ff4f0-bfb4-11ec-865c-8d2d7bc8b0fd",
+      "target": "f72b3d20-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295703Z",
+        "updated": "2022-07-14T13:15:02.295703Z"
+      }
+    },
+    "f72b3d22-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "f72b3d20-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "793fac70-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295686Z",
+        "updated": "2022-07-14T13:15:02.295686Z"
+      }
+    },
+    "b4f3cad0-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "9a23ee60-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "b4f3a3c0-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295586Z",
+        "updated": "2022-07-14T13:15:02.295586Z"
+      }
+    },
+    "decf46e1-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "decf1fd0-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "9a23ee60-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295656Z",
+        "updated": "2022-07-14T13:15:02.295656Z"
+      }
+    },
+    "f72b3d21-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "ec92fd30-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "f72b3d20-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295671Z",
+        "updated": "2022-07-14T13:15:02.295671Z"
+      }
+    },
+    "b4f3cad1-bfb3-11ec-865c-8d2d7bc8b0fd": {
+      "source": "b4f3a3c0-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "target": "793fac70-bfb3-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.295621Z",
+        "updated": "2022-07-14T13:15:02.295621Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.292882Z",
+    "updated": "2022-07-14T13:15:02.292882Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6375": 1,
+          "nodeset6410": 3,
+          "nodeset6419": 3,
+          "nodeset6449": 2,
+          "nodeset6451": 3,
+          "nodeset6457": 2,
+          "nodeset6462": 3,
+          "nodeset6466": 3
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "nodes": {
+    "277016": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:41:25Z",
+        "updated": "2017-05-02T23:41:25Z"
+      }
+    },
+    "277013": {
+      "atom": {
+        "text": "education is a basic right"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:41:25Z",
+        "updated": "2017-05-02T23:41:25Z"
+      }
+    },
+    "277012": {
+      "atom": {
+        "text": "german universities should be free"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:41:24Z",
+        "updated": "2017-05-02T23:41:24Z"
+      }
+    },
+    "277014": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:41:25Z",
+        "updated": "2017-05-02T23:41:25Z"
+      }
+    },
+    "277015": {
+      "atom": {
+        "text": "support for financially weaker students"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:41:25Z",
+        "updated": "2017-05-02T23:41:25Z"
+      }
+    }
+  },
+  "edges": {
+    "337884": {
+      "source": "277014",
+      "target": "277012",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.664264Z",
+        "updated": "2023-02-07T15:53:14.664264Z"
+      }
+    },
+    "337885": {
+      "source": "277015",
+      "target": "277016",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.664278Z",
+        "updated": "2023-02-07T15:53:14.664278Z"
+      }
+    },
+    "337883": {
+      "source": "277013",
+      "target": "277014",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.664247Z",
+        "updated": "2023-02-07T15:53:14.664247Z"
+      }
+    },
+    "337886": {
+      "source": "277016",
+      "target": "277012",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.664298Z",
+        "updated": "2023-02-07T15:53:14.664298Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.663765Z",
+    "updated": "2023-02-07T15:53:14.663765Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6381": 1,
+          "microtexts/nodeset6388": 1,
+          "microtexts/nodeset6394": 2,
+          "microtexts/nodeset6407": 1,
+          "microtexts/nodeset6447": 3,
+          "microtexts/nodeset6456": 1
+        }
+      }
+    ]
+  }
+}

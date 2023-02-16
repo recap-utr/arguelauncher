@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "276984": {
+      "atom": {
+        "text": "health insurance should cover the cost of alternative treatments"
+      },
+      "metadata": {
+        "created": "2017-05-02T13:01:26Z",
+        "updated": "2017-05-02T13:01:26Z"
+      }
+    },
+    "276985": {
+      "atom": {
+        "text": "many alternative treatments have proven to be effective"
+      },
+      "metadata": {
+        "created": "2017-05-02T13:01:26Z",
+        "updated": "2017-05-02T13:01:26Z"
+      }
+    },
+    "276986": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T13:01:26Z",
+        "updated": "2017-05-02T13:01:26Z"
+      }
+    }
+  },
+  "edges": {
+    "337867": {
+      "source": "276985",
+      "target": "276986",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.636357Z",
+        "updated": "2023-02-07T15:53:14.636357Z"
+      }
+    },
+    "337868": {
+      "source": "276986",
+      "target": "276984",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.636374Z",
+        "updated": "2023-02-07T15:53:14.636374Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.636056Z",
+    "updated": "2023-02-07T15:53:14.636056Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6363": 3,
+          "microtexts/nodeset6370": 1,
+          "microtexts/nodeset6373": 1,
+          "microtexts/nodeset6378": 3,
+          "microtexts/nodeset6385": 2,
+          "microtexts/nodeset6386": 1,
+          "microtexts/nodeset6395": 1,
+          "microtexts/nodeset6412": 3
+        }
+      }
+    ]
+  }
+}

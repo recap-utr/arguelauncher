@@ -1,0 +1,41 @@
+{
+  "nodes": {
+    "f45ef3f8-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should educational instituitions in Germany be free of fees?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.703583Z",
+        "updated": "2023-02-10T09:47:38.703583Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.703538Z",
+    "updated": "2023-02-10T09:47:38.703538Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6388": {
+            "studying/verb": " thinking/verb",
+            "tuition fees/noun": " fees/noun",
+            "universities/noun": " educational institutions/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 1.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 2.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

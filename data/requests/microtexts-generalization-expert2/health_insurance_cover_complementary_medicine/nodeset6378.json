@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "f451cd36-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should unproven care by healers be reimbursed by insurance companies?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.617387Z",
+        "updated": "2023-02-10T09:47:38.617387Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.617359Z",
+    "updated": "2023-02-10T09:47:38.617359Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6378": {
+            "treatment/noun": " care/noun",
+            "naturopath/noun": " healer/noun",
+            "physician/noun": " medical practitioner/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 1.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

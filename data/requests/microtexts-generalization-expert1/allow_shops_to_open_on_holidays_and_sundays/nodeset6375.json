@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f479527a-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should political units advocate to open retail stores on weekends for workers in business establishments?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.876392Z",
+        "updated": "2023-02-10T09:47:38.876392Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.876358Z",
+    "updated": "2023-02-10T09:47:38.876358Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6375": {
+            "shops/noun": "retail stores/noun",
+            "state/noun": "political unit/noun",
+            "employee/noun": "worker/noun",
+            "office/noun": "business establishment/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6451": 2.0,
+          "microtexts/nodeset6457": 2.0,
+          "microtexts/nodeset6410": 2.0,
+          "microtexts/nodeset6375": 1.0,
+          "microtexts/nodeset6466": 2.0,
+          "microtexts/nodeset6419": 2.0,
+          "microtexts/nodeset6449": 2.0,
+          "microtexts/nodeset6462": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

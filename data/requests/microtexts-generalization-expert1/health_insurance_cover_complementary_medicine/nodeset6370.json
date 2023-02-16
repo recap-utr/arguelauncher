@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f4683b0c-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should all alternative aids be supported like conventional aids as long as they cure health problems or there is at least a chance for improvement?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.764384Z",
+        "updated": "2023-02-10T09:47:38.764384Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.764340Z",
+    "updated": "2023-02-10T09:47:38.764340Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6370": {
+            "subsidized/verb": "supported/verb",
+            "treatment/noun": "aid/noun",
+            "illness/noun": "health problem/noun",
+            "recovery/noun": "improvement/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 1.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 2.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

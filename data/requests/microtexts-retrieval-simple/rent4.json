@@ -1,0 +1,33 @@
+{
+  "nodes": {
+    "277030": {
+      "atom": {
+        "text": "A cap on rent prices is undesirable"
+      },
+      "metadata": {
+        "created": "2017-05-03T06:32:08Z",
+        "updated": "2017-05-03T06:32:08Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.659656Z",
+    "updated": "2023-02-07T15:53:14.659656Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6369": 3,
+          "microtexts/nodeset6377": 3,
+          "microtexts/nodeset6384": 3,
+          "microtexts/nodeset6418": 1,
+          "microtexts/nodeset6455": 2,
+          "microtexts/nodeset6465": 2
+        }
+      }
+    ]
+  }
+}

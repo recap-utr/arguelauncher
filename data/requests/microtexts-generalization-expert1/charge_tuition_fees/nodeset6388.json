@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f4759f36-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should all educational institutions for higher cognitive process in Germany charge fees from enrollees or are there other possible acts?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.852143Z",
+        "updated": "2023-02-10T09:47:38.852143Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.852106Z",
+    "updated": "2023-02-10T09:47:38.852106Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6388": {
+            "means/noun": "acts/noun",
+            "circumstances/noun": "conditions/noun",
+            "studying/noun": "higher cognitive process/noun",
+            "students/noun": "enrollees/noun",
+            "universities/noun": "educational institution/noun",
+            "tuition fees/noun": "fees/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 1.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 2.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

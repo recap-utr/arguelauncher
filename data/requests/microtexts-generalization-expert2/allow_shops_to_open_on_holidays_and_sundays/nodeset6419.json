@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f4647b16-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Does opening public and private establishments (bureaucracy, shops, ..) on weekends support consumers claiming services?\n\n\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.739808Z",
+        "updated": "2023-02-10T09:47:38.739808Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.739767Z",
+    "updated": "2023-02-10T09:47:38.739767Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6419": {
+            "shopping centres/noun": " establishment/noun",
+            "shops/noun": " establishments/noun",
+            "supermarkets/noun": " establishments/noun",
+            "customers/noun": " consumer/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6451": 2.0,
+          "microtexts/nodeset6457": 2.0,
+          "microtexts/nodeset6410": 2.0,
+          "microtexts/nodeset6375": 2.0,
+          "microtexts/nodeset6466": 2.0,
+          "microtexts/nodeset6419": 1.0,
+          "microtexts/nodeset6449": 2.0,
+          "microtexts/nodeset6462": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

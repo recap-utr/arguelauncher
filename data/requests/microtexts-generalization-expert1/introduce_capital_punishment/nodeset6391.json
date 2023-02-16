@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f47c7b6c-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should Germany introduce the corporal punishment or should wrongdoers have the possibility to make compensations for their inhuman treatments?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.897100Z",
+        "updated": "2023-02-10T09:47:38.897100Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.897067Z",
+    "updated": "2023-02-10T09:47:38.897067Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6391": {
+            "chance/noun": "possibility/noun",
+            "capital punishment/noun": "corporal punishment/noun",
+            "atrocity/noun": "inhuman treatment/noun",
+            "amends/noun": "compensations/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 2.0,
+          "microtexts/nodeset6464": 2.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 2.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 2.0,
+          "microtexts/nodeset6391": 1.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

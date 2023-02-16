@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f45a0050-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should cost on contracts be limited in terms of previous agreements between payers for arbitrary situations?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.671126Z",
+        "updated": "2023-02-10T09:47:38.671126Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.671094Z",
+    "updated": "2023-02-10T09:47:38.671094Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6377": {
+            "rent/noun": " cost/noun",
+            "tenant/noun": " payer/noun",
+            "landlords/noun": " owners/noun",
+            "flat/noun": " object/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6455": 2.0,
+          "microtexts/nodeset6465": 2.0,
+          "microtexts/nodeset6369": 2.0,
+          "microtexts/nodeset6377": 1.0,
+          "microtexts/nodeset6384": 2.0,
+          "microtexts/nodeset6418": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

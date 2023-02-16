@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "f468f22c-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should insurance institutions refund people if their healers aids them with complementary and alternative medicine?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.769071Z",
+        "updated": "2023-02-10T09:47:38.769071Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.769032Z",
+    "updated": "2023-02-10T09:47:38.769032Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6378": {
+            "health insurance/noun": "insurance/noun",
+            "reimbursed/verb": "refunded/verb",
+            "treatments/noun": "aids/noun",
+            "naturopaths/noun": "healers/noun",
+            "companies/noun": "institutions/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 1.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

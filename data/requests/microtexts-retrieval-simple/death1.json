@@ -1,0 +1,35 @@
+{
+  "nodes": {
+    "276993": {
+      "atom": {
+        "text": "the death penalty should be introducted in germany"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:42:19Z",
+        "updated": "2017-05-02T22:42:19Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.612567Z",
+    "updated": "2023-02-07T15:53:14.612567Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6366": 2,
+          "microtexts/nodeset6383": 2,
+          "microtexts/nodeset6387": 3,
+          "microtexts/nodeset6391": 2,
+          "microtexts/nodeset6450": 2,
+          "microtexts/nodeset6453": 2,
+          "microtexts/nodeset6464": 2,
+          "microtexts/nodeset6469": 1
+        }
+      }
+    ]
+  }
+}

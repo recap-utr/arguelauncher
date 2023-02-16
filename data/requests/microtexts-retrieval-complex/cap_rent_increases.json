@@ -1,0 +1,127 @@
+{
+  "nodes": {
+    "cae53770-bfb8-11ec-865c-8d2d7bc8b0fd": {
+      "atom": { "text": "Of course, some repairs have to be done." },
+      "metadata": {
+        "created": "2022-04-19T10:14:54Z",
+        "updated": "2022-04-19T10:14:54Z"
+      }
+    },
+    "c89972b0-bfb8-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Isn’t it unfair to pay more rent than my previous resident, simply because I am new?"
+      },
+      "metadata": {
+        "created": "2022-04-19T10:14:50Z",
+        "updated": "2022-04-19T10:14:50Z"
+      }
+    },
+    "cd6a82c0-bfb8-11ec-865c-8d2d7bc8b0fd": {
+      "atom": { "text": "But the previous resident could have covered them." },
+      "metadata": {
+        "created": "2022-04-19T10:14:58Z",
+        "updated": "2022-04-19T10:14:58Z"
+      }
+    },
+    "30ccdcf0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:17:45Z",
+        "updated": "2022-04-19T10:17:45Z"
+      }
+    },
+    "288df650-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "If the rental concept was profitable a few weeks ago with the old rent,it cannot be unprofitable now with the same rent."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:17:31Z",
+        "updated": "2022-04-19T10:17:31Z"
+      }
+    },
+    "1c63f2d0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:17:10Z",
+        "updated": "2022-04-19T10:17:10Z"
+      }
+    },
+    "166a6850-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:17:00Z",
+        "updated": "2022-04-19T10:17:00Z"
+      }
+    }
+  },
+  "edges": {
+    "166a6851-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "cd6a82c0-bfb8-11ec-865c-8d2d7bc8b0fd",
+      "target": "166a6850-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304365Z",
+        "updated": "2022-07-14T13:15:02.304365Z"
+      }
+    },
+    "1c6419e0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "cae53770-bfb8-11ec-865c-8d2d7bc8b0fd",
+      "target": "1c63f2d0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304395Z",
+        "updated": "2022-07-14T13:15:02.304395Z"
+      }
+    },
+    "30ccdcf1-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "288df650-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "30ccdcf0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304348Z",
+        "updated": "2022-07-14T13:15:02.304348Z"
+      }
+    },
+    "1c6419e1-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "1c63f2d0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "c89972b0-bfb8-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304410Z",
+        "updated": "2022-07-14T13:15:02.304410Z"
+      }
+    },
+    "166a8f60-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "166a6850-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "cae53770-bfb8-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304380Z",
+        "updated": "2022-07-14T13:15:02.304380Z"
+      }
+    },
+    "30ccdcf2-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "30ccdcf0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "c89972b0-bfb8-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.304324Z",
+        "updated": "2022-07-14T13:15:02.304324Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.303357Z",
+    "updated": "2022-07-14T13:15:02.303357Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6369": 1,
+          "nodeset6377": 3,
+          "nodeset6384": 3,
+          "nodeset6418": 3,
+          "nodeset6455": 3,
+          "nodeset6465": 2
+        }
+      }
+    ]
+  }
+}

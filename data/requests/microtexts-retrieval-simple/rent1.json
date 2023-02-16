@@ -1,0 +1,33 @@
+{
+  "nodes": {
+    "277021": {
+      "atom": {
+        "text": "rent prices have to be capped"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:45:41Z",
+        "updated": "2017-05-03T00:45:41Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.652337Z",
+    "updated": "2023-02-07T15:53:14.652337Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6369": 2,
+          "microtexts/nodeset6377": 1,
+          "microtexts/nodeset6384": 1,
+          "microtexts/nodeset6418": 3,
+          "microtexts/nodeset6455": 2,
+          "microtexts/nodeset6465": 2
+        }
+      }
+    ]
+  }
+}

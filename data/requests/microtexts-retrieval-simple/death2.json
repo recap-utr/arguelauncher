@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "276994": {
+      "atom": {
+        "text": "the death penalty is needed as highest punishment"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:45:40Z",
+        "updated": "2017-05-02T22:45:40Z"
+      }
+    },
+    "276995": {
+      "atom": {
+        "text": "other punishments are too kind for murder"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:45:41Z",
+        "updated": "2017-05-02T22:45:41Z"
+      }
+    },
+    "276996": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:45:41Z",
+        "updated": "2017-05-02T22:45:41Z"
+      }
+    }
+  },
+  "edges": {
+    "337874": {
+      "source": "276996",
+      "target": "276994",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.616314Z",
+        "updated": "2023-02-07T15:53:14.616314Z"
+      }
+    },
+    "337873": {
+      "source": "276995",
+      "target": "276996",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.616291Z",
+        "updated": "2023-02-07T15:53:14.616291Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.615952Z",
+    "updated": "2023-02-07T15:53:14.615952Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6366": 2,
+          "microtexts/nodeset6383": 3,
+          "microtexts/nodeset6387": 2,
+          "microtexts/nodeset6391": 3,
+          "microtexts/nodeset6450": 2,
+          "microtexts/nodeset6453": 3,
+          "microtexts/nodeset6464": 2,
+          "microtexts/nodeset6469": 1
+        }
+      }
+    ]
+  }
+}

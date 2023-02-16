@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f4544994-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should broadcasting authorization costs be collected only from those who actually use it?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.633700Z",
+        "updated": "2023-02-10T09:47:38.633700Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.633628Z",
+    "updated": "2023-02-10T09:47:38.633628Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6470": {
+            "license/noun": " authorization/noun",
+            "broadcaster/noun": " communicator/noun",
+            "TV/noun": " broadcasting/noun",
+            "fee/noun": " cost/noun",
+            "receiver/noun": "  electronic equipment/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6454": 2.0,
+          "microtexts/nodeset6446": 2.0,
+          "microtexts/nodeset6463": 2.0,
+          "microtexts/nodeset6389": 2.0,
+          "microtexts/nodeset6470": 1.0,
+          "microtexts/nodeset6364": 2.0,
+          "microtexts/nodeset6374": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

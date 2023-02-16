@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f4753ce4-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should all educational institution for learning in Germany charge fees independent from time periods?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.849624Z",
+        "updated": "2023-02-10T09:47:38.849624Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.849594Z",
+    "updated": "2023-02-10T09:47:38.849594Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6381": {
+            "studies/noun": "learning/noun",
+            "studying/verb": "learning/verb",
+            "durations/noun": "time periods/noun",
+            "tuition fees/noun": "fees/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 2.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 1.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 2.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

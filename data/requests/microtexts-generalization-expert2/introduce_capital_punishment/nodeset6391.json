@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "f4664888-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should  we re-introduce corporal punishment in Germany to deter from inhuman treatment of other human beings?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.751621Z",
+        "updated": "2023-02-10T09:47:38.751621Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.751581Z",
+    "updated": "2023-02-10T09:47:38.751581Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6391": {
+            "capital punishment/noun": " corporal punishment/noun",
+            "death/noun": " modification/noun",
+            "atrocity/noun": " inhuman treatment/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 2.0,
+          "microtexts/nodeset6464": 2.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 2.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 2.0,
+          "microtexts/nodeset6391": 1.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

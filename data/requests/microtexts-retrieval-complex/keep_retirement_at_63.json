@@ -1,0 +1,155 @@
+{
+  "nodes": {
+    "abab9cd0-ebed-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "The retirement age should be raised to 65." },
+      "metadata": {
+        "created": "2022-06-14T16:24:16Z",
+        "updated": "2022-06-14T16:24:16Z"
+      }
+    },
+    "ad18e870-ebed-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "Forced to retire, experience will be lost." },
+      "metadata": {
+        "created": "2022-06-14T16:24:18Z",
+        "updated": "2022-06-14T16:24:18Z"
+      }
+    },
+    "b55fbe50-ebed-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:24:32Z",
+        "updated": "2022-06-14T16:24:32Z"
+      }
+    },
+    "addf93d0-ebed-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "People get old healthier than a few decades ago." },
+      "metadata": {
+        "created": "2022-06-14T16:24:19Z",
+        "updated": "2022-06-14T16:24:19Z"
+      }
+    },
+    "b26c20d0-ebed-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:24:27Z",
+        "updated": "2022-06-14T16:24:27Z"
+      }
+    },
+    "b39adcd0-ebed-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:24:29Z",
+        "updated": "2022-06-14T16:24:29Z"
+      }
+    },
+    "b1908de0-ebed-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:24:26Z",
+        "updated": "2022-06-14T16:24:26Z"
+      }
+    },
+    "ac6046d0-ebed-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "You would have to organize more leisure activities for old people."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:24:17Z",
+        "updated": "2022-06-14T16:24:17Z"
+      }
+    },
+    "afa20450-ebed-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "People stay healthy to that age, nowadays." },
+      "metadata": {
+        "created": "2022-06-14T16:24:22Z",
+        "updated": "2022-06-14T16:24:22Z"
+      }
+    }
+  },
+  "edges": {
+    "cd85b070-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "b55fbe50-ebed-11ec-bc75-5d1586fcf929",
+      "target": "b26c20d0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345408Z",
+        "updated": "2022-07-14T13:15:02.345408Z"
+      }
+    },
+    "d558b5e0-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "b39adcd0-ebed-11ec-bc75-5d1586fcf929",
+      "target": "abab9cd0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345471Z",
+        "updated": "2022-07-14T13:15:02.345471Z"
+      }
+    },
+    "d847e690-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "b1908de0-ebed-11ec-bc75-5d1586fcf929",
+      "target": "abab9cd0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345502Z",
+        "updated": "2022-07-14T13:15:02.345502Z"
+      }
+    },
+    "cf1db590-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "b26c20d0-ebed-11ec-bc75-5d1586fcf929",
+      "target": "abab9cd0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345425Z",
+        "updated": "2022-07-14T13:15:02.345425Z"
+      }
+    },
+    "d3a4c450-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "ac6046d0-ebed-11ec-bc75-5d1586fcf929",
+      "target": "b39adcd0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345456Z",
+        "updated": "2022-07-14T13:15:02.345456Z"
+      }
+    },
+    "c8cf5450-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "addf93d0-ebed-11ec-bc75-5d1586fcf929",
+      "target": "b55fbe50-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345388Z",
+        "updated": "2022-07-14T13:15:02.345388Z"
+      }
+    },
+    "d6d2abb0-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "ad18e870-ebed-11ec-bc75-5d1586fcf929",
+      "target": "b1908de0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345487Z",
+        "updated": "2022-07-14T13:15:02.345487Z"
+      }
+    },
+    "d0ce99e0-ebed-11ec-bc75-5d1586fcf929": {
+      "source": "afa20450-ebed-11ec-bc75-5d1586fcf929",
+      "target": "b26c20d0-ebed-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.345441Z",
+        "updated": "2022-07-14T13:15:02.345441Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.344419Z",
+    "updated": "2022-07-14T13:15:02.344419Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6382": 1,
+          "nodeset6409": 2,
+          "nodeset6411": 3,
+          "nodeset6416": 1,
+          "nodeset6421": 3,
+          "nodeset6461": 3
+        }
+      }
+    ]
+  }
+}

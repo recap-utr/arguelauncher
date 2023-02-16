@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f4749c94-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should all educational institution in Germany charge fees from enrollees?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.845520Z",
+        "updated": "2023-02-10T09:47:38.845520Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.845488Z",
+    "updated": "2023-02-10T09:47:38.845488Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6407": {
+            "tuition fees/noun": "fees/noun",
+            "students/noun": "enrollees/noun",
+            "universities/noun": "educational institution/noun",
+            "citizen/noun": "person/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 2.0,
+          "microtexts/nodeset6407": 1.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 2.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

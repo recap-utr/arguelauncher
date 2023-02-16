@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f46e30e8-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should the penalties for leaving domestic animal excrements on surfaces be increased?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.803445Z",
+        "updated": "2023-02-10T09:47:38.803445Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.803405Z",
+    "updated": "2023-02-10T09:47:38.803405Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6400": {
+            "dog/noun": "domestic animal/noun",
+            "dirt/noun": "excrements/noun",
+            "fines/noun": "penalties/noun",
+            "pavements/noun": "surfaces/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6400": 1.0,
+          "microtexts/nodeset6367": 2.0,
+          "microtexts/nodeset6452": 2.0,
+          "microtexts/nodeset6371": 2.0,
+          "microtexts/nodeset6362": 2.0,
+          "microtexts/nodeset6420": 2.0,
+          "microtexts/nodeset6468": 2.0,
+          "microtexts/nodeset6392": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

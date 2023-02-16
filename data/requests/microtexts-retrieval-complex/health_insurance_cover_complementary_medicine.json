@@ -1,0 +1,163 @@
+{
+  "nodes": {
+    "1bc35090-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:24:19Z",
+        "updated": "2022-04-19T10:24:19Z"
+      }
+    },
+    "de945200-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": { "text": "But the proof is missing in most cases." },
+      "metadata": {
+        "created": "2022-04-19T10:22:36Z",
+        "updated": "2022-04-19T10:22:36Z"
+      }
+    },
+    "002e2850-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:23:32Z",
+        "updated": "2022-04-19T10:23:32Z"
+      }
+    },
+    "0aacecd0-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "But since one does not know with certainty about the effectiveness of those treatments, it is best to rely on therapies with success guaranteed."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:23:50Z",
+        "updated": "2022-04-19T10:23:50Z"
+      }
+    },
+    "de36a1a0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Health insurance companies should not pay for nonsense like complementary-medicine treatments.\n"
+      },
+      "metadata": {
+        "created": "2022-04-19T10:22:35Z",
+        "updated": "2022-04-19T10:22:35Z"
+      }
+    },
+    "ef87c470-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:23:05Z",
+        "updated": "2022-04-19T10:23:05Z"
+      }
+    },
+    "de6d1af0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "If the effect and its medical benefits is proofen, the payments are a well use of the money.\n"
+      },
+      "metadata": {
+        "created": "2022-04-19T10:22:36Z",
+        "updated": "2022-04-19T10:22:36Z"
+      }
+    },
+    "45802110-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:25:29Z",
+        "updated": "2022-04-19T10:25:29Z"
+      }
+    },
+    "dec9b9e0-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Patients often belief in the methods and suffer less after their application."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:22:36Z",
+        "updated": "2022-04-19T10:22:36Z"
+      }
+    }
+  },
+  "edges": {
+    "45804820-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "0aacecd0-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "45802110-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315677Z",
+        "updated": "2022-07-14T13:15:02.315677Z"
+      }
+    },
+    "ef87eb81-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "ef87c470-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "de36a1a0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315595Z",
+        "updated": "2022-07-14T13:15:02.315595Z"
+      }
+    },
+    "ef87eb80-bfb9-11ec-865c-8d2d7bc8b0fd": {
+      "source": "de6d1af0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "ef87c470-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315570Z",
+        "updated": "2022-07-14T13:15:02.315570Z"
+      }
+    },
+    "4a064570-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "45802110-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "1bc35090-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315692Z",
+        "updated": "2022-07-14T13:15:02.315692Z"
+      }
+    },
+    "002e4f60-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "002e2850-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "de6d1af0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315630Z",
+        "updated": "2022-07-14T13:15:02.315630Z"
+      }
+    },
+    "1bc377a1-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "1bc35090-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "de36a1a0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315661Z",
+        "updated": "2022-07-14T13:15:02.315661Z"
+      }
+    },
+    "3c4f3950-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "dec9b9e0-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "1bc35090-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315646Z",
+        "updated": "2022-07-14T13:15:02.315646Z"
+      }
+    },
+    "002e2851-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "de945200-bfb9-11ec-865c-8d2d7bc8b0fd",
+      "target": "002e2850-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.315613Z",
+        "updated": "2022-07-14T13:15:02.315613Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.314451Z",
+    "updated": "2022-07-14T13:15:02.314451Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6363": 1,
+          "nodeset6370": 3,
+          "nodeset6373": 3,
+          "nodeset6378": 2,
+          "nodeset6385": 3,
+          "nodeset6386": 3,
+          "nodeset6395": 3,
+          "nodeset6412": 1
+        }
+      }
+    ]
+  }
+}

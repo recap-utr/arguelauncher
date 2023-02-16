@@ -1,0 +1,40 @@
+{
+  "nodes": {
+    "f45bb9e0-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should we terminate the jobs of workers when reaching a certain age?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.682427Z",
+        "updated": "2023-02-10T09:47:38.682427Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.682401Z",
+    "updated": "2023-02-10T09:47:38.682401Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6382": {
+            "experience/noun": " education/noun",
+            "retirement/noun": " termination/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6409": 2.0,
+          "microtexts/nodeset6382": 1.0,
+          "microtexts/nodeset6416": 2.0,
+          "microtexts/nodeset6411": 2.0,
+          "microtexts/nodeset6421": 2.0,
+          "microtexts/nodeset6461": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

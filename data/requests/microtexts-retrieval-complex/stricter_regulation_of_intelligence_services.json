@@ -1,0 +1,161 @@
+{
+  "nodes": {
+    "55439090-ecc0-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "These problems concern mostly the most powerful intelligence services of the world in democratic countries: CIA and MI6."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:32:15Z",
+        "updated": "2022-06-15T17:32:15Z"
+      }
+    },
+    "56a8ecf0-ecc0-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:32:17Z",
+        "updated": "2022-06-15T17:32:17Z"
+      }
+    },
+    "4e1ad4e0-ecc0-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "This is clearly visible after the disclosures of Edward Snowden and Julian Assange and their treatment."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:32:02Z",
+        "updated": "2022-06-15T17:32:02Z"
+      }
+    },
+    "51ba90e0-ecc0-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "The BND has supported our surveillance for quite a long time."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:32:09Z",
+        "updated": "2022-06-15T17:32:09Z"
+      }
+    },
+    "52b9b160-ecc0-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:32:10Z",
+        "updated": "2022-06-15T17:32:10Z"
+      }
+    },
+    "50185290-ecc0-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "The German services and others do collaborate with CIA and MI6 closely..."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:32:06Z",
+        "updated": "2022-06-15T17:32:06Z"
+      }
+    },
+    "4f00a100-ecc0-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "Intelligence services must urgently be regulated more tightly by parliament."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:32:04Z",
+        "updated": "2022-06-15T17:32:04Z"
+      }
+    },
+    "53ba7f90-ecc0-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:32:12Z",
+        "updated": "2022-06-15T17:32:12Z"
+      }
+    },
+    "54690f10-ecc0-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:32:13Z",
+        "updated": "2022-06-15T17:32:13Z"
+      }
+    }
+  },
+  "edges": {
+    "835f4e60-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "51ba90e0-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "56a8ecf0-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364656Z",
+        "updated": "2022-07-14T13:15:02.364656Z"
+      }
+    },
+    "7e4108b0-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "54690f10-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "53ba7f90-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364641Z",
+        "updated": "2022-07-14T13:15:02.364641Z"
+      }
+    },
+    "882f4d00-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "56a8ecf0-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "50185290-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364671Z",
+        "updated": "2022-07-14T13:15:02.364671Z"
+      }
+    },
+    "7c141690-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "53ba7f90-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "52b9b160-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364612Z",
+        "updated": "2022-07-14T13:15:02.364612Z"
+      }
+    },
+    "71475920-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "50185290-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "54690f10-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364561Z",
+        "updated": "2022-07-14T13:15:02.364561Z"
+      }
+    },
+    "7a0c38a0-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "55439090-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "53ba7f90-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364581Z",
+        "updated": "2022-07-14T13:15:02.364581Z"
+      }
+    },
+    "7d290900-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "52b9b160-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "4f00a100-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364627Z",
+        "updated": "2022-07-14T13:15:02.364627Z"
+      }
+    },
+    "7b042d30-ecc0-11ec-bc75-5d1586fcf929": {
+      "source": "4e1ad4e0-ecc0-11ec-bc75-5d1586fcf929",
+      "target": "52b9b160-ecc0-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.364597Z",
+        "updated": "2022-07-14T13:15:02.364597Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.363598Z",
+    "updated": "2022-07-14T13:15:02.363598Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6365": 1,
+          "nodeset6401": 2,
+          "nodeset6405": 3,
+          "nodeset6458": 2
+        }
+      }
+    ]
+  }
+}

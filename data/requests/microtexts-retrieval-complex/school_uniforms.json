@@ -1,0 +1,124 @@
+{
+  "nodes": {
+    "1d6d6850-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Some may find the idea of a school uniform anachronistic."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:09Z",
+        "updated": "2022-06-15T17:52:09Z"
+      }
+    },
+    "1bf71c00-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Brands are uniforms as well in another way. Also many students are dressing the same way already without official school uniforms."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:07Z",
+        "updated": "2022-06-15T17:52:07Z"
+      }
+    },
+    "21103190-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:15Z",
+        "updated": "2022-06-15T17:52:15Z"
+      }
+    },
+    "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "The school would focus more on the character of the students than onto their families wealth and thereby school uniforms would have a great benefit."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:04Z",
+        "updated": "2022-06-15T17:52:04Z"
+      }
+    },
+    "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:17Z",
+        "updated": "2022-06-15T17:52:17Z"
+      }
+    },
+    "1ecef420-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Furthermore there would be a great intervention into the decision making of parents and students."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:12Z",
+        "updated": "2022-06-15T17:52:12Z"
+      }
+    },
+    "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:14Z",
+        "updated": "2022-06-15T17:52:14Z"
+      }
+    }
+  },
+  "edges": {
+    "3bf2aba0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "21103190-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360843Z",
+        "updated": "2022-07-14T13:15:02.360843Z"
+      }
+    },
+    "3026cdb0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360779Z",
+        "updated": "2022-07-14T13:15:02.360779Z"
+      }
+    },
+    "335f8a80-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "21103190-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360797Z",
+        "updated": "2022-07-14T13:15:02.360797Z"
+      }
+    },
+    "2e36bd80-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1d6d6850-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360758Z",
+        "updated": "2022-07-14T13:15:02.360758Z"
+      }
+    },
+    "3a359250-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1bf71c00-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360829Z",
+        "updated": "2022-07-14T13:15:02.360829Z"
+      }
+    },
+    "35595eb0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1ecef420-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "21103190-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.360813Z",
+        "updated": "2022-07-14T13:15:02.360813Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.359886Z",
+    "updated": "2022-07-14T13:15:02.359886Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": { "nodeset6372": 1, "nodeset6390": 2, "nodeset6398": 2 }
+      }
+    ]
+  }
+}

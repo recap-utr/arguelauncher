@@ -3,7 +3,6 @@ from __future__ import absolute_import, annotations
 import csv
 import json
 import logging
-import time
 import typing as t
 from collections import defaultdict
 from pathlib import Path

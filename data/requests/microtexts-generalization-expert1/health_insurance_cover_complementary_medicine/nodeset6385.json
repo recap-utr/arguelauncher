@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "f4689976-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should reductions in the magnitude of chemically made therapies be pursued for sufferers to take care of sufferers and organisms?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.766801Z",
+        "updated": "2023-02-10T09:47:38.766801Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.766760Z",
+    "updated": "2023-02-10T09:47:38.766760Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6385": {
+            "produced/verb": "made/verb",
+            "amount/noun": "magnitude/noun",
+            "patient/noun": "sufferers/noun",
+            "person/noun": "organism/noun",
+            "medication/noun": "therapy/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 1.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 2.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

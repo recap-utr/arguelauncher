@@ -18,7 +18,7 @@ from omegaconf import OmegaConf
 from rich import print_json
 
 from arguelauncher.algorithms.graph2text import graph2text
-from arguelauncher.config import Config
+from arguelauncher.config import RetrievalConfig
 from arguelauncher.services import exporter
 from arguelauncher.services.evaluation import Evaluation
 
@@ -46,8 +46,8 @@ _nlp_configs = {
 }
 
 
-@hydra.main(version_base=None, config_path=".", config_name="config")
-def main(config: Config) -> None:
+@hydra.main(version_base=None, config_path=".", config_name="retrieval_config")
+def main(config: RetrievalConfig) -> None:
     """Calculate similarity of queries and case base"""
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 
@@ -61,7 +61,7 @@ def main(config: Config) -> None:
     )
 
     cases: t.Dict[Path, ag.Graph] = {
-        file: ag.from_file(file)
+        file: ag.load.file(file)
         for file in Path(config.path.cases).glob(config.path.case_graphs_pattern)
     }
     arguebuf_cases = {
@@ -69,14 +69,14 @@ def main(config: Config) -> None:
     }
     protobuf_cases = {
         key: AnnotatedGraph(
-            graph=ag.to_protobuf(graph),
+            graph=ag.dump.protobuf(graph),
             text=graph2text(graph, config.request.graph2text_algorithm),
         )
         for key, graph in arguebuf_cases.items()
     }
 
     queries: t.Dict[Path, ag.Graph] = {
-        file: ag.from_file(file)
+        file: ag.load.file(file)
         for file in Path(config.path.queries).glob(config.path.query_graphs_pattern)
     }
     for file in Path(config.path.queries).glob(config.path.query_texts_pattern):
@@ -86,11 +86,11 @@ def main(config: Config) -> None:
             g.add_node(ag.AtomNode(text))
             g.add_resource(ag.Resource(text))
             queries[file] = g
-    query_files = [file for file in queries]
+    query_files = list(queries)
 
     protobuf_queries = [
         AnnotatedGraph(
-            graph=ag.to_protobuf(query),
+            graph=ag.dump.protobuf(query),
             text=graph2text(query, config.request.graph2text_algorithm),
         )
         for query in queries.values()
@@ -162,7 +162,7 @@ def main(config: Config) -> None:
         exporter.export_results_aggregated(
             eval_dict,
             duration,
-            t.cast(Config, OmegaConf.to_object(config)).to_dict(),
+            t.cast(RetrievalConfig, OmegaConf.to_object(config)).to_dict(),
             config.path,
             output_folder,
         )

@@ -1,0 +1,120 @@
+{
+  "nodes": {
+    "1d6d6850-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Every major issue coming up over the years of building do show clearly the shortcomings of the entire planning."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:09Z",
+        "updated": "2022-06-15T17:52:09Z"
+      }
+    },
+    "1bf71c00-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Billions have been invested already. Therefore it may be a waste of money to decline everything."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:52:07Z",
+        "updated": "2022-06-15T17:52:07Z"
+      }
+    },
+    "21103190-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:15Z",
+        "updated": "2022-06-15T17:52:15Z"
+      }
+    },
+    "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "BER should be reshaped from scratch." },
+      "metadata": {
+        "created": "2022-06-15T17:52:04Z",
+        "updated": "2022-06-15T17:52:04Z"
+      }
+    },
+    "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:17Z",
+        "updated": "2022-06-15T17:52:17Z"
+      }
+    },
+    "1ecef420-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "Thereby it is never going to be finished." },
+      "metadata": {
+        "created": "2022-06-15T17:52:12Z",
+        "updated": "2022-06-15T17:52:12Z"
+      }
+    },
+    "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:52:14Z",
+        "updated": "2022-06-15T17:52:14Z"
+      }
+    }
+  },
+  "edges": {
+    "09aed280-ecc4-11ec-8c4a-8393a9f2ee74": {
+      "source": "1ecef420-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "21103190-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368228Z",
+        "updated": "2022-07-14T13:15:02.368228Z"
+      }
+    },
+    "3026cdb0-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368144Z",
+        "updated": "2022-07-14T13:15:02.368144Z"
+      }
+    },
+    "335f8a80-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "21103190-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368178Z",
+        "updated": "2022-07-14T13:15:02.368178Z"
+      }
+    },
+    "2e36bd80-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1d6d6850-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1ffdfe40-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368123Z",
+        "updated": "2022-07-14T13:15:02.368123Z"
+      }
+    },
+    "3a359250-ecc3-11ec-8c4a-8393a9f2ee74": {
+      "source": "1bf71c00-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368198Z",
+        "updated": "2022-07-14T13:15:02.368198Z"
+      }
+    },
+    "08310c20-ecc4-11ec-8c4a-8393a9f2ee74": {
+      "source": "220e40a0-ecc3-11ec-8c4a-8393a9f2ee74",
+      "target": "1a67f080-ecc3-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.368213Z",
+        "updated": "2022-07-14T13:15:02.368213Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.367298Z",
+    "updated": "2022-07-14T13:15:02.367298Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": { "nodeset6403": 3, "nodeset6422": 3, "nodeset6459": 1 }
+      }
+    ]
+  }
+}

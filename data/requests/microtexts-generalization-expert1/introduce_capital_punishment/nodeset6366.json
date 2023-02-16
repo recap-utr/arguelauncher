@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "f47dd80e-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should Germany decide to discuss the corporal punishment for wrongdoings as legal act for wrongdoers?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.906030Z",
+        "updated": "2023-02-10T09:47:38.906030Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.905985Z",
+    "updated": "2023-02-10T09:47:38.905985Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6366": {
+            "murderer/noun": "wrongdoer/noun",
+            "death penalty/noun": "corporal punishment/noun",
+            "means/noun": "act/noun",
+            "adjudicate/verb": "decide/verb",
+            "constitution/noun": "law/noun",
+            "crime/noun": "wrongdoing/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 1.0,
+          "microtexts/nodeset6464": 2.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 2.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 2.0,
+          "microtexts/nodeset6391": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

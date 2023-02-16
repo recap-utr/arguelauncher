@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f46cc46a-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should only those persons pay a medium licence charge to communicators who actually want to watch telecommunications offered by public communicators?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.794110Z",
+        "updated": "2023-02-10T09:47:38.794110Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.794079Z",
+    "updated": "2023-02-10T09:47:38.794079Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6389": {
+            "programming/noun": "preparation/noun",
+            "TV/noun": "medium/noun",
+            "broadcasting/noun": "telecommunication/noun",
+            "broadcasters/noun": "communicators/noun",
+            "fee/noun": "charge/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6454": 2.0,
+          "microtexts/nodeset6446": 2.0,
+          "microtexts/nodeset6463": 2.0,
+          "microtexts/nodeset6389": 1.0,
+          "microtexts/nodeset6470": 2.0,
+          "microtexts/nodeset6364": 2.0,
+          "microtexts/nodeset6374": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

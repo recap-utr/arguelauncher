@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f469b554-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should (public) insurance include aid in each practice of medicine?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.774069Z",
+        "updated": "2023-02-10T09:47:38.774069Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.774024Z",
+    "updated": "2023-02-10T09:47:38.774024Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6363": {
+            "cover/verb": "include/verb",
+            "treatment/noun": "aid/noun",
+            "complementary medicine/noun": "practice of medicine/noun",
+            "Health insurance/noun": "insurance/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 1.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 2.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

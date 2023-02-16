@@ -1,0 +1,160 @@
+{
+  "nodes": {
+    "7c7b0910-ebec-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "Everybody should pay for public broadcasters." },
+      "metadata": {
+        "created": "2022-06-14T16:15:47Z",
+        "updated": "2022-06-14T16:15:47Z"
+      }
+    },
+    "7b591e50-ebec-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "There are a lot of programmes, that are not worth the money we paid."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:15:45Z",
+        "updated": "2022-06-14T16:15:45Z"
+      }
+    },
+    "9da57bc0-ebec-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:16:43Z",
+        "updated": "2022-06-14T16:16:43Z"
+      }
+    },
+    "9d101990-ebec-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:16:42Z",
+        "updated": "2022-06-14T16:16:42Z"
+      }
+    },
+    "9e701ec0-ebec-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:16:44Z",
+        "updated": "2022-06-14T16:16:44Z"
+      }
+    },
+    "9f077cc0-ebec-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:16:45Z",
+        "updated": "2022-06-14T16:16:45Z"
+      }
+    },
+    "79efca50-ebec-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "We do want to get our news through the lense of neutral and independent journalists."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:15:43Z",
+        "updated": "2022-06-14T16:15:43Z"
+      }
+    },
+    "7df80c20-ebec-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "The people should be able to decide on their own about the program, they want to pay for."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:15:49Z",
+        "updated": "2022-06-14T16:15:49Z"
+      }
+    },
+    "9c2ff2c0-ebec-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "Because the need for independent media is high. " },
+      "metadata": {
+        "created": "2022-06-14T16:16:40Z",
+        "updated": "2022-06-14T16:16:40Z"
+      }
+    }
+  },
+  "edges": {
+    "b911e650-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "7b591e50-ebec-11ec-bc75-5d1586fcf929",
+      "target": "9da57bc0-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357019Z",
+        "updated": "2022-07-14T13:15:02.357019Z"
+      }
+    },
+    "b9f45710-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "9c2ff2c0-ebec-11ec-bc75-5d1586fcf929",
+      "target": "9d101990-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357035Z",
+        "updated": "2022-07-14T13:15:02.357035Z"
+      }
+    },
+    "bbeb1e00-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "9e701ec0-ebec-11ec-bc75-5d1586fcf929",
+      "target": "9c2ff2c0-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357066Z",
+        "updated": "2022-07-14T13:15:02.357066Z"
+      }
+    },
+    "bce75850-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "79efca50-ebec-11ec-bc75-5d1586fcf929",
+      "target": "9e701ec0-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357081Z",
+        "updated": "2022-07-14T13:15:02.357081Z"
+      }
+    },
+    "b735d350-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "9f077cc0-ebec-11ec-bc75-5d1586fcf929",
+      "target": "7c7b0910-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.356986Z",
+        "updated": "2022-07-14T13:15:02.356986Z"
+      }
+    },
+    "b81b7860-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "9da57bc0-ebec-11ec-bc75-5d1586fcf929",
+      "target": "7c7b0910-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357003Z",
+        "updated": "2022-07-14T13:15:02.357003Z"
+      }
+    },
+    "b5a966f0-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "7df80c20-ebec-11ec-bc75-5d1586fcf929",
+      "target": "9f077cc0-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.356963Z",
+        "updated": "2022-07-14T13:15:02.356963Z"
+      }
+    },
+    "bae19d40-ebec-11ec-bc75-5d1586fcf929": {
+      "source": "9d101990-ebec-11ec-bc75-5d1586fcf929",
+      "target": "7c7b0910-ebec-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.357050Z",
+        "updated": "2022-07-14T13:15:02.357050Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.355920Z",
+    "updated": "2022-07-14T13:15:02.355920Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6364": 1,
+          "nodeset6389": 2,
+          "nodeset6446": 2,
+          "nodeset6454": 3,
+          "nodeset6463": 2,
+          "nodeset6470": 3,
+          "nodeset6374": 3
+        }
+      }
+    ]
+  }
+}

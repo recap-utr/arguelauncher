@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "276982": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:53:16Z",
+        "updated": "2017-05-02T12:53:16Z"
+      }
+    },
+    "276981": {
+      "atom": {
+        "text": "there is not enough staff to enforce penalties"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:53:15Z",
+        "updated": "2017-05-02T12:53:15Z"
+      }
+    },
+    "276980": {
+      "atom": {
+        "text": "higher fines for dog owner are useless"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:53:15Z",
+        "updated": "2017-05-02T12:53:15Z"
+      }
+    }
+  },
+  "edges": {
+    "337866": {
+      "source": "276982",
+      "target": "276980",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.632165Z",
+        "updated": "2023-02-07T15:53:14.632165Z"
+      }
+    },
+    "337865": {
+      "source": "276981",
+      "target": "276982",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.632148Z",
+        "updated": "2023-02-07T15:53:14.632148Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.631806Z",
+    "updated": "2023-02-07T15:53:14.631806Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6362": 2,
+          "microtexts/nodeset6367": 3,
+          "microtexts/nodeset6371": 2,
+          "microtexts/nodeset6392": 2,
+          "microtexts/nodeset6400": 2,
+          "microtexts/nodeset6420": 2,
+          "microtexts/nodeset6452": 2,
+          "microtexts/nodeset6468": 1
+        }
+      }
+    ]
+  }
+}

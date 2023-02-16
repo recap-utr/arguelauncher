@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f46d7c2a-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should owners transfer more fine for leaving domestic animal excrements on surfaces be increased in order to stimulate owners to take care of people who do not want their undersides with excrements?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.798819Z",
+        "updated": "2023-02-10T09:47:38.798819Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.798777Z",
+    "updated": "2023-02-10T09:47:38.798777Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6371": {
+            "dog/noun": "domestic animal/noun",
+            "pavement/noun": "surface/noun",
+            "soles/noun": "undersides/noun",
+            "pay/verb": "transfer/verb"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6400": 2.0,
+          "microtexts/nodeset6367": 2.0,
+          "microtexts/nodeset6452": 2.0,
+          "microtexts/nodeset6371": 1.0,
+          "microtexts/nodeset6362": 2.0,
+          "microtexts/nodeset6420": 2.0,
+          "microtexts/nodeset6468": 2.0,
+          "microtexts/nodeset6392": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

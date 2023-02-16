@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "f46371da-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should public and private establishments (bureaucracy, shops, ..) be open on weekends at their own discretion?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.733017Z",
+        "updated": "2023-02-10T09:47:38.733017Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.732978Z",
+    "updated": "2023-02-10T09:47:38.732978Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6451": {
+            "shopping centres/noun": " establishments/noun",
+            "supermarkets/noun": " establishments/noun",
+            "shop/noun": " establishment/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6451": 1.0,
+          "microtexts/nodeset6457": 2.0,
+          "microtexts/nodeset6410": 2.0,
+          "microtexts/nodeset6375": 2.0,
+          "microtexts/nodeset6466": 2.0,
+          "microtexts/nodeset6419": 2.0,
+          "microtexts/nodeset6449": 2.0,
+          "microtexts/nodeset6462": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

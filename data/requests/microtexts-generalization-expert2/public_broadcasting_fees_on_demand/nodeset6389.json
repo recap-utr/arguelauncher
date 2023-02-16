@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f45575a8-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should we all require all households equally to pay TV and radio costs?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.641378Z",
+        "updated": "2023-02-10T09:47:38.641378Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.641331Z",
+    "updated": "2023-02-10T09:47:38.641331Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6389": {
+            "broadcaster/noun": " communicator/noun",
+            "broadcasting/noun": " telecommunication/noun",
+            "license fee/noun": " cost/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6454": 2.0,
+          "microtexts/nodeset6446": 2.0,
+          "microtexts/nodeset6463": 2.0,
+          "microtexts/nodeset6389": 1.0,
+          "microtexts/nodeset6470": 2.0,
+          "microtexts/nodeset6364": 2.0,
+          "microtexts/nodeset6374": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

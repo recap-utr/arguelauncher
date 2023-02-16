@@ -1,0 +1,105 @@
+{
+  "nodes": {
+    "276978": {
+      "scheme": {
+        "attack": "ATTACK_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:35:44Z",
+        "updated": "2017-05-02T12:35:44Z"
+      }
+    },
+    "276974": {
+      "atom": {
+        "text": "There should be higher penalties for dog dirt left on the ground"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:35:43Z",
+        "updated": "2017-05-02T12:35:43Z"
+      }
+    },
+    "276975": {
+      "atom": {
+        "text": "If the waste is disposed then there is no fine"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:35:43Z",
+        "updated": "2017-05-02T12:35:43Z"
+      }
+    },
+    "276976": {
+      "atom": {
+        "text": "Higher fines particularly hit financially weaker individuals"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:35:44Z",
+        "updated": "2017-05-02T12:35:44Z"
+      }
+    },
+    "276977": {
+      "scheme": {
+        "attack": "ATTACK_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T12:35:44Z",
+        "updated": "2017-05-02T12:35:44Z"
+      }
+    }
+  },
+  "edges": {
+    "337864": {
+      "source": "276978",
+      "target": "276976",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.627293Z",
+        "updated": "2023-02-07T15:53:14.627293Z"
+      }
+    },
+    "337862": {
+      "source": "276977",
+      "target": "276974",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.627266Z",
+        "updated": "2023-02-07T15:53:14.627266Z"
+      }
+    },
+    "337861": {
+      "source": "276976",
+      "target": "276977",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.627248Z",
+        "updated": "2023-02-07T15:53:14.627248Z"
+      }
+    },
+    "337863": {
+      "source": "276975",
+      "target": "276978",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.627280Z",
+        "updated": "2023-02-07T15:53:14.627280Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.625832Z",
+    "updated": "2023-02-07T15:53:14.625832Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6362": 1,
+          "microtexts/nodeset6367": 2,
+          "microtexts/nodeset6371": 1,
+          "microtexts/nodeset6392": 1,
+          "microtexts/nodeset6400": 1,
+          "microtexts/nodeset6420": 3,
+          "microtexts/nodeset6452": 2,
+          "microtexts/nodeset6468": 1
+        }
+      }
+    ]
+  }
+}

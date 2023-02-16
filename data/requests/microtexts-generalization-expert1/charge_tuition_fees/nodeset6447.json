@@ -1,0 +1,41 @@
+{
+  "nodes": {
+    "f474efaa-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "TODO\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.847647Z",
+        "updated": "2023-02-10T09:47:38.847647Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.847616Z",
+    "updated": "2023-02-10T09:47:38.847616Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6447": {
+            "student/noun": "enrollee/noun",
+            "universities/noun": "educational institution/noun",
+            "tuition fees/noun": "fees/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 2.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 1.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

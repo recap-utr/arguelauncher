@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f47bd8e2-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should Germany introduce corporal punishment for homicides to wrongdoers?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.892941Z",
+        "updated": "2023-02-10T09:47:38.892941Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.892904Z",
+    "updated": "2023-02-10T09:47:38.892904Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6464": {
+            "death penalty/noun": "corporal punishment/noun",
+            "murderers/noun": "wrongdoers/noun",
+            "capital punishment/noun": "corporal punishment/noun",
+            "murder/noun": "homicide/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 2.0,
+          "microtexts/nodeset6464": 1.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 2.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 2.0,
+          "microtexts/nodeset6391": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f476e6de-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should prophylactic devices be sold over the counter at business establishments from health care providers or from medical men after medial communication?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.860529Z",
+        "updated": "2023-02-10T09:47:38.860529Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.860497Z",
+    "updated": "2023-02-10T09:47:38.860497Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6406": {
+            "layperson/noun": "common man/noun",
+            "woman/noun": "person/noun",
+            "morning-after pill/noun": "prophylactic devices/noun",
+            "physician/noun": "medical man/noun",
+            "advice/noun": "communication/noun",
+            "pharmacist/noun": "health care provider/noun",
+            "pregnancy/noun": "physical condition/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6368": 2.0,
+          "microtexts/nodeset6397": 2.0,
+          "microtexts/nodeset6406": 1.0,
+          "microtexts/nodeset6414": 2.0,
+          "microtexts/nodeset6402": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

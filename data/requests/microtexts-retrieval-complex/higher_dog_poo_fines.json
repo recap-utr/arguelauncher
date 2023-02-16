@@ -1,0 +1,99 @@
+{
+  "nodes": {
+    "82f613b0-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:27:12Z",
+        "updated": "2022-04-19T10:27:12Z"
+      }
+    },
+    "7c83d6c0-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-04-19T10:27:01Z",
+        "updated": "2022-04-19T10:27:01Z"
+      }
+    },
+    "72cf4010-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "Penalties for dog excrements left on the pavement should be increased."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:26:45Z",
+        "updated": "2022-04-19T10:26:45Z"
+      }
+    },
+    "73567170-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "atom": { "text": "The dog cannot do anything about its nature." },
+      "metadata": {
+        "created": "2022-04-19T10:26:46Z",
+        "updated": "2022-04-19T10:26:46Z"
+      }
+    },
+    "73898f60-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "atom": {
+        "text": "But once you step into the dog’s poo, it is sticking onto your shoes persistently."
+      },
+      "metadata": {
+        "created": "2022-04-19T10:26:46Z",
+        "updated": "2022-04-19T10:26:46Z"
+      }
+    }
+  },
+  "edges": {
+    "7c83d6c1-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "73567170-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "7c83d6c0-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.319382Z",
+        "updated": "2022-07-14T13:15:02.319382Z"
+      }
+    },
+    "82f613b1-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "73898f60-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "82f613b0-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.319420Z",
+        "updated": "2022-07-14T13:15:02.319420Z"
+      }
+    },
+    "82f613b2-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "82f613b0-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "73567170-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.319436Z",
+        "updated": "2022-07-14T13:15:02.319436Z"
+      }
+    },
+    "7c83d6c2-bfba-11ec-865c-8d2d7bc8b0fd": {
+      "source": "7c83d6c0-bfba-11ec-865c-8d2d7bc8b0fd",
+      "target": "72cf4010-bfba-11ec-865c-8d2d7bc8b0fd",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.319403Z",
+        "updated": "2022-07-14T13:15:02.319403Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.318792Z",
+    "updated": "2022-07-14T13:15:02.318792Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6362": 2,
+          "nodeset6367": 3,
+          "nodeset6371": 1,
+          "nodeset6392": 3,
+          "nodeset6400": 3,
+          "nodeset6420": 3,
+          "nodeset6452": 2,
+          "nodeset6468": 3
+        }
+      }
+    ]
+  }
+}

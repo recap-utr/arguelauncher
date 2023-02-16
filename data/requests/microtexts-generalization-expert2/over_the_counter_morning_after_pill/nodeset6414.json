@@ -1,0 +1,41 @@
+{
+  "nodes": {
+    "f460ab3a-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Could over-the-counter availability of birth control devices lead to many people taking them unnecessarily?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.714829Z",
+        "updated": "2023-02-10T09:47:38.714829Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.714779Z",
+    "updated": "2023-02-10T09:47:38.714779Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6414": {
+            "intercourse/noun": " sexual activity/noun",
+            "pregnancies/noun": " condition/noun",
+            "morning-after pill/noun": " birth control device/noun",
+            "women/noun": " people/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6368": 2.0,
+          "microtexts/nodeset6397": 2.0,
+          "microtexts/nodeset6406": 2.0,
+          "microtexts/nodeset6414": 1.0,
+          "microtexts/nodeset6402": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

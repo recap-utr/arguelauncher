@@ -1,0 +1,104 @@
+{
+  "nodes": {
+    "277006": {
+      "atom": {
+        "text": "the programming does not represent every age group equally"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:09:12Z",
+        "updated": "2017-05-02T23:09:12Z"
+      }
+    },
+    "277005": {
+      "atom": {
+        "text": "only people that make use of the programming of the public media should have to pay"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:09:12Z",
+        "updated": "2017-05-02T23:09:12Z"
+      }
+    },
+    "277008": {
+      "atom": {
+        "text": "the quality of many shows is bad"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:09:13Z",
+        "updated": "2017-05-02T23:09:13Z"
+      }
+    },
+    "277009": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:09:13Z",
+        "updated": "2017-05-02T23:09:13Z"
+      }
+    },
+    "277007": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:09:13Z",
+        "updated": "2017-05-02T23:09:13Z"
+      }
+    }
+  },
+  "edges": {
+    "337880": {
+      "source": "277007",
+      "target": "277005",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.647969Z",
+        "updated": "2023-02-07T15:53:14.647969Z"
+      }
+    },
+    "337882": {
+      "source": "277009",
+      "target": "277005",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.647996Z",
+        "updated": "2023-02-07T15:53:14.647996Z"
+      }
+    },
+    "337881": {
+      "source": "277008",
+      "target": "277009",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.647983Z",
+        "updated": "2023-02-07T15:53:14.647983Z"
+      }
+    },
+    "337879": {
+      "source": "277006",
+      "target": "277007",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.647952Z",
+        "updated": "2023-02-07T15:53:14.647952Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.647490Z",
+    "updated": "2023-02-07T15:53:14.647490Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6364": 3,
+          "microtexts/nodeset6374": 1,
+          "microtexts/nodeset6389": 2,
+          "microtexts/nodeset6446": 2,
+          "microtexts/nodeset6454": 2,
+          "microtexts/nodeset6463": 3,
+          "microtexts/nodeset6470": 1
+        }
+      }
+    ]
+  }
+}

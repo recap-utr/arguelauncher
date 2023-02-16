@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f45c0404-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should we raise age of termination of the basis of physical fitness of every individual?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.684326Z",
+        "updated": "2023-02-10T09:47:38.684326Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.684299Z",
+    "updated": "2023-02-10T09:47:38.684299Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6409": {
+            "pension/noun": " payment/noun",
+            "social security/noun": " public assistance/noun",
+            "retirement/noun": " termination/noun",
+            "citizen/noun": " individual/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6409": 1.0,
+          "microtexts/nodeset6382": 2.0,
+          "microtexts/nodeset6416": 2.0,
+          "microtexts/nodeset6411": 2.0,
+          "microtexts/nodeset6421": 2.0,
+          "microtexts/nodeset6461": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

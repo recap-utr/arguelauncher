@@ -1,0 +1,167 @@
+{
+  "nodes": {
+    "83800050-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "Olympic events are rooted in old traditions." },
+      "metadata": {
+        "created": "2022-06-15T17:40:42Z",
+        "updated": "2022-06-15T17:40:42Z"
+      }
+    },
+    "85285920-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:44Z",
+        "updated": "2022-06-15T17:40:44Z"
+      }
+    },
+    "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:46Z",
+        "updated": "2022-06-15T17:40:46Z"
+      }
+    },
+    "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:49Z",
+        "updated": "2022-06-15T17:40:49Z"
+      }
+    },
+    "7a15c3a0-ecc2-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "The events have a cultural determined character. " },
+      "metadata": {
+        "created": "2022-06-15T17:47:35Z",
+        "updated": "2022-06-15T17:47:35Z"
+      }
+    },
+    "8439b360-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Computer games should not be considerd Olympic events."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:43Z",
+        "updated": "2022-06-15T17:40:43Z"
+      }
+    },
+    "86dac410-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:47Z",
+        "updated": "2022-06-15T17:40:47Z"
+      }
+    },
+    "8281a320-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Other card play games as well as chess are not Olympic events either..."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:40Z",
+        "updated": "2022-06-15T17:40:40Z"
+      }
+    },
+    "80e88c90-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "The society is strongly affected by video games." },
+      "metadata": {
+        "created": "2022-06-15T17:40:37Z",
+        "updated": "2022-06-15T17:40:37Z"
+      }
+    },
+    "81c7c900-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Yet sports are usually associated with physical training."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:39Z",
+        "updated": "2022-06-15T17:40:39Z"
+      }
+    }
+  },
+  "edges": {
+    "94b02da0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "81c7c900-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349277Z",
+        "updated": "2022-07-14T13:15:02.349277Z"
+      }
+    },
+    "95966ef0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "8281a320-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349294Z",
+        "updated": "2022-07-14T13:15:02.349294Z"
+      }
+    },
+    "97678570-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "83800050-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "86dac410-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349309Z",
+        "updated": "2022-07-14T13:15:02.349309Z"
+      }
+    },
+    "9d990fe0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "86dac410-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349370Z",
+        "updated": "2022-07-14T13:15:02.349370Z"
+      }
+    },
+    "9401ec40-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "80e88c90-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "85285920-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349257Z",
+        "updated": "2022-07-14T13:15:02.349257Z"
+      }
+    },
+    "9a038d10-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "85285920-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349324Z",
+        "updated": "2022-07-14T13:15:02.349324Z"
+      }
+    },
+    "9c737ba0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349354Z",
+        "updated": "2022-07-14T13:15:02.349354Z"
+      }
+    },
+    "9b5d77c0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349339Z",
+        "updated": "2022-07-14T13:15:02.349339Z"
+      }
+    },
+    "7db55890-ecc2-11ec-8c4a-8393a9f2ee74": {
+      "source": "7a15c3a0-ecc2-11ec-8c4a-8393a9f2ee74",
+      "target": "85285920-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.349384Z",
+        "updated": "2022-07-14T13:15:02.349384Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.348199Z",
+    "updated": "2022-07-14T13:15:02.348199Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": { "nodeset6380": 1, "nodeset6396": 3, "nodeset6417": 2 }
+      }
+    ]
+  }
+}

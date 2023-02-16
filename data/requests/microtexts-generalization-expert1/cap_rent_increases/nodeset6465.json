@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f4715cfa-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should there be a cap on annuity increases for a change of room or construction holders?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.824232Z",
+        "updated": "2023-02-10T09:47:38.824232Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.824198Z",
+    "updated": "2023-02-10T09:47:38.824198Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6465": {
+            "rent/noun": "annuity/noun",
+            "neighbourhoods/noun": "areas/noun",
+            "live/verb": "be/verb",
+            "tenants/noun": "remunerator/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6455": 2.0,
+          "microtexts/nodeset6465": 1.0,
+          "microtexts/nodeset6369": 2.0,
+          "microtexts/nodeset6377": 2.0,
+          "microtexts/nodeset6384": 2.0,
+          "microtexts/nodeset6418": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

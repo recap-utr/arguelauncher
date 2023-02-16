@@ -1,0 +1,33 @@
+{
+  "nodes": {
+    "277011": {
+      "atom": {
+        "text": "universities should be free of charge"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:37:07Z",
+        "updated": "2017-05-02T23:37:07Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.661620Z",
+    "updated": "2023-02-07T15:53:14.661620Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6381": 2,
+          "microtexts/nodeset6388": 2,
+          "microtexts/nodeset6394": 1,
+          "microtexts/nodeset6407": 2,
+          "microtexts/nodeset6447": 3,
+          "microtexts/nodeset6456": 2
+        }
+      }
+    ]
+  }
+}

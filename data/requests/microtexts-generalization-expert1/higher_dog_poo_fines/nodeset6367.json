@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f46ff004-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should the fine for leaving domenstic animal excrements on surfaces be increased as they require peoples mental processes not to step in them?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.814890Z",
+        "updated": "2023-02-10T09:47:38.814890Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.814852Z",
+    "updated": "2023-02-10T09:47:38.814852Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6367": {
+            "dog/noun": "domestic animal/noun",
+            "pavement/noun": "surface/noun",
+            "attention/noun": "mental process/noun",
+            "dirt/noun": "excrement/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6400": 2.0,
+          "microtexts/nodeset6367": 1.0,
+          "microtexts/nodeset6452": 2.0,
+          "microtexts/nodeset6371": 2.0,
+          "microtexts/nodeset6362": 2.0,
+          "microtexts/nodeset6420": 2.0,
+          "microtexts/nodeset6468": 2.0,
+          "microtexts/nodeset6392": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

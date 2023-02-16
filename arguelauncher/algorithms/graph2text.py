@@ -1,11 +1,11 @@
 import random
 import typing as t
 
-random.seed(0)
-
 import arguebuf as ag
 
-from arguelauncher.config import Graph2TextAlgorithm
+from arguelauncher.config import RetrievalGraph2TextAlgorithm
+
+random.seed(0)
 
 SCHEME_RECONSTRUCTION: dict[t.Type[ag.Scheme], str] = {
     ag.Support: "This is true because",
@@ -64,14 +64,18 @@ def _traverse_texts(
 
 
 def _dfs(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.dfs(start, connections, include_start=False)
+    def func(start, connections):
+        return ag.traverse.dfs(start, connections, include_start=False)
+
     texts = _traverse_texts(g, func)
 
     return " ".join(texts)
 
 
 def _dfs_reconstruction(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.dfs(start, connections, include_start=False)
+    def func(start, connections):
+        return ag.traverse.dfs(start, connections, include_start=False)
+
     nodes = _traverse_nodes(g, func)
     texts = []
 
@@ -89,21 +93,23 @@ def _dfs_reconstruction(g: ag.Graph) -> str:
 
 
 def _bfs(g: ag.Graph) -> str:
-    func = lambda start, connections: ag.bfs(start, connections, include_start=False)
+    def func(start, connections):
+        return ag.traverse.bfs(start, connections, include_start=False)
+
     texts = _traverse_texts(g, func)
 
     return " ".join(texts)
 
 
-algorithm_map: dict[Graph2TextAlgorithm, t.Callable[[ag.Graph], str]] = {
-    Graph2TextAlgorithm.NODE_ID: _node_id,
-    Graph2TextAlgorithm.ORIGINAL_RESOURCE: _original_resource,
-    Graph2TextAlgorithm.RANDOM: _random,
-    Graph2TextAlgorithm.BFS: _bfs,
-    Graph2TextAlgorithm.DFS: _dfs,
-    Graph2TextAlgorithm.DFS_RECONSTRUCTION: _dfs_reconstruction,
+algorithm_map: dict[RetrievalGraph2TextAlgorithm, t.Callable[[ag.Graph], str]] = {
+    RetrievalGraph2TextAlgorithm.NODE_ID: _node_id,
+    RetrievalGraph2TextAlgorithm.ORIGINAL_RESOURCE: _original_resource,
+    RetrievalGraph2TextAlgorithm.RANDOM: _random,
+    RetrievalGraph2TextAlgorithm.BFS: _bfs,
+    RetrievalGraph2TextAlgorithm.DFS: _dfs,
+    RetrievalGraph2TextAlgorithm.DFS_RECONSTRUCTION: _dfs_reconstruction,
 }
 
 
-def graph2text(g: ag.Graph, algorithm: Graph2TextAlgorithm) -> str:
+def graph2text(g: ag.Graph, algorithm: RetrievalGraph2TextAlgorithm) -> str:
     return algorithm_map[algorithm](g)

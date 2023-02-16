@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "f477dd46-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should prophylactic devices be sold over the counter at business establishments without medical communication?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.866837Z",
+        "updated": "2023-02-10T09:47:38.866837Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.866807Z",
+    "updated": "2023-02-10T09:47:38.866807Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6402": {
+            "morning-after pill/noun": "prophylactic devices/noun",
+            "advice/noun": "communication/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6368": 2.0,
+          "microtexts/nodeset6397": 2.0,
+          "microtexts/nodeset6406": 2.0,
+          "microtexts/nodeset6414": 2.0,
+          "microtexts/nodeset6402": 1.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

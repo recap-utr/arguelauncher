@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "f46538c6-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should we introduce capital punishment to punish crimes such as modification of other human beings?\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.744662Z",
+        "updated": "2023-02-10T09:47:38.744662Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.744628Z",
+    "updated": "2023-02-10T09:47:38.744628Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6383": {
+            "capital punishment/noun": " corporal punishment/noun",
+            "death/noun": " modification/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 2.0,
+          "microtexts/nodeset6464": 2.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 2.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 1.0,
+          "microtexts/nodeset6391": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

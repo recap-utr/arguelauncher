@@ -1,0 +1,71 @@
+{
+  "nodes": {
+    "276997": {
+      "atom": {
+        "text": "death penalty is inhumane"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:49:21Z",
+        "updated": "2017-05-02T22:49:21Z"
+      }
+    },
+    "276998": {
+      "atom": {
+        "text": "Even the guilty have a right to life"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:49:21Z",
+        "updated": "2017-05-02T22:49:21Z"
+      }
+    },
+    "276999": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T22:49:21Z",
+        "updated": "2017-05-02T22:49:21Z"
+      }
+    }
+  },
+  "edges": {
+    "337875": {
+      "source": "276998",
+      "target": "276999",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.618775Z",
+        "updated": "2023-02-07T15:53:14.618775Z"
+      }
+    },
+    "337876": {
+      "source": "276999",
+      "target": "276997",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.618791Z",
+        "updated": "2023-02-07T15:53:14.618791Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.618472Z",
+    "updated": "2023-02-07T15:53:14.618472Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6366": 2,
+          "microtexts/nodeset6383": 2,
+          "microtexts/nodeset6387": 1,
+          "microtexts/nodeset6391": 2,
+          "microtexts/nodeset6450": 2,
+          "microtexts/nodeset6453": 2,
+          "microtexts/nodeset6464": 2,
+          "microtexts/nodeset6469": 3
+        }
+      }
+    ]
+  }
+}

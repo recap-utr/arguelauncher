@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "f47cd09e-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should Germany introduce the corporal punishment for wrongdoings as legal act for wrongdoers because it can be the ultimate elimination of any potential danger?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.899282Z",
+        "updated": "2023-02-10T09:47:38.899282Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.899248Z",
+    "updated": "2023-02-10T09:47:38.899248Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6387": {
+            "countries/noun": "regions/noun",
+            "death penalty/noun": "corporal punishment/noun",
+            "murder/noun": "homicide/noun",
+            "threat/noun": "danger/noun",
+            "crime/noun": "wrongdoing/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6366": 2.0,
+          "microtexts/nodeset6464": 2.0,
+          "microtexts/nodeset6453": 2.0,
+          "microtexts/nodeset6387": 1.0,
+          "microtexts/nodeset6469": 2.0,
+          "microtexts/nodeset6450": 2.0,
+          "microtexts/nodeset6383": 2.0,
+          "microtexts/nodeset6391": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "f46a0fe0-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should insurance institutions include alternative medical cares although they may be not confirmed in clicinal trials?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.776386Z",
+        "updated": "2023-02-10T09:47:38.776386Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.776344Z",
+    "updated": "2023-02-10T09:47:38.776344Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6373": {
+            "proven/verb": "confirmed/verb",
+            "cover/verb": "include/verb",
+            "health insurance/noun": "insurance/noun",
+            "treatments/noun": "aids/noun",
+            "companies/noun": "institutions/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 2.0,
+          "microtexts/nodeset6378": 2.0,
+          "microtexts/nodeset6373": 1.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

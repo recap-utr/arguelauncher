@@ -1,0 +1,126 @@
+{
+  "nodes": {
+    "c96bed00-ebee-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:32:15Z",
+        "updated": "2022-06-14T16:32:15Z"
+      }
+    },
+    "c8d5c780-ebee-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:32:14Z",
+        "updated": "2022-06-14T16:32:14Z"
+      }
+    },
+    "bfdda300-ebee-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "Visiting the doctor on a regular basis should stay mandatory for everybody."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:31:59Z",
+        "updated": "2022-06-14T16:31:59Z"
+      }
+    },
+    "c1559d00-ebee-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "But this does not exist." },
+      "metadata": {
+        "created": "2022-06-14T16:32:02Z",
+        "updated": "2022-06-14T16:32:02Z"
+      }
+    },
+    "bf11c780-ebee-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "If there would exist a pill for every desease, including hangover and other side effects of a drunk night, this would be best."
+      },
+      "metadata": {
+        "created": "2022-06-14T16:31:58Z",
+        "updated": "2022-06-14T16:31:58Z"
+      }
+    },
+    "c7cce300-ebee-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-14T16:32:12Z",
+        "updated": "2022-06-14T16:32:12Z"
+      }
+    },
+    "be647080-ebee-11ec-bc75-5d1586fcf929": {
+      "atom": { "text": "A new life may already have begun." },
+      "metadata": {
+        "created": "2022-06-14T16:31:57Z",
+        "updated": "2022-06-14T16:31:57Z"
+      }
+    }
+  },
+  "edges": {
+    "d7c8fd20-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "c96bed00-ebee-11ec-bc75-5d1586fcf929",
+      "target": "c1559d00-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.352992Z",
+        "updated": "2022-07-14T13:15:02.352992Z"
+      }
+    },
+    "d96a02f0-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "c1559d00-ebee-11ec-bc75-5d1586fcf929",
+      "target": "c8d5c780-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.353009Z",
+        "updated": "2022-07-14T13:15:02.353009Z"
+      }
+    },
+    "da7dbce0-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "c8d5c780-ebee-11ec-bc75-5d1586fcf929",
+      "target": "bf11c780-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.353025Z",
+        "updated": "2022-07-14T13:15:02.353025Z"
+      }
+    },
+    "dc2b45d0-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "bf11c780-ebee-11ec-bc75-5d1586fcf929",
+      "target": "c7cce300-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.352935Z",
+        "updated": "2022-07-14T13:15:02.352935Z"
+      }
+    },
+    "d6a7fcc0-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "be647080-ebee-11ec-bc75-5d1586fcf929",
+      "target": "c96bed00-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.352972Z",
+        "updated": "2022-07-14T13:15:02.352972Z"
+      }
+    },
+    "dd1864f0-ebee-11ec-bc75-5d1586fcf929": {
+      "source": "c7cce300-ebee-11ec-bc75-5d1586fcf929",
+      "target": "bfdda300-ebee-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.352956Z",
+        "updated": "2022-07-14T13:15:02.352956Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.352140Z",
+    "updated": "2022-07-14T13:15:02.352140Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6368": 2,
+          "nodeset6397": 3,
+          "nodeset6402": 3,
+          "nodeset6406": 3,
+          "nodeset6414": 3
+        }
+      }
+    ]
+  }
+}

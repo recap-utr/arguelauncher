@@ -1,0 +1,69 @@
+{
+  "nodes": {
+    "277018": {
+      "atom": {
+        "text": "money for better equipment"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:45:44Z",
+        "updated": "2017-05-02T23:45:44Z"
+      }
+    },
+    "277017": {
+      "atom": {
+        "text": "universities should be allowed to charge tuition fees"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:45:44Z",
+        "updated": "2017-05-02T23:45:44Z"
+      }
+    },
+    "277019": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-02T23:45:44Z",
+        "updated": "2017-05-02T23:45:44Z"
+      }
+    }
+  },
+  "edges": {
+    "337887": {
+      "source": "277018",
+      "target": "277019",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.667032Z",
+        "updated": "2023-02-07T15:53:14.667032Z"
+      }
+    },
+    "337888": {
+      "source": "277019",
+      "target": "277017",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.667047Z",
+        "updated": "2023-02-07T15:53:14.667047Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.666732Z",
+    "updated": "2023-02-07T15:53:14.666732Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6381": 2,
+          "microtexts/nodeset6388": 2,
+          "microtexts/nodeset6394": 3,
+          "microtexts/nodeset6407": 2,
+          "microtexts/nodeset6447": 1,
+          "microtexts/nodeset6456": 2
+        }
+      }
+    ]
+  }
+}

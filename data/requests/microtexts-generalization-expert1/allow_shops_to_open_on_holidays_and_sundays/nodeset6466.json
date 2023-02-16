@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f47a4a5e-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should markets and retail stores generally be allowed to open on holidays and rest days or is it a damage to social units?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.882737Z",
+        "updated": "2023-02-10T09:47:38.882737Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.882706Z",
+    "updated": "2023-02-10T09:47:38.882706Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6466": {
+            "sunday/noun": "rest day/noun",
+            "supermarkets/noun": "markets/noun",
+            "shops/noun": "retail stores/noun",
+            "family/noun": "social units/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6451": 2.0,
+          "microtexts/nodeset6457": 2.0,
+          "microtexts/nodeset6410": 2.0,
+          "microtexts/nodeset6375": 2.0,
+          "microtexts/nodeset6466": 1.0,
+          "microtexts/nodeset6419": 2.0,
+          "microtexts/nodeset6449": 2.0,
+          "microtexts/nodeset6462": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

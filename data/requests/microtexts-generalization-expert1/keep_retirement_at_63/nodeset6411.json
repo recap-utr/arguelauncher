@@ -1,0 +1,50 @@
+{
+  "nodes": {
+    "f47446cc-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should the statutory ending period remain at 63 time periods in the future despite the regular payment spendings or should it be dependent on the activities of social groups?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.843325Z",
+        "updated": "2023-02-10T09:47:38.843325Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.843292Z",
+    "updated": "2023-02-10T09:47:38.843292Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6411": {
+            "costs/noun": "spendings/noun",
+            "wear/noun": "unsoundness/noun",
+            "personnel/noun": "social group/noun",
+            "birth rate/noun": "magnitude relation/noun",
+            "age/noun": "period/noun",
+            "professions/noun": "social group/noun",
+            "years/noun": "time periods/noun",
+            "workload/noun": "activity/noun",
+            "occupations/noun": "activities/noun",
+            "healthcare/noun": "activity/noun",
+            "retirement/noun": "ending/noun",
+            "pension/noun": "regular payment/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6409": 2.0,
+          "microtexts/nodeset6382": 2.0,
+          "microtexts/nodeset6416": 2.0,
+          "microtexts/nodeset6411": 1.0,
+          "microtexts/nodeset6421": 2.0,
+          "microtexts/nodeset6461": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

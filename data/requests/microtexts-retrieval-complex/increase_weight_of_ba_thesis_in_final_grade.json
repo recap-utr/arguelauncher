@@ -1,0 +1,161 @@
+{
+  "nodes": {
+    "872282d0-ecbe-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "This is even wanted by the Bachelor-Master-System of Bolognia: The final grade should be subsummized from various individual grades."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:19:19Z",
+        "updated": "2022-06-15T17:19:19Z"
+      }
+    },
+    "887d7ef0-ecbe-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "This system is more related to the real working world, where constant pressure and performance is required as well. No singular peak performance needed in most cases."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:19:21Z",
+        "updated": "2022-06-15T17:19:21Z"
+      }
+    },
+    "93a13600-ecbe-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:19:40Z",
+        "updated": "2022-06-15T17:19:40Z"
+      }
+    },
+    "912dc500-ecbe-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:19:36Z",
+        "updated": "2022-06-15T17:19:36Z"
+      }
+    },
+    "856d58c0-ecbe-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "But since this is not the case, we have to accept, that it is currently wise, not to overweigh the BA thesis."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:19:16Z",
+        "updated": "2022-06-15T17:19:16Z"
+      }
+    },
+    "848a72d0-ecbe-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "If you want to strengthen the meaning of the final BA thesis, you will have to change the difficulty of it."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:19:15Z",
+        "updated": "2022-06-15T17:19:15Z"
+      }
+    },
+    "866414d0-ecbe-11ec-bc75-5d1586fcf929": {
+      "atom": {
+        "text": "The weight is not distributed correctly, since the workload varies strongly from professor to professor."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:19:18Z",
+        "updated": "2022-06-15T17:19:18Z"
+      }
+    },
+    "920894a0-ecbe-11ec-bc75-5d1586fcf929": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:19:37Z",
+        "updated": "2022-06-15T17:19:37Z"
+      }
+    },
+    "948db8e0-ecbe-11ec-bc75-5d1586fcf929": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:19:42Z",
+        "updated": "2022-06-15T17:19:42Z"
+      }
+    }
+  },
+  "edges": {
+    "aed5c7b0-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "866414d0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "948db8e0-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322749Z",
+        "updated": "2022-07-14T13:15:02.322749Z"
+      }
+    },
+    "b9769320-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "872282d0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "93a13600-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322840Z",
+        "updated": "2022-07-14T13:15:02.322840Z"
+      }
+    },
+    "b8abf020-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "887d7ef0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "920894a0-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322826Z",
+        "updated": "2022-07-14T13:15:02.322826Z"
+      }
+    },
+    "acb72d70-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "948db8e0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "912dc500-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322728Z",
+        "updated": "2022-07-14T13:15:02.322728Z"
+      }
+    },
+    "b5d6fe30-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "856d58c0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "912dc500-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322781Z",
+        "updated": "2022-07-14T13:15:02.322781Z"
+      }
+    },
+    "b6d84190-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "920894a0-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "856d58c0-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322796Z",
+        "updated": "2022-07-14T13:15:02.322796Z"
+      }
+    },
+    "b7910a40-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "93a13600-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "856d58c0-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322811Z",
+        "updated": "2022-07-14T13:15:02.322811Z"
+      }
+    },
+    "b4b93220-ecbe-11ec-bc75-5d1586fcf929": {
+      "source": "912dc500-ecbe-11ec-bc75-5d1586fcf929",
+      "target": "848a72d0-ecbe-11ec-bc75-5d1586fcf929",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.322766Z",
+        "updated": "2022-07-14T13:15:02.322766Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.321749Z",
+    "updated": "2022-07-14T13:15:02.321749Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "nodeset6376": 1,
+          "nodeset6408": 2,
+          "nodeset6448": 2,
+          "nodeset6467": 3
+        }
+      }
+    ]
+  }
+}

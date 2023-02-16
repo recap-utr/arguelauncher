@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f4709950-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should there be a cap on annuity increases for a change of remunerators?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.819221Z",
+        "updated": "2023-02-10T09:47:38.819221Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.819192Z",
+    "updated": "2023-02-10T09:47:38.819192Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6377": {
+            "rent/noun": "annuity/noun",
+            "tenant/noun": "remunerator/noun",
+            "landlords/noun": "property owners/noun",
+            "live/verb": "be/verb",
+            "flat/noun": "unit/noun",
+            "gentrification/noun": "fixing/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6455": 2.0,
+          "microtexts/nodeset6465": 2.0,
+          "microtexts/nodeset6369": 2.0,
+          "microtexts/nodeset6377": 1.0,
+          "microtexts/nodeset6384": 2.0,
+          "microtexts/nodeset6418": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "nodes": {
+    "277024": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:51:05Z",
+        "updated": "2017-05-03T00:51:05Z"
+      }
+    },
+    "277023": {
+      "atom": {
+        "text": "market principles are undermined"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:51:05Z",
+        "updated": "2017-05-03T00:51:05Z"
+      }
+    },
+    "277025": {
+      "atom": {
+        "text": "Gentrification destroys social structure of districts"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:51:06Z",
+        "updated": "2017-05-03T00:51:06Z"
+      }
+    },
+    "277022": {
+      "atom": {
+        "text": "a cap on rent prices should not be supported"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:51:05Z",
+        "updated": "2017-05-03T00:51:05Z"
+      }
+    },
+    "277026": {
+      "scheme": {
+        "attack": "ATTACK_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:51:06Z",
+        "updated": "2017-05-03T00:51:06Z"
+      }
+    }
+  },
+  "edges": {
+    "337892": {
+      "source": "277026",
+      "target": "277022",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.654808Z",
+        "updated": "2023-02-07T15:53:14.654808Z"
+      }
+    },
+    "337889": {
+      "source": "277023",
+      "target": "277024",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.654748Z",
+        "updated": "2023-02-07T15:53:14.654748Z"
+      }
+    },
+    "337890": {
+      "source": "277024",
+      "target": "277022",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.654765Z",
+        "updated": "2023-02-07T15:53:14.654765Z"
+      }
+    },
+    "337891": {
+      "source": "277025",
+      "target": "277026",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.654779Z",
+        "updated": "2023-02-07T15:53:14.654779Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.654265Z",
+    "updated": "2023-02-07T15:53:14.654265Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6369": 3,
+          "microtexts/nodeset6377": 3,
+          "microtexts/nodeset6384": 3,
+          "microtexts/nodeset6418": 1,
+          "microtexts/nodeset6455": 2,
+          "microtexts/nodeset6465": 2
+        }
+      }
+    ]
+  }
+}

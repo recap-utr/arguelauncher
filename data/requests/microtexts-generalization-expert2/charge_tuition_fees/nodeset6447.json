@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "f45e174e-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should German citizens finance the awards of educational institutions of other citizens?\n\n\n"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.697928Z",
+        "updated": "2023-02-10T09:47:38.697928Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.697881Z",
+    "updated": "2023-02-10T09:47:38.697881Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6447": {
+            "degree/noun": " award/noun",
+            "academic/noun": " professional/noun",
+            "student/noun": " individual/noun",
+            "tuition fees/noun": " fees/noun",
+            "universities/noun": " educational institutions/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6388": 2.0,
+          "microtexts/nodeset6407": 2.0,
+          "microtexts/nodeset6381": 2.0,
+          "microtexts/nodeset6456": 2.0,
+          "microtexts/nodeset6447": 1.0,
+          "microtexts/nodeset6394": 2.0
+        },
+        "name": "expert2"
+      }
+    ]
+  }
+}

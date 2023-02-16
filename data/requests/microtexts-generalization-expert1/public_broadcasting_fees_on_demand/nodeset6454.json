@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "f46b669c-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should only those persons pay a medium licence charge who actually want to watch shows offered by public communicators?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.785157Z",
+        "updated": "2023-02-10T09:47:38.785157Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.785123Z",
+    "updated": "2023-02-10T09:47:38.785123Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6454": {
+            "viewers/noun": "persons/noun",
+            "programming/noun": "preparation/noun",
+            "programmes/noun": "shows/noun",
+            "broadcasters/noun": "communicators/noun",
+            "television/noun": "medium/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6454": 1.0,
+          "microtexts/nodeset6446": 2.0,
+          "microtexts/nodeset6463": 2.0,
+          "microtexts/nodeset6389": 2.0,
+          "microtexts/nodeset6470": 2.0,
+          "microtexts/nodeset6364": 2.0,
+          "microtexts/nodeset6374": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

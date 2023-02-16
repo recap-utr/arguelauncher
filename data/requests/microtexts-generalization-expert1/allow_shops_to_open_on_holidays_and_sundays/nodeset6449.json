@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "f478e77c-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should markets and retail stores be allowed to open on holidays and rest days to reach workers and working consumers?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.873655Z",
+        "updated": "2023-02-10T09:47:38.873655Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.873615Z",
+    "updated": "2023-02-10T09:47:38.873615Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6449": {
+            "shopping centres/noun": "retail stores/noun",
+            "sundays/noun": "rest days/noun",
+            "supermarkets/noun": "markets/noun",
+            "employees/noun": "workers/noun",
+            "customers/noun": "consumers/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6451": 2.0,
+          "microtexts/nodeset6457": 2.0,
+          "microtexts/nodeset6410": 2.0,
+          "microtexts/nodeset6375": 2.0,
+          "microtexts/nodeset6466": 2.0,
+          "microtexts/nodeset6419": 2.0,
+          "microtexts/nodeset6449": 1.0,
+          "microtexts/nodeset6462": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "nodes": {
+    "277029": {
+      "scheme": {
+        "support": "SUPPORT_DEFAULT"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:59:29Z",
+        "updated": "2017-05-03T00:59:29Z"
+      }
+    },
+    "277027": {
+      "atom": {
+        "text": "a limit on rental prices is neccesary to protect new tenants"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:59:29Z",
+        "updated": "2017-05-03T00:59:29Z"
+      }
+    },
+    "277028": {
+      "atom": {
+        "text": "home owner have a social responsibility"
+      },
+      "metadata": {
+        "created": "2017-05-03T00:59:29Z",
+        "updated": "2017-05-03T00:59:29Z"
+      }
+    }
+  },
+  "edges": {
+    "337894": {
+      "source": "277029",
+      "target": "277027",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.657597Z",
+        "updated": "2023-02-07T15:53:14.657597Z"
+      }
+    },
+    "337893": {
+      "source": "277028",
+      "target": "277029",
+      "metadata": {
+        "created": "2023-02-07T15:53:14.657579Z",
+        "updated": "2023-02-07T15:53:14.657579Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-07T15:53:14.657272Z",
+    "updated": "2023-02-07T15:53:14.657272Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": {
+          "microtexts/nodeset6369": 1,
+          "microtexts/nodeset6377": 1,
+          "microtexts/nodeset6384": 1,
+          "microtexts/nodeset6418": 3,
+          "microtexts/nodeset6455": 2,
+          "microtexts/nodeset6465": 1
+        }
+      }
+    ]
+  }
+}

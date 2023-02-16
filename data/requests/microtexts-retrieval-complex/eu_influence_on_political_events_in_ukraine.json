@@ -1,0 +1,152 @@
+{
+  "nodes": {
+    "83800050-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Even though the hard clashes in Kiev were almost escalating."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:42Z",
+        "updated": "2022-06-15T17:40:42Z"
+      }
+    },
+    "85285920-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:44Z",
+        "updated": "2022-06-15T17:40:44Z"
+      }
+    },
+    "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:46Z",
+        "updated": "2022-06-15T17:40:46Z"
+      }
+    },
+    "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "support": "SUPPORT_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:49Z",
+        "updated": "2022-06-15T17:40:49Z"
+      }
+    },
+    "8439b360-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "The EU should not take part in local politics." },
+      "metadata": {
+        "created": "2022-06-15T17:40:43Z",
+        "updated": "2022-06-15T17:40:43Z"
+      }
+    },
+    "86dac410-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "scheme": { "attack": "ATTACK_DEFAULT" },
+      "metadata": {
+        "created": "2022-06-15T17:40:47Z",
+        "updated": "2022-06-15T17:40:47Z"
+      }
+    },
+    "8281a320-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "the EU may come about trouble with Russia by doing so."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:40Z",
+        "updated": "2022-06-15T17:40:40Z"
+      }
+    },
+    "80e88c90-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": {
+        "text": "Although the Ukraine is a European country, geographically speaking."
+      },
+      "metadata": {
+        "created": "2022-06-15T17:40:37Z",
+        "updated": "2022-06-15T17:40:37Z"
+      }
+    },
+    "81c7c900-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "atom": { "text": "The Ukraine partly supports a western democracy." },
+      "metadata": {
+        "created": "2022-06-15T17:40:39Z",
+        "updated": "2022-06-15T17:40:39Z"
+      }
+    }
+  },
+  "edges": {
+    "94b02da0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "81c7c900-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311477Z",
+        "updated": "2022-07-14T13:15:02.311477Z"
+      }
+    },
+    "95966ef0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "8281a320-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311494Z",
+        "updated": "2022-07-14T13:15:02.311494Z"
+      }
+    },
+    "97678570-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "83800050-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "86dac410-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311510Z",
+        "updated": "2022-07-14T13:15:02.311510Z"
+      }
+    },
+    "9d990fe0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "86dac410-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311570Z",
+        "updated": "2022-07-14T13:15:02.311570Z"
+      }
+    },
+    "9401ec40-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "80e88c90-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "85285920-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311455Z",
+        "updated": "2022-07-14T13:15:02.311455Z"
+      }
+    },
+    "9a038d10-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "85285920-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311525Z",
+        "updated": "2022-07-14T13:15:02.311525Z"
+      }
+    },
+    "9c737ba0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "87a2cf00-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311555Z",
+        "updated": "2022-07-14T13:15:02.311555Z"
+      }
+    },
+    "9b5d77c0-ecc1-11ec-8c4a-8393a9f2ee74": {
+      "source": "860a54b0-ecc1-11ec-8c4a-8393a9f2ee74",
+      "target": "8439b360-ecc1-11ec-8c4a-8393a9f2ee74",
+      "metadata": {
+        "created": "2022-07-14T13:15:02.311540Z",
+        "updated": "2022-07-14T13:15:02.311540Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "0.3.8",
+  "metadata": {
+    "created": "2022-07-14T13:15:02.310486Z",
+    "updated": "2022-07-14T13:15:02.310486Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "ranking": { "nodeset6399": 2, "nodeset6415": 3, "nodeset6460": 1 }
+      }
+    ]
+  }
+}

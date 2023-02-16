@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "f46a66b6-a927-11ed-bb11-acde48001122": {
+      "atom": {
+        "text": "Should public insurance include aids in complementary and alternative medicine of professionals and their therapies?"
+      },
+      "metadata": {
+        "created": "2023-02-10T09:47:38.778607Z",
+        "updated": "2023-02-10T09:47:38.778607Z"
+      }
+    }
+  },
+  "schemaVersion": 1,
+  "libraryVersion": "1.1.0",
+  "metadata": {
+    "created": "2023-02-10T09:47:38.778571Z",
+    "updated": "2023-02-10T09:47:38.778571Z"
+  },
+  "userdata": {
+    "cbrEvaluations": [
+      {
+        "generalizations": {
+          "microtexts/nodeset6386": {
+            "cover/verb": "include/verb",
+            "companies/noun": "institutions/noun",
+            "practitioners/noun": "professionals/noun",
+            "health insurance/noun": "insurance/noun",
+            "treatments/noun": "aids/noun",
+            "medication/noun": "therapies/noun"
+          }
+        },
+        "ranking": {
+          "microtexts/nodeset6385": 2.0,
+          "microtexts/nodeset6412": 2.0,
+          "microtexts/nodeset6395": 2.0,
+          "microtexts/nodeset6370": 2.0,
+          "microtexts/nodeset6363": 2.0,
+          "microtexts/nodeset6386": 1.0,
+          "microtexts/nodeset6378": 2.0,
+          "microtexts/nodeset6373": 2.0
+        },
+        "name": "expert1"
+      }
+    ]
+  }
+}
