@@ -3,7 +3,7 @@ import typing as t
 
 import arguebuf as ag
 
-from arguelauncher.config import RetrievalGraph2TextAlgorithm
+from arguelauncher.model import Graph2TextAlgorithm
 
 random.seed(0)
 
@@ -101,15 +101,15 @@ def _bfs(g: ag.Graph) -> str:
     return " ".join(texts)
 
 
-algorithm_map: dict[RetrievalGraph2TextAlgorithm, t.Callable[[ag.Graph], str]] = {
-    RetrievalGraph2TextAlgorithm.NODE_ID: _node_id,
-    RetrievalGraph2TextAlgorithm.ORIGINAL_RESOURCE: _original_resource,
-    RetrievalGraph2TextAlgorithm.RANDOM: _random,
-    RetrievalGraph2TextAlgorithm.BFS: _bfs,
-    RetrievalGraph2TextAlgorithm.DFS: _dfs,
-    RetrievalGraph2TextAlgorithm.DFS_RECONSTRUCTION: _dfs_reconstruction,
+algorithm_map: dict[Graph2TextAlgorithm, t.Callable[[ag.Graph], str]] = {
+    Graph2TextAlgorithm.NODE_ID: _node_id,
+    Graph2TextAlgorithm.ORIGINAL_RESOURCE: _original_resource,
+    Graph2TextAlgorithm.RANDOM: _random,
+    Graph2TextAlgorithm.BFS: _bfs,
+    Graph2TextAlgorithm.DFS: _dfs,
+    Graph2TextAlgorithm.DFS_RECONSTRUCTION: _dfs_reconstruction,
 }
 
 
-def graph2text(g: ag.Graph, algorithm: RetrievalGraph2TextAlgorithm) -> str:
+def graph2text(g: ag.Graph, algorithm: Graph2TextAlgorithm) -> str:
     return algorithm_map[algorithm](g)

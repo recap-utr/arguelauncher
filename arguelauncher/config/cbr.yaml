@@ -1,6 +1,6 @@
 # https://github.com/facebookresearch/hydra/issues/1376#issuecomment-1010247754
 defaults:
-  - retrieval_config
+  - cbr
   - _self_
   - override hydra/launcher: joblib
 

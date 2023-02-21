@@ -1,169 +1,100 @@
 from __future__ import annotations
 
-import json
 import logging
 import typing as t
 from pathlib import Path
 from timeit import default_timer as timer
-from typing import List
 
 import arguebuf as ag
-import grpc
 import hydra
-from arg_services.cbr.v1beta import retrieval_pb2, retrieval_pb2_grpc
-from arg_services.cbr.v1beta.model_pb2 import AnnotatedGraph
-from arg_services.nlp.v1 import nlp_pb2
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import OmegaConf
 from rich import print_json
 
-from arguelauncher.algorithms.graph2text import graph2text
-from arguelauncher.config import RetrievalConfig
+from arguelauncher import model
+from arguelauncher.config import CbrConfig
 from arguelauncher.services import exporter
-from arguelauncher.services.evaluation import Evaluation
+from arguelauncher.services.adaptation import adapt
+from arguelauncher.services.evaluation import (
+    AdaptationEvaluation,
+    BaseEvaluation,
+    RetrievalEvaluation,
+)
+from arguelauncher.services.retrieval import retrieve
 
 log = logging.getLogger(__name__)
 
-_nlp_configs = {
-    "default": nlp_pb2.NlpConfig(
-        spacy_model="en_core_web_lg",
-        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
-    ),
-    "trf": nlp_pb2.NlpConfig(
-        language="en",
-        spacy_model="en_core_web_trf",
-    ),
-    "sbert": nlp_pb2.NlpConfig(
-        language="en",
-        embedding_models=[
-            nlp_pb2.EmbeddingModel(
-                model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_SENTENCE_TRANSFORMERS,
-                model_name="stsb-mpnet-base-v2",
-                pooling_type=nlp_pb2.Pooling.POOLING_MEAN,
-            )
-        ],
-    ),
-}
 
-
-@hydra.main(version_base=None, config_path=".", config_name="retrieval_config")
-def main(config: RetrievalConfig) -> None:
+@hydra.main(version_base=None, config_path="config", config_name="cbr")
+def main(config: CbrConfig) -> None:
     """Calculate similarity of queries and case base"""
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 
     start_time = 0
     duration = 0
-    eval_dict = {}
-    evaluations: List[t.Optional[Evaluation]] = []
 
-    client = retrieval_pb2_grpc.RetrievalServiceStub(
-        grpc.insecure_channel(config.retrieval_address)
-    )
-
-    cases: t.Dict[Path, ag.Graph] = {
-        file: ag.load.file(file)
-        for file in Path(config.path.cases).glob(config.path.case_graphs_pattern)
-    }
-    arguebuf_cases = {
-        str(key.relative_to(config.path.cases)): graph for key, graph in cases.items()
-    }
-    protobuf_cases = {
-        key: AnnotatedGraph(
-            graph=ag.dump.protobuf(graph),
-            text=graph2text(graph, config.request.graph2text_algorithm),
+    cases = {
+        str(file.relative_to(config.path.cases)): t.cast(
+            model.Graph,
+            ag.load.file(file, config=ag.load.Config(GraphClass=model.Graph)),
         )
-        for key, graph in arguebuf_cases.items()
+        for file in Path(config.path.cases).glob(config.path.cases_pattern)
     }
-
-    queries: t.Dict[Path, ag.Graph] = {
-        file: ag.load.file(file)
-        for file in Path(config.path.queries).glob(config.path.query_graphs_pattern)
-    }
-    for file in Path(config.path.queries).glob(config.path.query_texts_pattern):
-        with file.open("r", encoding="utf-8") as f:
-            text = f.read()
-            g = ag.Graph()
-            g.add_node(ag.AtomNode(text))
-            g.add_resource(ag.Resource(text))
-            queries[file] = g
-    query_files = list(queries)
-
-    protobuf_queries = [
-        AnnotatedGraph(
-            graph=ag.dump.protobuf(query),
-            text=graph2text(query, config.request.graph2text_algorithm),
+    requests = {
+        str(file.relative_to(config.path.requests)): t.cast(
+            model.Graph,
+            ag.load.file(file, config=ag.load.Config(GraphClass=model.Graph)),
         )
-        for query in queries.values()
-    ]
-
-    nlp_config = _nlp_configs[config.request.nlp_config]
-    nlp_config.language = config.request.language
+        for file in Path(config.path.requests).glob(config.path.requests_pattern)
+    }
+    ordered_requests = list(requests.values())
 
     start_time = timer()
 
-    req = retrieval_pb2.RetrieveRequest(
-        cases=protobuf_cases,
-        queries=protobuf_queries,
-        limit=config.request.limit,
-        semantic_retrieval=config.request.mac,
-        structural_retrieval=config.request.fac,
-        nlp_config=nlp_config,
-        scheme_handling=config.request.scheme_handling.value,
-        mapping_algorithm=config.request.mapping_algorithm.value[0],
-        mapping_algorithm_variant=config.request.mapping_algorithm.value[1],
-    )
+    _, retrieve_response = retrieve(cases, ordered_requests, config)
+    evals: list[dict[str, BaseEvaluation]] = []
 
-    res_wrapper: retrieval_pb2.RetrieveResponse = client.Retrieve(req)
+    for i, res in enumerate(retrieve_response.query_responses):
+        eval_map: dict[str, BaseEvaluation] = {}
 
-    for i, res in enumerate(res_wrapper.query_responses):
-        evaluation = None
-        mac_export = None
-        fac_export = None
-
-        if mac_results := res.semantic_ranking:
-            mac_export = exporter.get_results(mac_results)
-            evaluation = Evaluation(
+        if ranking := res.semantic_ranking:
+            eval_map["mac"] = RetrievalEvaluation(
                 cases,
-                mac_results,
-                query_files[i],
-                config.path,
+                ordered_requests[i],
                 config.evaluation,
+                ranking,
             )
 
-        if fac_results := res.structural_ranking:
-            fac_export = exporter.get_results(fac_results)
-            evaluation = Evaluation(
+        if ranking := res.structural_ranking:
+            eval_map["fac"] = RetrievalEvaluation(
                 cases,
-                fac_results,
-                query_files[i],
-                config.path,
+                ordered_requests[i],
                 config.evaluation,
+                ranking,
             )
 
-        evaluations.append(evaluation)
+        _, adapt_response = adapt(cases, ordered_requests[i], config)
+        eval_map["adapt"] = AdaptationEvaluation(
+            cases,
+            ordered_requests[i],
+            config.evaluation,
+            {key: case for key, case in zip(cases.keys(), adapt_response.cases)},
+        )
+        # TODO: Save adapted graphs
 
-        if config.evaluation.individual_results:
-            exporter.export_results(
-                query_files[i],
-                mac_export,
-                fac_export,
-                evaluation,
-                config.path,
-                output_folder,
-            )
-            log.info("Individual Results were exported.")
+        evals.append(eval_map)
 
     duration = timer() - start_time
-    eval_dict = exporter.get_results_aggregated(evaluations)
+    config_dump = (t.cast(CbrConfig, OmegaConf.to_object(config)).to_dict(),)
+    aggregated_eval = exporter.get_aggregated(evals)
 
-    print_json(json.dumps(eval_dict))
+    print_json(exporter.get_json(aggregated_eval))
 
-    if config.evaluation.aggregated_results:
-        exporter.export_results_aggregated(
-            eval_dict,
-            duration,
-            t.cast(RetrievalConfig, OmegaConf.to_object(config)).to_dict(),
-            config.path,
-            output_folder,
-        )
-        log.info("Aggregated Results were exported.")
+    eval_dump = {
+        "config": config_dump,
+        "duration": duration,
+        "aggregated": aggregated_eval,
+        "individual": [exporter.get_named_individual(eval) for eval in evals],
+    }
+
+    exporter.get_file(eval_dump, output_folder / "eval.json")
