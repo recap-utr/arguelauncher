@@ -5,8 +5,10 @@ import typing as t
 
 import grpc
 from arg_services.cbr.v1beta import adaptation_pb2, adaptation_pb2_grpc
+from omegaconf import OmegaConf
 
 from arguelauncher import model
+from arguelauncher.config.arguegen import ExtrasConfig
 from arguelauncher.config.cbr import CbrConfig
 from arguelauncher.config.nlp import NLP_CONFIG
 
@@ -50,6 +52,8 @@ def adapt(
         query=query.to_annotated_graph(config.graph2text),
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
-    req.extras.update(config.adaptation.extras.to_dict())
+    req.extras.update(
+        t.cast(ExtrasConfig, OmegaConf.to_object(config.adaptation.extras)).to_dict()
+    )
 
     return req, client.Adapt(req)
