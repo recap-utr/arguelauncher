@@ -11,6 +11,7 @@ from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import OmegaConf
 from rich import print_json
+from rich.progress import track
 
 from arguelauncher import model
 from arguelauncher.config.cbr import CbrConfig
@@ -56,10 +57,13 @@ def main(config: CbrConfig) -> None:
 
     start_time = timer()
 
+    log.info("Retrieving...")
     _, retrieve_response = retrieve(cases, ordered_requests, config)
+
+    log.info("Processing results...")
     evals: list[dict[str, BaseEvaluation]] = []
 
-    for i, res in enumerate(retrieve_response.query_responses):
+    for i, res in track(list(enumerate(retrieve_response.query_responses))):
         eval_map: dict[str, BaseEvaluation] = {}
 
         if ranking := res.semantic_ranking:
