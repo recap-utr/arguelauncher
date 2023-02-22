@@ -23,7 +23,7 @@ class RetrievalSchemeHandling(Enum):
 
 @dataclass
 class RetrievalConfig(DataClassDictMixin):
-    address: str = "127.0.0.1:6789"
+    address: str = "127.0.0.1:50200"
     scheme_handling: RetrievalSchemeHandling = RetrievalSchemeHandling.BINARY
     mapping_algorithm: RetrievalMappingAlgorithm = RetrievalMappingAlgorithm.ASTAR_1
     mac: bool = True

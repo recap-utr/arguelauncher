@@ -7,6 +7,7 @@ from timeit import default_timer as timer
 
 import arguebuf as ag
 import hydra
+from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import OmegaConf
 from rich import print_json
@@ -25,7 +26,11 @@ from arguelauncher.services.retrieval import retrieve
 log = logging.getLogger(__name__)
 
 
-@hydra.main(version_base=None, config_path="config", config_name="cbr")
+cs = ConfigStore.instance()
+cs.store(name="cbr", node=CbrConfig)
+
+
+@hydra.main(version_base=None, config_path="config", config_name="cbr_run")
 def main(config: CbrConfig) -> None:
     """Calculate similarity of queries and case base"""
     output_folder = Path(HydraConfig.get().runtime.output_dir)
