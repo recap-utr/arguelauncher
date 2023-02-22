@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import typing as t
-from enum import Enum, auto
 
 import arguebuf
 from arg_services.cbr.v1beta import adaptation_pb2
 from arg_services.cbr.v1beta.model_pb2 import AnnotatedGraph
 from typing_extensions import Required, TypedDict
 
-from arguelauncher.algorithms.graph2text import graph2text
+from arguelauncher.algorithms.graph2text import Graph2TextAlgorithm, graph2text
 
 pos2proto = {
     "noun": adaptation_pb2.Pos.POS_NOUN,
@@ -43,15 +42,6 @@ class CbrEvaluation(TypedDict, total=False):
 
 class Userdata(TypedDict):
     cbrEvaluations: list[CbrEvaluation]
-
-
-class Graph2TextAlgorithm(Enum):
-    DFS = auto()
-    DFS_RECONSTRUCTION = auto()
-    BFS = auto()
-    RANDOM = auto()
-    ORIGINAL_RESOURCE = auto()
-    NODE_ID = auto()
 
 
 class Graph(arguebuf.Graph):

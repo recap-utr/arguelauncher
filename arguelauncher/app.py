@@ -12,7 +12,7 @@ from omegaconf import OmegaConf
 from rich import print_json
 
 from arguelauncher import model
-from arguelauncher.config import CbrConfig
+from arguelauncher.config.cbr import CbrConfig
 from arguelauncher.services import exporter
 from arguelauncher.services.adaptation import adapt
 from arguelauncher.services.evaluation import (

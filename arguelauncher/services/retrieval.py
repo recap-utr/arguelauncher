@@ -7,7 +7,7 @@ import grpc
 from arg_services.cbr.v1beta import retrieval_pb2, retrieval_pb2_grpc
 
 from arguelauncher import model
-from arguelauncher.config import CbrConfig
+from arguelauncher.config.cbr import CbrConfig
 from arguelauncher.config.nlp import NLP_CONFIG
 
 log = logging.getLogger(__name__)

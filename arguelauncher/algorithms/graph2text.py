@@ -1,9 +1,18 @@
 import random
 import typing as t
+from enum import Enum, auto
 
 import arguebuf as ag
 
-from arguelauncher.model import Graph2TextAlgorithm
+
+class Graph2TextAlgorithm(Enum):
+    DFS = auto()
+    DFS_RECONSTRUCTION = auto()
+    BFS = auto()
+    RANDOM = auto()
+    ORIGINAL_RESOURCE = auto()
+    NODE_ID = auto()
+
 
 random.seed(0)
 
