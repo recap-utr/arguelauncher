@@ -36,9 +36,6 @@ def main(config: CbrConfig) -> None:
     """Calculate similarity of queries and case base"""
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 
-    start_time = 0
-    duration = 0
-
     cases = {
         str(file.relative_to(config.path.cases)): t.cast(
             model.Graph,
@@ -55,45 +52,66 @@ def main(config: CbrConfig) -> None:
     }
     ordered_requests = list(requests.values())
 
-    start_time = timer()
+    retrieval_time = timer()
 
     log.info("Retrieving...")
     _, retrieve_response = retrieve(cases, ordered_requests, config)
 
-    log.info("Processing results...")
+    retrieval_duration = timer() - retrieval_time
+
+    adaptation_duration = 0
+    evaluation_duration = 0
     evals: list[dict[str, BaseEvaluation]] = []
 
-    for i, res in track(list(enumerate(retrieve_response.query_responses))):
-        eval_map: dict[str, BaseEvaluation] = {}
-
-        if ranking := res.semantic_ranking:
-            eval_map["mac"] = RetrievalEvaluation(
-                cases,
-                ordered_requests[i],
-                config.evaluation,
-                ranking,
-            )
-
-        if ranking := res.structural_ranking:
-            eval_map["fac"] = RetrievalEvaluation(
-                cases,
-                ordered_requests[i],
-                config.evaluation,
-                ranking,
-            )
-
-        _, adapt_response = adapt(cases, ordered_requests[i], config)
-        eval_map["adapt"] = AdaptationEvaluation(
+    for i, res in track(
+        list(enumerate(retrieve_response.query_responses)),
+        description="Processing query results...",
+    ):
+        adaptation_start = timer()
+        _, adapt_response = adapt(
             cases,
             ordered_requests[i],
-            config.evaluation,
-            {key: case for key, case in zip(cases.keys(), adapt_response.cases)},
+            res.structural_ranking or res.semantic_ranking,
+            config,
         )
+        adaptation_duration += timer() - adaptation_start
         # TODO: Save adapted graphs
 
-        evals.append(eval_map)
+        evaluation_start = timer()
 
-    duration = timer() - start_time
+        if config.evaluation:
+            eval_map: dict[str, BaseEvaluation] = {}
+
+            if ranking := res.semantic_ranking:
+                eval_map["mac"] = RetrievalEvaluation(
+                    cases,
+                    ordered_requests[i],
+                    config.evaluation,
+                    ranking,
+                )
+
+            if ranking := res.structural_ranking:
+                eval_map["fac"] = RetrievalEvaluation(
+                    cases,
+                    ordered_requests[i],
+                    config.evaluation,
+                    ranking,
+                )
+
+            if adapt_response:
+                eval_map["adapt"] = AdaptationEvaluation(
+                    cases,
+                    ordered_requests[i],
+                    config.evaluation,
+                    {
+                        key: case
+                        for key, case in zip(cases.keys(), adapt_response.cases)
+                    },
+                )
+
+            evals.append(eval_map)
+            evaluation_duration += timer() - evaluation_start
+
     config_dump = (t.cast(CbrConfig, OmegaConf.to_object(config)).to_dict(),)
     aggregated_eval = exporter.get_aggregated(evals)
 
@@ -101,7 +119,11 @@ def main(config: CbrConfig) -> None:
 
     eval_dump = {
         "config": config_dump,
-        "duration": duration,
+        "durations": {
+            "retrieval": retrieval_duration,
+            "adaptation": adaptation_duration,
+            "evaluation": evaluation_duration,
+        },
         "aggregated": aggregated_eval,
         "individual": [exporter.get_named_individual(eval) for eval in evals],
     }

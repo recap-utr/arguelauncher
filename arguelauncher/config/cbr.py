@@ -1,3 +1,4 @@
+import typing as t
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -28,6 +29,6 @@ class CbrConfig(DataClassDictMixin):
     nlp_config: NlpConfig = NlpConfig.DEFAULT
     graph2text: Graph2TextAlgorithm = Graph2TextAlgorithm.NODE_ID
     path: PathConfig = field(default_factory=PathConfig)
-    retrieval: RetrievalConfig = field(default_factory=RetrievalConfig)
-    adaptation: AdaptationConfig = field(default_factory=AdaptationConfig)
-    evaluation: EvaluationConfig = field(default_factory=EvaluationConfig)
+    retrieval: t.Optional[RetrievalConfig] = field(default_factory=RetrievalConfig)
+    adaptation: t.Optional[AdaptationConfig] = field(default_factory=AdaptationConfig)
+    evaluation: t.Optional[EvaluationConfig] = field(default_factory=EvaluationConfig)

@@ -20,23 +20,36 @@ def retrieve(
 ) -> tuple[retrieval_pb2.RetrieveRequest, retrieval_pb2.RetrieveResponse]:
     """Calculate similarity of queries and case base"""
 
-    client = retrieval_pb2_grpc.RetrievalServiceStub(
-        grpc.insecure_channel(config.retrieval.address)
-    )
-
     req = retrieval_pb2.RetrieveRequest(
         cases={
             key: value.to_annotated_graph(config.graph2text)
             for key, value in cases.items()
         },
         queries=[value.to_annotated_graph(config.graph2text) for value in queries],
-        limit=config.retrieval.limit,
-        semantic_retrieval=config.retrieval.mac,
-        structural_retrieval=config.retrieval.fac,
         nlp_config=NLP_CONFIG[config.nlp_config],
-        scheme_handling=config.retrieval.scheme_handling.value,
-        mapping_algorithm=config.retrieval.mapping_algorithm.value[0],
-        mapping_algorithm_variant=config.retrieval.mapping_algorithm.value[1],
     )
+
+    if config.retrieval is None:
+        ranking = [retrieval_pb2.RetrievedCase(id=case_id) for case_id in cases]
+
+        return req, retrieval_pb2.RetrieveResponse(
+            query_responses=[
+                retrieval_pb2.QueryResponse(
+                    semantic_ranking=ranking, structural_ranking=ranking
+                )
+                for _ in queries
+            ]
+        )
+
+    client = retrieval_pb2_grpc.RetrievalServiceStub(
+        grpc.insecure_channel(config.retrieval.address)
+    )
+
+    req.limit = config.retrieval.limit
+    req.semantic_retrieval = config.retrieval.mac
+    req.structural_retrieval = config.retrieval.fac
+    req.scheme_handling = config.retrieval.scheme_handling.value
+    req.mapping_algorithm = config.retrieval.mapping_algorithm.value[0]
+    req.mapping_algorithm_variant = config.retrieval.mapping_algorithm.value[1]
 
     return req, client.Retrieve(req)

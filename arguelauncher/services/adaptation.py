@@ -4,7 +4,7 @@ import logging
 import typing as t
 
 import grpc
-from arg_services.cbr.v1beta import adaptation_pb2, adaptation_pb2_grpc
+from arg_services.cbr.v1beta import adaptation_pb2, adaptation_pb2_grpc, retrieval_pb2
 from omegaconf import OmegaConf
 
 from arguelauncher import model
@@ -18,9 +18,15 @@ log = logging.getLogger(__name__)
 def adapt(
     cases: t.Mapping[str, model.Graph],
     query: model.Graph,
+    ranking: t.Iterable[retrieval_pb2.RetrievedCase],
     config: CbrConfig,
 ) -> tuple[adaptation_pb2.AdaptRequest, adaptation_pb2.AdaptResponse]:
     """Calculate similarity of queries and case base"""
+    # TODO: Retrieval result currently not used
+    # TODO: Properly handle the case of no prior retrieval
+
+    if config.adaptation is None:
+        return adaptation_pb2.AdaptRequest(), adaptation_pb2.AdaptResponse()
 
     client = adaptation_pb2_grpc.AdaptationServiceStub(
         grpc.insecure_channel(config.adaptation.address)
