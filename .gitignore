@@ -230,6 +230,9 @@ poetry.toml
 /parse_adaptations.py
 /data/private/
 
+# Config
+*.local.yaml
+
 # Hydra
 /multirun/
 /outputs/

@@ -9,7 +9,8 @@
       "type": "python",
       "request": "launch",
       "console": "integratedTerminal",
-      "module": "arguelauncher"
+      "module": "arguelauncher",
+      "args": ["--config-name", "app.local"]
     }
   ]
 }

@@ -7,5 +7,6 @@ defaults:
 #   sweeper:
 #     subdir: ${hydra.job.override_dirname}
 #     params:
-#       request.enforce_scheme_types: true, false
-#       request.use_scheme_ontology: true, false
+#       retrieval.mac: true, false
+#       retrieval.fac: true, false
+#       retrieval.limit: 5, 10, 20

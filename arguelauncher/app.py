@@ -31,7 +31,7 @@ cs = ConfigStore.instance()
 cs.store(name="cbr", node=CbrConfig)
 
 
-@hydra.main(version_base=None, config_path="config", config_name="cbr_run")
+@hydra.main(version_base=None, config_path="config", config_name="app")
 def main(config: CbrConfig) -> None:
     """Calculate similarity of queries and case base"""
     output_folder = Path(HydraConfig.get().runtime.output_dir)
