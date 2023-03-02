@@ -15,43 +15,64 @@ from arguelauncher.config.nlp import NLP_CONFIG
 log = logging.getLogger(__name__)
 
 
+def build_case_request(
+    case_key: str,
+    cases: t.Mapping[str, model.Graph],
+    rules_per_case: t.Optional[dict[str, dict[str, str]]],
+    config: CbrConfig,
+) -> adaptation_pb2.AdaptedCaseRequest:
+    assert config.adaptation is not None
+    case = cases[case_key]
+
+    rules_limit = config.adaptation.predefined_rules_limit
+    proto_case = adaptation_pb2.AdaptedCaseRequest(
+        case=case.to_annotated_graph(config.graph2text)
+    )
+
+    if rules_per_case and (case_rules := rules_per_case.get(case_key)):
+        parsed_rules = list(model.parse_rules(case_rules))
+
+        if rules_limit is not None:
+            parsed_rules = parsed_rules[:rules_limit]
+
+        proto_case.rules.extend(parsed_rules)
+
+    return proto_case
+
+
 def adapt(
     cases: t.Mapping[str, model.Graph],
     query: model.Graph,
-    ranking: t.Iterable[retrieval_pb2.RetrievedCase],
+    ranking: t.Collection[retrieval_pb2.RetrievedCase],
     config: CbrConfig,
 ) -> tuple[adaptation_pb2.AdaptRequest, adaptation_pb2.AdaptResponse]:
     """Calculate similarity of queries and case base"""
-    # TODO: Retrieval result currently not used
-    # TODO: Properly handle the case of no prior retrieval
-
     if config.adaptation is None:
         return adaptation_pb2.AdaptRequest(), adaptation_pb2.AdaptResponse()
 
     client = adaptation_pb2_grpc.AdaptationServiceStub(
         grpc.insecure_channel(config.adaptation.address)
     )
-    rules_limit = config.adaptation.predefined_rules_limit
 
     # TODO: We only evaluate the first cbrEvaluation
     rules_per_case = query.userdata["cbrEvaluations"][0].get("generalizations")
 
+    # If there is a retrieval ranking, we only adapt the cases in the ranking
+    # Otherwise, we adapt all cases that have benchmark rules
     proto_cases: dict[str, adaptation_pb2.AdaptedCaseRequest] = {}
 
-    for case_key, case in cases.items():
-        proto_case = adaptation_pb2.AdaptedCaseRequest(
-            case=case.to_annotated_graph(config.graph2text)
-        )
-
-        if rules_per_case and (case_rules := rules_per_case.get(case_key)):
-            parsed_rules = list(model.parse_rules(case_rules))
-
-            if rules_limit is not None:
-                parsed_rules = parsed_rules[:rules_limit]
-
-            proto_case.rules.extend(parsed_rules)
-
-        proto_cases[case_key] = proto_case
+    if ranking:
+        proto_cases = {
+            ranked_case.id: build_case_request(
+                ranked_case.id, cases, rules_per_case, config
+            )
+            for ranked_case in ranking
+        }
+    elif rules_per_case:
+        proto_cases = {
+            case_key: build_case_request(case_key, cases, rules_per_case, config)
+            for case_key in rules_per_case.keys()
+        }
 
     req = adaptation_pb2.AdaptRequest(
         cases=proto_cases,

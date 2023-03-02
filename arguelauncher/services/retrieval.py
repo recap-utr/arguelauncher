@@ -30,12 +30,12 @@ def retrieve(
     )
 
     if config.retrieval is None:
-        ranking = [retrieval_pb2.RetrievedCase(id=case_id) for case_id in cases]
+        # ranking = [retrieval_pb2.RetrievedCase(id=case_id) for case_id in cases]
 
         return req, retrieval_pb2.RetrieveResponse(
             query_responses=[
                 retrieval_pb2.QueryResponse(
-                    semantic_ranking=ranking, structural_ranking=ranking
+                    # semantic_ranking=ranking, structural_ranking=ranking
                 )
                 for _ in queries
             ]

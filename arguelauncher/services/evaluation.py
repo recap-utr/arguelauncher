@@ -231,7 +231,7 @@ class AdaptationEvaluation(BaseEvaluation):
     ) -> None:
         super().__init__(cases, query, config)
 
-        # TODO: This is a hack to get the first user evaluation
+        # TODO: We only evaluate the first cbrEvaluation
         generalizations = query.userdata["cbrEvaluations"][0].get("generalizations")
         assert generalizations is not None
 
