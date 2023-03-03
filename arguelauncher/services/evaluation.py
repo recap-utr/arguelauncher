@@ -5,8 +5,8 @@ import typing as t
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
+import nptyping as npt
 import numpy as np
-import numpy.typing as npt
 from arg_services.cbr.v1beta import adaptation_pb2, retrieval_pb2
 from google.protobuf.json_format import MessageToDict
 from sklearn import metrics
@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class Labeling:
-    true: npt.NDArray[t.Any]
-    predicted: npt.NDArray[t.Any]
+    true: npt.NDArray[npt.Shape["*"], t.Any]
+    predicted: npt.NDArray[npt.Shape["*"], t.Any]
 
 
 @dataclass
@@ -63,14 +63,14 @@ class AbstractEvaluation(ABC):
         self.config = config
 
     @abstractmethod
-    def compute_metrics(self) -> dict[str, np.float_]:
+    def compute_metrics(self) -> dict[str, npt.Floating]:
         ...
 
     @abstractmethod
     def get_results(self) -> t.Any:
         ...
 
-    def _aggregate(self, values: t.Iterable[np.float_]) -> np.float_:
+    def _aggregate(self, values: t.Iterable[npt.Floating]) -> npt.Floating:
         return np.mean(np.array(values))
 
 
@@ -88,7 +88,7 @@ class UnrankedEvaluation(AbstractEvaluation):
         self.labels = labels
 
     @override
-    def compute_metrics(self) -> dict[str, np.float_]:
+    def compute_metrics(self) -> dict[str, npt.Floating]:
         out = {
             "precision": self.precision(),
             "recall": self.recall(),
@@ -101,30 +101,30 @@ class UnrankedEvaluation(AbstractEvaluation):
 
         return out
 
-    def precision(self) -> np.float_:
+    def precision(self) -> npt.Floating:
         return self._aggregate(
             metrics.precision_score(label.true, label.predicted)
             for label in self.labels
         )
 
-    def recall(self) -> np.float_:
+    def recall(self) -> npt.Floating:
         return self._aggregate(
             metrics.recall_score(label.true, label.predicted) for label in self.labels
         )
 
-    def f_score(self, beta: float) -> np.float_:
+    def f_score(self, beta: float) -> npt.Floating:
         return self._aggregate(
             metrics.fbeta_score(label.true, label.predicted, beta=beta)
             for label in self.labels
         )
 
-    def accuracy(self) -> np.float_:
+    def accuracy(self) -> npt.Floating:
         return self._aggregate(
-            t.cast(np.float_, metrics.accuracy_score(label.true, label.predicted))
+            t.cast(npt.Floating, metrics.accuracy_score(label.true, label.predicted))
             for label in self.labels
         )
 
-    def balanced_accuracy(self) -> np.float_:
+    def balanced_accuracy(self) -> npt.Floating:
         return self._aggregate(
             metrics.balanced_accuracy_score(label.true, label.predicted)
             for label in self.labels
@@ -144,10 +144,10 @@ class RankedEvaluation(UnrankedEvaluation):
         super().__init__(cases, query, config, rankings)
         self.rankings = rankings
 
-    def average_precision(self) -> np.float_:
+    def average_precision(self) -> npt.Floating:
         return self._aggregate(
             t.cast(
-                np.float_,
+                npt.Floating,
                 metrics.average_precision_score(
                     [
                         1 if key in ranking.true_ranks else 0
@@ -159,7 +159,7 @@ class RankedEvaluation(UnrankedEvaluation):
             for ranking in self.rankings
         )
 
-    def ndcg(self) -> np.float_:
+    def ndcg(self) -> npt.Floating:
         return self._aggregate(
             metrics.ndcg_score(
                 [
@@ -171,7 +171,7 @@ class RankedEvaluation(UnrankedEvaluation):
             for ranking in self.rankings
         )
 
-    def correctness_completeness(self) -> t.Tuple[np.float_, np.float_]:
+    def correctness_completeness(self) -> t.Tuple[npt.Floating, npt.Floating]:
         scores = [self._correctness_completeness(ranking) for ranking in self.rankings]
         correctness_scores = [score[0] for score in scores]
         completeness_scores = [score[1] for score in scores]
@@ -180,7 +180,7 @@ class RankedEvaluation(UnrankedEvaluation):
 
     def _correctness_completeness(
         self, ranking: Ranking
-    ) -> t.Tuple[np.float_, np.float_]:
+    ) -> t.Tuple[npt.Floating, npt.Floating]:
         orders = 0
         concordances = 0
         disconcordances = 0
@@ -212,7 +212,7 @@ class RankedEvaluation(UnrankedEvaluation):
         return np.floating(correctness), np.floating(completeness)
 
     @override
-    def compute_metrics(self) -> dict[str, np.float_]:
+    def compute_metrics(self) -> dict[str, npt.Floating]:
         out = super().compute_metrics()
         completeness, correctness = self.correctness_completeness()
 
