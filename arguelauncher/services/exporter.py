@@ -2,18 +2,20 @@ from __future__ import absolute_import, annotations
 
 import json
 import logging
-import statistics
 import typing as t
 from collections import defaultdict
 from pathlib import Path
 
-from arguelauncher.services.evaluation import BaseEvaluation
+import numpy as np
+import numpy.typing as npt
+
+from arguelauncher.services.evaluation import AbstractEvaluation
 
 logger = logging.getLogger(__name__)
 
 
 def get_individual(
-    eval: BaseEvaluation,
+    eval: AbstractEvaluation,
 ):
     return {
         "metrics": eval.compute_metrics(),
@@ -21,21 +23,21 @@ def get_individual(
     }
 
 
-def get_named_individual(eval_map: t.Mapping[str, BaseEvaluation]):
+def get_named_individual(eval_map: t.Mapping[str, AbstractEvaluation]):
     return {name: get_individual(eval) for name, eval in eval_map.items()}
 
 
-AGGREGATORS: dict[str, t.Callable[[t.Iterable[float]], float]] = {
-    "mean": statistics.mean,
-    "min": min,
-    "max": max,
+AGGREGATORS: dict[str, t.Callable[[npt.NDArray[np.float_]], np.float_]] = {
+    "mean": np.mean,
+    "min": np.min,
+    "max": np.max,
 }
 
 
 def _aggregate_eval_values(
-    values: t.Iterable[t.Optional[float]],
-) -> dict[str, t.Optional[float]]:
-    values = [v for v in values if v is not None]
+    values: npt.NDArray[np.float_],
+) -> dict[str, t.Optional[np.float_]]:
+    values = np.array(v for v in values if v is not None)
 
     if not values:
         return {key: None for key in AGGREGATORS.keys()}
@@ -44,8 +46,8 @@ def _aggregate_eval_values(
 
 
 # One eval_map for each query
-def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, BaseEvaluation]]):
-    metrics: defaultdict[tuple[str, str], list[t.Optional[float]]] = defaultdict(list)
+def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
+    metrics: defaultdict[tuple[str, str], list[np.float_]] = defaultdict(list)
 
     for eval_map in eval_maps:
         for eval_name, eval_value in eval_map.items():
@@ -53,7 +55,7 @@ def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, BaseEvaluation]]):
                 metrics[(eval_name, metric_name)].append(metric_value)
 
     return {
-        eval_name: {metric_name: _aggregate_eval_values(metric_values)}
+        eval_name: {metric_name: _aggregate_eval_values(np.array(metric_values))}
         for (eval_name, metric_name), metric_values in metrics.items()
     }
 

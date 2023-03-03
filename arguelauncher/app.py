@@ -18,8 +18,8 @@ from arguelauncher.config.cbr import CbrConfig
 from arguelauncher.services import exporter
 from arguelauncher.services.adaptation import adapt
 from arguelauncher.services.evaluation import (
+    AbstractEvaluation,
     AdaptationEvaluation,
-    BaseEvaluation,
     RetrievalEvaluation,
 )
 from arguelauncher.services.retrieval import retrieve
@@ -61,7 +61,7 @@ def main(config: CbrConfig) -> None:
 
     adaptation_duration = 0
     evaluation_duration = 0
-    evals: list[dict[str, BaseEvaluation]] = []
+    evals: list[dict[str, AbstractEvaluation]] = []
 
     for i, res in track(
         list(enumerate(retrieve_response.query_responses)),
@@ -80,7 +80,7 @@ def main(config: CbrConfig) -> None:
         evaluation_start = timer()
 
         if config.evaluation:
-            eval_map: dict[str, BaseEvaluation] = {}
+            eval_map: dict[str, AbstractEvaluation] = {}
 
             if ranking := res.semantic_ranking:
                 eval_map["mac"] = RetrievalEvaluation(
