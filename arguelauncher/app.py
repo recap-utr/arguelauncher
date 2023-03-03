@@ -103,10 +103,7 @@ def main(config: CbrConfig) -> None:
                     cases,
                     ordered_requests[i],
                     config.evaluation,
-                    {
-                        key: case
-                        for key, case in zip(cases.keys(), adapt_response.cases)
-                    },
+                    adapt_response.cases,
                 )
 
             evals.append(eval_map)
