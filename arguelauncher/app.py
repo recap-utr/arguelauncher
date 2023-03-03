@@ -98,7 +98,7 @@ def main(config: CbrConfig) -> None:
                     ranking,
                 )
 
-            if adapt_response:
+            if adapt_response.cases:
                 eval_map["adapt"] = AdaptationEvaluation(
                     cases,
                     ordered_requests[i],

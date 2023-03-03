@@ -32,7 +32,10 @@ class Ranking(Labeling):
     predicted_ranks: dict[str, int]
 
     def __init__(self, true_ranks: dict[str, int], predicted_scores: dict[str, float]):
-        super().__init__(np.array(true_ranks.keys()), np.array(predicted_scores.keys()))
+        super().__init__(
+            np.fromiter(true_ranks.keys(), object),
+            np.fromiter(predicted_scores.keys(), object),
+        )
         self.true_ranks = true_ranks
         self.predicted_scores = predicted_scores
         self.predicted_ranks = {
@@ -71,7 +74,7 @@ class AbstractEvaluation(ABC):
         ...
 
     def _aggregate(self, values: t.Iterable[npt.Floating]) -> npt.Floating:
-        return np.mean(np.array(values))
+        return np.mean(np.fromiter(values, float))
 
 
 class UnrankedEvaluation(AbstractEvaluation):
