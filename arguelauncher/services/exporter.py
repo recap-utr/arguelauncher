@@ -48,8 +48,12 @@ def _aggregate_eval_values(
 
 # One eval_map for each query
 def get_aggregated(
-    eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]], config: EvaluationConfig
+    eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]],
+    config: t.Optional[EvaluationConfig] = None,
 ):
+    if config is None:
+        config = EvaluationConfig()
+
     metrics: defaultdict[str, defaultdict[str, list[float]]] = defaultdict(
         lambda: defaultdict(list)
     )

@@ -43,12 +43,19 @@ def build_case_request(
 def adapt(
     cases: t.Mapping[str, model.Graph],
     query: model.Graph,
-    ranking: t.Collection[retrieval_pb2.RetrievedCase],
+    retrieval: t.Optional[retrieval_pb2.QueryResponse],
     config: CbrConfig,
 ) -> tuple[adaptation_pb2.AdaptRequest, adaptation_pb2.AdaptResponse]:
     """Calculate similarity of queries and case base"""
+
     if config.adaptation is None:
         return adaptation_pb2.AdaptRequest(), adaptation_pb2.AdaptResponse()
+
+    ranking = (
+        (retrieval.structural_ranking or retrieval.semantic_ranking)
+        if retrieval
+        else None
+    )
 
     client = adaptation_pb2_grpc.AdaptationServiceStub(
         grpc.insecure_channel(config.adaptation.address)
