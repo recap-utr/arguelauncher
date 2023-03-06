@@ -2,12 +2,10 @@ from __future__ import absolute_import, annotations
 
 import json
 import logging
+import statistics
 import typing as t
 from collections import defaultdict
 from pathlib import Path
-
-import nptyping as npt
-import numpy as np
 
 from arguelauncher.services.evaluation import AbstractEvaluation
 
@@ -27,20 +25,16 @@ def get_named_individual(eval_map: t.Mapping[str, AbstractEvaluation]):
     return {name: get_individual(eval) for name, eval in eval_map.items()}
 
 
-AGGREGATORS: dict[
-    str, t.Callable[[npt.NDArray[npt.Shape["*"], npt.Floating]], npt.Floating]
-] = {
-    "mean": np.mean,
-    "min": np.min,
-    "max": np.max,
+AGGREGATORS: dict[str, t.Callable[[t.Sequence[float]], float]] = {
+    "mean": statistics.mean,
+    "min": min,
+    "max": max,
 }
 
 
 def _aggregate_eval_values(
-    values: npt.NDArray[npt.Shape["*"], npt.Floating],
-) -> dict[str, t.Optional[npt.Floating]]:
-    values = np.array(v for v in values if v is not None)
-
+    values: t.Sequence[float],
+) -> dict[str, t.Optional[float]]:
     if not values:
         return {key: None for key in AGGREGATORS.keys()}
 
@@ -49,7 +43,7 @@ def _aggregate_eval_values(
 
 # One eval_map for each query
 def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
-    metrics: defaultdict[tuple[str, str], list[npt.Floating]] = defaultdict(list)
+    metrics: defaultdict[tuple[str, str], list[float]] = defaultdict(list)
 
     for eval_map in eval_maps:
         for eval_name, eval_value in eval_map.items():
@@ -57,7 +51,7 @@ def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
                 metrics[(eval_name, metric_name)].append(metric_value)
 
     return {
-        eval_name: {metric_name: _aggregate_eval_values(np.array(metric_values))}
+        eval_name: {metric_name: _aggregate_eval_values(metric_values)}
         for (eval_name, metric_name), metric_values in metrics.items()
     }
 
