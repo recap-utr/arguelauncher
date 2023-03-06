@@ -45,24 +45,24 @@ This data is used to calculate the evaluation metrics.
 ```json
 {
   "candidates": [
-    "nodeset6366.json",
-    "nodeset6383.json",
-    "nodeset6387.json",
-    "nodeset6391.json",
-    "nodeset6450.json",
-    "nodeset6453.json",
-    "nodeset6464.json",
-    "nodeset6469.json"
+    "microtexts/nodeset6366.json",
+    "microtexts/nodeset6383.json",
+    "microtexts/nodeset6387.json",
+    "microtexts/nodeset6391.json",
+    "microtexts/nodeset6450.json",
+    "microtexts/nodeset6453.json",
+    "microtexts/nodeset6464.json",
+    "microtexts/nodeset6469.json"
   ],
   "rankings": {
-    "nodeset6366.json": 2,
-    "nodeset6383.json": 2,
-    "nodeset6387.json": 3,
-    "nodeset6391.json": 2,
-    "nodeset6450.json": 2,
-    "nodeset6453.json": 2,
-    "nodeset6464.json": 2,
-    "nodeset6469.json": 1
+    "microtexts/nodeset6366.json": 2,
+    "microtexts/nodeset6383.json": 2,
+    "microtexts/nodeset6387.json": 3,
+    "microtexts/nodeset6391.json": 2,
+    "microtexts/nodeset6450.json": 2,
+    "microtexts/nodeset6453.json": 2,
+    "microtexts/nodeset6464.json": 2,
+    "microtexts/nodeset6469.json": 1
   }
 }
 ```

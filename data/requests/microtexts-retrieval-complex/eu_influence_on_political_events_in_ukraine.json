@@ -145,7 +145,11 @@
   "userdata": {
     "cbrEvaluations": [
       {
-        "ranking": { "nodeset6399": 2, "nodeset6415": 3, "nodeset6460": 1 }
+        "ranking": {
+          "microtexts/nodeset6399": 2,
+          "microtexts/nodeset6415": 3,
+          "microtexts/nodeset6460": 1
+        }
       }
     ]
   }

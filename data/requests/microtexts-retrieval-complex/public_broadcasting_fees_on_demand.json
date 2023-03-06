@@ -146,13 +146,13 @@
     "cbrEvaluations": [
       {
         "ranking": {
-          "nodeset6364": 1,
-          "nodeset6389": 2,
-          "nodeset6446": 2,
-          "nodeset6454": 3,
-          "nodeset6463": 2,
-          "nodeset6470": 3,
-          "nodeset6374": 3
+          "microtexts/nodeset6364": 1,
+          "microtexts/nodeset6389": 2,
+          "microtexts/nodeset6446": 2,
+          "microtexts/nodeset6454": 3,
+          "microtexts/nodeset6463": 2,
+          "microtexts/nodeset6470": 3,
+          "microtexts/nodeset6374": 3
         }
       }
     ]
