@@ -36,6 +36,7 @@ class AbstractEvaluation(ABC):
         self.query = query
         self.config = config
         self.qrels = ranx.Qrels(qrels)
+        self.qrels.set_relevance_level(self.config.relevance_levels)
         self.run = ranx.Run(run)
 
     def compute_metrics(self) -> dict[str, float]:
@@ -76,10 +77,7 @@ class AbstractEvaluation(ABC):
     def _correctness_completeness(self, key: str) -> t.Tuple[float, float]:
         qrel = self.qrels[key]
         sorted_run = sorted(self.run[key].items(), key=lambda x: x[1], reverse=True)
-        run_ranking = {
-            x[0]: i + 1
-            for i, x in enumerate(sorted_run)
-        }
+        run_ranking = {x[0]: i + 1 for i, x in enumerate(sorted_run)}
 
         orders = 0
         concordances = 0

@@ -20,7 +20,8 @@ class PathConfig(DataClassDictMixin):
 
 @dataclass
 class EvaluationConfig(DataClassDictMixin):
-    pass
+    relevance_levels: int = 3
+    aggregators: tuple[str, ...] = ("mean",)
 
 
 @dataclass
