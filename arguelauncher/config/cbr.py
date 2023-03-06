@@ -20,8 +20,7 @@ class PathConfig(DataClassDictMixin):
 
 @dataclass
 class EvaluationConfig(DataClassDictMixin):
-    max_user_rank: int = 3
-    f_scores: list[float] = field(default_factory=lambda: [1, 2])
+    pass
 
 
 @dataclass

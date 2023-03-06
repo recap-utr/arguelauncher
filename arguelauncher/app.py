@@ -9,7 +9,6 @@ import arguebuf as ag
 import hydra
 from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
-from omegaconf import OmegaConf
 from rich import print_json
 from rich.progress import track
 
@@ -108,13 +107,11 @@ def main(config: CbrConfig) -> None:
             evals.append(eval_map)
             evaluation_duration += timer() - evaluation_start
 
-    config_dump = (t.cast(CbrConfig, OmegaConf.to_object(config)).to_dict(),)
     aggregated_eval = exporter.get_aggregated(evals)
 
     print_json(exporter.get_json(aggregated_eval))
 
     eval_dump = {
-        "config": config_dump,
         "durations": {
             "retrieval": retrieval_duration,
             "adaptation": adaptation_duration,
