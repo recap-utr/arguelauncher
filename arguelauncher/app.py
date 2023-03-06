@@ -37,14 +37,14 @@ def main(config: CbrConfig) -> None:
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 
     cases = {
-        str(file.relative_to(config.path.cases)): t.cast(
+        str(file.relative_to(config.path.cases.parent).with_suffix("")): t.cast(
             model.Graph,
             ag.load.file(file, config=ag.load.Config(GraphClass=model.Graph)),
         )
         for file in Path(config.path.cases).glob(config.path.cases_pattern)
     }
     requests = {
-        str(file.relative_to(config.path.requests)): t.cast(
+        str(file.relative_to(config.path.requests).with_suffix("")): t.cast(
             model.Graph,
             ag.load.file(file, config=ag.load.Config(GraphClass=model.Graph)),
         )
@@ -75,7 +75,6 @@ def main(config: CbrConfig) -> None:
             config,
         )
         adaptation_duration += timer() - adaptation_start
-        # TODO: Save adapted graphs
 
         evaluation_start = timer()
 
