@@ -43,16 +43,21 @@ def _aggregate_eval_values(
 
 # One eval_map for each query
 def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
-    metrics: defaultdict[tuple[str, str], list[float]] = defaultdict(list)
+    metrics: defaultdict[str, defaultdict[str, list[float]]] = defaultdict(
+        lambda: defaultdict(list)
+    )
 
     for eval_map in eval_maps:
         for eval_name, eval_value in eval_map.items():
             for metric_name, metric_value in eval_value.compute_metrics().items():
-                metrics[(eval_name, metric_name)].append(metric_value)
+                metrics[eval_name][metric_name].append(metric_value)
 
     return {
-        eval_name: {metric_name: _aggregate_eval_values(metric_values)}
-        for (eval_name, metric_name), metric_values in metrics.items()
+        eval_name: {
+            metric_name: _aggregate_eval_values(metric_values)
+            for metric_name, metric_values in eval_metrics.items()
+        }
+        for eval_name, eval_metrics in metrics.items()
     }
 
 
