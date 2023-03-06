@@ -107,18 +107,22 @@ def main(config: CbrConfig) -> None:
             evals.append(eval_map)
             evaluation_duration += timer() - evaluation_start
 
-    aggregated_eval = exporter.get_aggregated(evals)
-
-    print_json(exporter.get_json(aggregated_eval))
-
-    eval_dump = {
-        "durations": {
+    if config.evaluation:
+        evals_aggregated = exporter.get_aggregated(evals, config.evaluation)
+        durations = {
             "retrieval": retrieval_duration,
             "adaptation": adaptation_duration,
             "evaluation": evaluation_duration,
-        },
-        "aggregated": aggregated_eval,
-        "individual": [exporter.get_named_individual(eval) for eval in evals],
-    }
+        }
 
-    exporter.get_file(eval_dump, output_folder / "eval.json")
+        print_json(
+            exporter.get_json({"evaluations": evals_aggregated, "durations": durations})
+        )
+
+        eval_dump = {
+            "durations": durations,
+            "aggregated": evals_aggregated,
+            "individual": [exporter.get_named_individual(eval) for eval in evals],
+        }
+
+        exporter.get_file(eval_dump, output_folder / "eval.json")

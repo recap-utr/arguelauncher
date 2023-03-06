@@ -7,6 +7,7 @@ import typing as t
 from collections import defaultdict
 from pathlib import Path
 
+from arguelauncher.config.cbr import EvaluationConfig
 from arguelauncher.services.evaluation import AbstractEvaluation
 
 logger = logging.getLogger(__name__)
@@ -33,16 +34,22 @@ AGGREGATORS: dict[str, t.Callable[[t.Sequence[float]], float]] = {
 
 
 def _aggregate_eval_values(
-    values: t.Sequence[float],
-) -> dict[str, t.Optional[float]]:
+    values: t.Sequence[float], aggregators: t.Collection[str]
+) -> t.Union[None, float, dict[str, float]]:
     if not values:
-        return {key: None for key in AGGREGATORS.keys()}
+        return None
+
+    if len(aggregators) == 1:
+        key = next(iter(aggregators))
+        return round(AGGREGATORS[key](values), 3)
 
     return {key: round(func(values), 3) for key, func in AGGREGATORS.items()}
 
 
 # One eval_map for each query
-def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
+def get_aggregated(
+    eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]], config: EvaluationConfig
+):
     metrics: defaultdict[str, defaultdict[str, list[float]]] = defaultdict(
         lambda: defaultdict(list)
     )
@@ -54,7 +61,7 @@ def get_aggregated(eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]]):
 
     return {
         eval_name: {
-            metric_name: _aggregate_eval_values(metric_values)
+            metric_name: _aggregate_eval_values(metric_values, config.aggregators)
             for metric_name, metric_values in eval_metrics.items()
         }
         for eval_name, eval_metrics in metrics.items()
