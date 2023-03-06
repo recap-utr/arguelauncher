@@ -1,12 +1,12 @@
-md5: b95a224cd2de8fbe11deecccf1956421
+md5: 563ba40654ddc515b59e7807cb545707
 frozen: true
 deps:
-- path: microtexts/format=arggraph,lang=en
+- path: microtexts/format=aif,lang=en
   repo:
     url: git@github.com:recap-utr/arguebase-public.git
-    rev_lock: dbdbf7f792611dfc39a6ef41b798c3843275eb03
+    rev_lock: c58ac84c611690d9944a3105874faa02702934b7
 outs:
-- md5: 889960feee7024c161ad144af26254f0.dir
-  size: 198326
-  nfiles: 224
+- md5: 42ad6c3726d981680786d7f2f7f14e2c.dir
+  size: 325016
+  nfiles: 220
   path: microtexts

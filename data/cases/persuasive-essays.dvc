@@ -1,10 +1,10 @@
-md5: 725b397eb9255f6333b72b37b553615c
+md5: 15eee5d17def66e364bc4f5fac2f0202
 frozen: true
 deps:
 - path: persuasive-essays/format=brat,lang=en
   repo:
     url: git@github.com:recap-utr/arguebase-public.git
-    rev_lock: dbdbf7f792611dfc39a6ef41b798c3843275eb03
+    rev_lock: c58ac84c611690d9944a3105874faa02702934b7
 outs:
 - md5: d993b8bcde1bc56825a44b5f1fb41852.dir
   size: 1629625
