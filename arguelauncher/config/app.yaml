@@ -2,10 +2,13 @@
 defaults:
   - cbr
   - _self_
-  - override hydra/launcher: joblib
-# hydra:
+  # - override hydra/launcher: joblib # for parallel runs
+hydra:
+  verbose: arguelauncher
+  sweep:
+    subdir: ${hydra.job.override_dirname}
+#   mode: MULTIRUN
 #   sweeper:
-#     subdir: ${hydra.job.override_dirname}
 #     params:
 #       retrieval.mac: true, false
 #       retrieval.fac: true, false

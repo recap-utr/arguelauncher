@@ -3,7 +3,6 @@ from __future__ import annotations
 import logging
 import typing as t
 
-import grpc
 from arg_services.cbr.v1beta import adaptation_pb2, adaptation_pb2_grpc, retrieval_pb2
 from omegaconf import OmegaConf
 
@@ -41,6 +40,7 @@ def build_case_request(
 
 
 def adapt(
+    client: t.Optional[adaptation_pb2_grpc.AdaptationServiceStub],
     cases: t.Mapping[str, model.Graph],
     query: model.Graph,
     retrieval: t.Optional[retrieval_pb2.QueryResponse],
@@ -48,17 +48,13 @@ def adapt(
 ) -> tuple[adaptation_pb2.AdaptRequest, adaptation_pb2.AdaptResponse]:
     """Calculate similarity of queries and case base"""
 
-    if config.adaptation is None:
+    if config.adaptation is None or client is None:
         return adaptation_pb2.AdaptRequest(), adaptation_pb2.AdaptResponse()
 
     ranking = (
         (retrieval.structural_ranking or retrieval.semantic_ranking)
         if retrieval
         else None
-    )
-
-    client = adaptation_pb2_grpc.AdaptationServiceStub(
-        grpc.insecure_channel(config.adaptation.address)
     )
 
     # TODO: We only evaluate the first cbrEvaluation

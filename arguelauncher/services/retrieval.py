@@ -3,7 +3,6 @@ from __future__ import annotations
 import logging
 import typing as t
 
-import grpc
 from arg_services.cbr.v1beta import retrieval_pb2, retrieval_pb2_grpc
 
 from arguelauncher import model
@@ -14,6 +13,7 @@ log = logging.getLogger(__name__)
 
 
 def retrieve(
+    client: t.Optional[retrieval_pb2_grpc.RetrievalServiceStub],
     cases: t.Mapping[str, model.Graph],
     queries: t.Sequence[model.Graph],
     config: CbrConfig,
@@ -29,14 +29,10 @@ def retrieve(
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
 
-    if config.retrieval is None:
+    if config.retrieval is None or client is None:
         return req, retrieval_pb2.RetrieveResponse(
             query_responses=[retrieval_pb2.QueryResponse() for _ in queries]
         )
-
-    client = retrieval_pb2_grpc.RetrievalServiceStub(
-        grpc.insecure_channel(config.retrieval.address)
-    )
 
     req.limit = config.retrieval.limit
     req.semantic_retrieval = config.retrieval.mac
