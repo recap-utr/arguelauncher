@@ -22,10 +22,9 @@ def retrieve(
 
     req = retrieval_pb2.RetrieveRequest(
         cases={
-            key: value.to_annotated_graph(config.graph2text)
-            for key, value in cases.items()
+            key: value.to_protobuf(config.graph2text) for key, value in cases.items()
         },
-        queries=[value.to_annotated_graph(config.graph2text) for value in queries],
+        queries=[value.to_protobuf(config.graph2text) for value in queries],
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
 

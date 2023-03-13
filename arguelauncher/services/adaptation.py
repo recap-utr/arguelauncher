@@ -25,7 +25,7 @@ def build_case_request(
 
     rules_limit = config.adaptation.predefined_rules_limit
     proto_case = adaptation_pb2.AdaptedCaseRequest(
-        case=case.to_annotated_graph(config.graph2text)
+        case=case.to_protobuf(config.graph2text)
     )
 
     if rules_per_case and (case_rules := rules_per_case.get(case_key)):
@@ -79,7 +79,7 @@ def adapt(
 
     req = adaptation_pb2.AdaptRequest(
         cases=proto_cases,
-        query=query.to_annotated_graph(config.graph2text),
+        query=query.to_protobuf(config.graph2text),
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
     req.extras.update(

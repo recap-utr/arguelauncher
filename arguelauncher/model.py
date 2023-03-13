@@ -47,11 +47,27 @@ class Userdata(TypedDict):
 class Graph(arguebuf.Graph):
     userdata: Userdata
 
-    def to_annotated_graph(self, text_algorithm: Graph2TextAlgorithm) -> AnnotatedGraph:
+    def to_protobuf(self, text_algorithm: Graph2TextAlgorithm) -> AnnotatedGraph:
         g = AnnotatedGraph(
             graph=arguebuf.dump.protobuf(self), text=graph2text(self, text_algorithm)
         )
         g.graph.userdata.Clear()
+
+        return g
+
+    @classmethod
+    def from_protobuf(
+        cls, obj: AnnotatedGraph, userdata: t.Optional[Userdata]
+    ) -> Graph:
+        g = t.cast(
+            Graph,
+            arguebuf.load.protobuf(
+                obj.graph, config=arguebuf.load.Config(GraphClass=cls)
+            ),
+        )
+
+        if userdata is not None:
+            g.userdata = userdata
 
         return g
 
