@@ -9,6 +9,7 @@ import arguebuf as ag
 import grpc
 import hydra
 from arg_services.cbr.v1beta import adaptation_pb2_grpc, retrieval_pb2_grpc
+from arg_services.cbr.v1beta.adaptation_pb2 import AdaptResponse
 from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
 from rich import print_json
@@ -82,11 +83,11 @@ def main(config: CbrConfig) -> None:
 
     # ADAPTATION
     adaptation_start = timer()
-    adaptation_responses = []
+    adaptation_responses: list[AdaptResponse] = []
     log.info("Adapting...")
 
     for i, res in enumerate(retrieval_responses):
-        log.debug(f"Adapting query {i}/{len(retrieval_responses)}...")
+        log.debug(f"Adapting query {i+1}/{len(retrieval_responses)}...")
         _, adapt_response = adapt(
             adaptation_client,
             cases,
@@ -107,6 +108,8 @@ def main(config: CbrConfig) -> None:
         for i, (retrieval_response, adaptation_response) in enumerate(
             zip(retrieval_responses, adaptation_responses)
         ):
+            log.debug(f"Evaluating query {i+1}/{len(retrieval_responses)}...")
+
             eval_map: dict[str, AbstractEvaluation] = {}
 
             if ranking := retrieval_response.semantic_ranking:
@@ -125,10 +128,10 @@ def main(config: CbrConfig) -> None:
                     ranking,
                 )
 
-                eval_map["adapt"] = AdaptationEvaluation(
             if adaptation_response.cases and any(
                 len(res.applied_rules) > 0 for res in adaptation_response.cases.values()
             ):
+                eval_map["adaptation"] = AdaptationEvaluation(
                     cases,
                     ordered_requests[i],
                     config.evaluation,
