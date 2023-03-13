@@ -83,7 +83,7 @@ def adapt(
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
     req.extras.update(
-        t.cast(ExtrasConfig, OmegaConf.to_object(config.adaptation.extras)).to_dict()
+        t.cast(ExtrasConfig, OmegaConf.to_object(config.adaptation.arguegen)).to_dict()
     )
 
     return req, client.Adapt(req)

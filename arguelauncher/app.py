@@ -138,6 +138,18 @@ def main(config: CbrConfig) -> None:
                     adaptation_response.cases,
                 )
 
+                cases_adapted = {
+                    name: model.Graph.from_protobuf(res.case, cases[name].userdata)
+                    for name, res in adaptation_response.cases.items()
+                }
+
+                _, retrieve_response_adapted = retrieve(
+                    retrieval_client,
+                    cases_adapted,
+                    ordered_requests,
+                    config,
+                )
+
             evaluation_responses.append(eval_map)
 
     evaluation_duration = timer() - evaluation_start
