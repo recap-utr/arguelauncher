@@ -172,6 +172,7 @@ class AdaptationEvaluation(AbstractEvaluation):
                 for rule in res.applied_rules
             }
             for casename, res in system_response.items()
+            if len(res.applied_rules) > 0
         }
 
         # TODO: Compare similarity of retrieved and adapted graph
