@@ -4,10 +4,11 @@ import logging
 import typing as t
 
 from arg_services.cbr.v1beta import adaptation_pb2, adaptation_pb2_grpc, retrieval_pb2
+from mashumaro import DataClassDictMixin
 from omegaconf import OmegaConf
 
 from arguelauncher import model
-from arguelauncher.config.arguegen import ExtrasConfig
+from arguelauncher.config.adaptation import AdaptationConfig
 from arguelauncher.config.cbr import CbrConfig
 from arguelauncher.config.nlp import NLP_CONFIG
 
@@ -82,8 +83,19 @@ def adapt(
         query=query.to_protobuf(config.graph2text),
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
-    req.extras.update(
-        t.cast(ExtrasConfig, OmegaConf.to_object(config.adaptation.arguegen)).to_dict()
-    )
+    req.extras.update(_get_extras(config.adaptation).to_dict())
 
     return req, client.Adapt(req)
+
+
+def _get_extras(config: AdaptationConfig) -> DataClassDictMixin:
+    obj = None
+
+    if config.extras == "wordnet":
+        obj = config.wordnet
+    elif config.extras == "openai":
+        obj = config.openai
+    else:
+        raise ValueError(f"Unknown extras: {config.extras}")
+
+    return t.cast(DataClassDictMixin, OmegaConf.to_object(obj))
