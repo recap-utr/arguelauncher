@@ -109,13 +109,14 @@ def main(config: CbrConfig) -> None:
             zip(retrieval_responses, adaptation_responses)
         ):
             log.debug(f"Evaluating query {i+1}/{len(retrieval_responses)}...")
+            current_request = ordered_requests[i]
 
             eval_map: dict[str, AbstractEvaluation] = {}
 
             if ranking := retrieval_response.semantic_ranking:
                 eval_map["mac"] = RetrievalEvaluation(
                     cases,
-                    ordered_requests[i],
+                    current_request,
                     config.evaluation,
                     ranking,
                 )
@@ -123,7 +124,7 @@ def main(config: CbrConfig) -> None:
             if ranking := retrieval_response.structural_ranking:
                 eval_map["fac"] = RetrievalEvaluation(
                     cases,
-                    ordered_requests[i],
+                    current_request,
                     config.evaluation,
                     ranking,
                 )
@@ -133,7 +134,7 @@ def main(config: CbrConfig) -> None:
             ):
                 eval_map["adaptation"] = AdaptationEvaluation(
                     cases,
-                    ordered_requests[i],
+                    current_request,
                     config.evaluation,
                     adaptation_response.cases,
                 )
@@ -143,12 +144,32 @@ def main(config: CbrConfig) -> None:
                     for name, res in adaptation_response.cases.items()
                 }
 
-                _, retrieve_response_adapted = retrieve(
+                _, retrieve_responses_adapted = retrieve(
                     retrieval_client,
                     cases_adapted,
-                    ordered_requests,
+                    [current_request],
                     config,
                 )
+
+                retrieve_response_adapted = retrieve_responses_adapted.query_responses[
+                    0
+                ]
+
+                if ranking := retrieve_response_adapted.semantic_ranking:
+                    eval_map["mac_adapted"] = RetrievalEvaluation(
+                        cases,
+                        current_request,
+                        config.evaluation,
+                        ranking,
+                    )
+
+                if ranking := retrieve_response_adapted.structural_ranking:
+                    eval_map["fac_adapted"] = RetrievalEvaluation(
+                        cases,
+                        current_request,
+                        config.evaluation,
+                        ranking,
+                    )
 
             evaluation_responses.append(eval_map)
 

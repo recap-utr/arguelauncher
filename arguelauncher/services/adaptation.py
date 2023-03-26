@@ -89,13 +89,4 @@ def adapt(
 
 
 def _get_extras(config: AdaptationConfig) -> DataClassDictMixin:
-    obj = None
-
-    if config.extras == "wordnet":
-        obj = config.wordnet
-    elif config.extras == "openai":
-        obj = config.openai
-    else:
-        raise ValueError(f"Unknown extras: {config.extras}")
-
-    return t.cast(DataClassDictMixin, OmegaConf.to_object(obj))
+    return t.cast(DataClassDictMixin, OmegaConf.to_object(config.extras))

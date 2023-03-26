@@ -137,6 +137,16 @@ class RetrievalEvaluation(AbstractEvaluation):
     def get_results(self) -> t.Any:
         return [MessageToDict(case) for case in self.retrieved_cases]
 
+    @override
+    def compute_metrics(self) -> dict[str, float]:
+        metrics = super().compute_metrics()
+
+        metrics["similarity"] = statistics.mean(
+            case.similarity for case in self.retrieved_cases
+        )
+
+        return metrics
+
 
 class AdaptationEvaluation(AbstractEvaluation):
     user_adaptations: dict[str, list[adaptation_pb2.Rule]]
@@ -174,11 +184,6 @@ class AdaptationEvaluation(AbstractEvaluation):
             for casename, res in system_response.items()
             if len(res.applied_rules) > 0
         }
-
-        # TODO: Compare similarity of retrieved and adapted graph
-
-        # TODO: Investigate deliberation-based adaptation for comparison
-        # i.e., adapting all concepts to themselves
 
         super().__init__(cases, query, config, qrels, run)
 
