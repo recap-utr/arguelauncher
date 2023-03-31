@@ -135,7 +135,15 @@ class RetrievalEvaluation(AbstractEvaluation):
 
     @override
     def get_results(self) -> t.Any:
-        return [MessageToDict(case) for case in self.retrieved_cases]
+        out = []
+
+        for value in self.retrieved_cases:
+            if not self.config.export_graph:
+                value.graph.graph.Clear()
+
+            out.append(MessageToDict(value))
+
+        return out
 
     @override
     def compute_metrics(self) -> dict[str, float]:
@@ -179,10 +187,10 @@ class AdaptationEvaluation(AbstractEvaluation):
         run = {
             casename: {
                 f"{rule.source.lemma}/{rule.source.pos}": rule.source.score
-                for rule in res.applied_rules
+                for rule in system_response[casename].applied_rules
             }
-            for casename, res in system_response.items()
-            if len(res.applied_rules) > 0
+            for casename in qrels.keys()
+            if len(system_response[casename].applied_rules) > 0
         }
 
         super().__init__(cases, query, config, qrels, run)
@@ -196,6 +204,12 @@ class AdaptationEvaluation(AbstractEvaluation):
 
     @override
     def get_results(self) -> t.Any:
-        return {
-            key: MessageToDict(value) for key, value in self.system_response.items()
-        }
+        out = {}
+
+        for key, value in self.system_response.items():
+            if not self.config.export_graph:
+                value.case.graph.Clear()
+
+            out[key] = MessageToDict(value)
+
+        return out

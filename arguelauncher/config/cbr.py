@@ -22,6 +22,7 @@ class PathConfig(DataClassDictMixin):
 class EvaluationConfig(DataClassDictMixin):
     relevance_levels: int = 3
     aggregators: tuple[str, ...] = ("mean",)
+    export_graph: bool = True
 
 
 @dataclass
