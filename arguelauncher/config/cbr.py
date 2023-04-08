@@ -15,7 +15,7 @@ class PathConfig(DataClassDictMixin):
     cases: Path = Path("data/cases/microtexts")
     cases_pattern: str = "*.json"
     requests: Path = Path("data/requests/microtexts-retrieval-complex")
-    requests_pattern: str = "*.json"
+    requests_pattern: str = "**/*.json"
 
 
 @dataclass
