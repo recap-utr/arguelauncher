@@ -105,10 +105,15 @@ def main(config: CbrConfig) -> None:
     log.info("Evaluating...")
 
     if config.evaluation:
+        request_keys = list(requests.keys())
+
         for i, (retrieval_response, adaptation_response) in enumerate(
             zip(retrieval_responses, adaptation_responses)
         ):
-            log.debug(f"Evaluating query {i+1}/{len(retrieval_responses)}...")
+            log.debug(
+                "Evaluating query"
+                f" {request_keys[i]} ({i+1}/{len(retrieval_responses)})..."
+            )
             current_request = ordered_requests[i]
 
             eval_map: dict[str, AbstractEvaluation] = {}
@@ -129,15 +134,18 @@ def main(config: CbrConfig) -> None:
                     ranking,
                 )
 
-            if adaptation_response.cases and any(
-                len(res.applied_rules) > 0 for res in adaptation_response.cases.values()
-            ):
-                eval_map["adaptation"] = AdaptationEvaluation(
-                    cases,
-                    current_request,
-                    config.evaluation,
-                    adaptation_response.cases,
-                )
+            if adaptation_response.cases:
+                try:
+                    eval_map["adaptation"] = AdaptationEvaluation(
+                        cases,
+                        current_request,
+                        config.evaluation,
+                        adaptation_response.cases,
+                    )
+                except ValueError as e:
+                    log.info(
+                        f"Cannot evaluate adaptation of query {request_keys[i]}: {e}"
+                    )
 
                 cases_adapted = {
                     name: model.Graph.from_protobuf(res.case, cases[name].userdata)

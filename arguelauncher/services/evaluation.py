@@ -36,7 +36,7 @@ class AbstractEvaluation(ABC):
         self.query = query
         self.config = config
         self.qrels = ranx.Qrels(qrels)
-        self.qrels.set_relevance_level(self.config.relevance_levels)
+        # self.qrels.set_relevance_level(self.config.relevance_levels)
         self.run = ranx.Run(run)
 
     def compute_metrics(self) -> dict[str, float]:
@@ -192,6 +192,9 @@ class AdaptationEvaluation(AbstractEvaluation):
             for casename in qrels.keys()
             if len(system_response[casename].applied_rules) > 0
         }
+
+        if not run:
+            raise ValueError("Computed adaptations are not present in user benchmark.")
 
         super().__init__(cases, query, config, qrels, run)
 
