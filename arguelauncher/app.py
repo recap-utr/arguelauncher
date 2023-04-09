@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import random
 import typing as t
 from pathlib import Path
 from timeit import default_timer as timer
@@ -119,6 +120,7 @@ def main(config: CbrConfig) -> None:
     # EVALUATION
     evaluation_start = timer()
     evaluation_responses: list[dict[str, AbstractEvaluation]] = []
+    retrieval_limit = config.retrieval.limit if config.retrieval else None
     log.info("Evaluating...")
 
     if config.evaluation:
@@ -137,18 +139,12 @@ def main(config: CbrConfig) -> None:
 
             if ranking := retrieval_response.semantic_ranking:
                 eval_map["mac"] = RetrievalEvaluation(
-                    cases,
-                    current_request,
-                    config.evaluation,
-                    ranking,
+                    cases, current_request, config.evaluation, ranking, retrieval_limit
                 )
 
             if ranking := retrieval_response.structural_ranking:
                 eval_map["fac"] = RetrievalEvaluation(
-                    cases,
-                    current_request,
-                    config.evaluation,
-                    ranking,
+                    cases, current_request, config.evaluation, ranking, retrieval_limit
                 )
 
             if adaptation_response.cases:
@@ -186,6 +182,7 @@ def main(config: CbrConfig) -> None:
                         current_request,
                         config.evaluation,
                         ranking,
+                        retrieval_limit,
                     )
 
                 if ranking := retrieve_response_adapted.structural_ranking:
@@ -194,6 +191,7 @@ def main(config: CbrConfig) -> None:
                         current_request,
                         config.evaluation,
                         ranking,
+                        retrieval_limit,
                     )
 
             evaluation_responses.append(eval_map)

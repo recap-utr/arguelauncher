@@ -1,5 +1,6 @@
 from __future__ import absolute_import, annotations
 
+import itertools
 import logging
 import statistics
 import typing as t
@@ -17,12 +18,40 @@ from arguelauncher.model import parse_rules
 logger = logging.getLogger(__name__)
 
 
+# https://amenra.github.io/ranx/metrics/
+RANX_METRICS: tuple[str, ...] = (
+    "precision",
+    "recall",
+    "f1",
+    "hits",
+    "hit_rate",
+    "mrr",
+    "map",
+    "ndcg",
+)
+
+
+def cutoffs(limit: t.Optional[int]) -> list[int]:
+    if limit is None:
+        return [1000]
+
+    return [limit // 4, limit // 2, 1000]
+
+
+def cutoff_metrics(metrics: t.Iterable[str], limit: t.Optional[int]) -> list[str]:
+    return [
+        metric if k is None else f"{metric}@{k}"
+        for metric, k in itertools.product(metrics, cutoffs(limit))
+    ]
+
+
 class AbstractEvaluation(ABC):
     cases: t.Mapping[str, model.Graph]
     query: model.Graph
     config: EvaluationConfig
     qrels: ranx.Qrels
     run: ranx.Run
+    limit: t.Optional[int]
 
     def __init__(
         self,
@@ -31,6 +60,7 @@ class AbstractEvaluation(ABC):
         config: EvaluationConfig,
         qrels: dict[str, dict[str, int]],
         run: dict[str, dict[str, float]],
+        limit: t.Optional[int],
     ):
         self.cases = cases
         self.query = query
@@ -38,46 +68,42 @@ class AbstractEvaluation(ABC):
         self.qrels = ranx.Qrels(qrels)
         # self.qrels.set_relevance_level(self.config.relevance_levels)
         self.run = ranx.Run(run)
+        self.limit = limit
 
     def compute_metrics(self) -> dict[str, float]:
-        metrics = ranx.evaluate(
+        eval_results = ranx.evaluate(
             self.qrels,
             self.run,
-            # https://amenra.github.io/ranx/metrics/
-            metrics=[
-                "precision",
-                "recall",
-                "f1",
-                "hits",
-                "hit_rate",
-                "mrr",
-                "map",
-                "ndcg",
-            ],
+            metrics=cutoff_metrics(RANX_METRICS, self.limit),
         )
-        correctness, completeness = self.correctness_completeness()
 
-        assert isinstance(metrics, dict)
+        assert isinstance(eval_results, dict)
 
-        return {**metrics, "correctness": correctness, "completeness": completeness}
+        for k in cutoffs(self.limit):
+            correctness, completeness = self.correctness_completeness(k)
+
+            eval_results[f"correctness@{k}"] = correctness
+            eval_results[f"completeness@{k}"] = completeness
+
+        return eval_results
 
     @abstractmethod
     def get_results(self) -> t.Any:
         ...
 
-    def correctness_completeness(self) -> t.Tuple[float, float]:
+    def correctness_completeness(self, k: int) -> t.Tuple[float, float]:
         keys = set(self.qrels.keys()).intersection(set(self.run.keys()))
 
-        scores = [self._correctness_completeness(key) for key in keys]
+        scores = [self._correctness_completeness(key, k) for key in keys]
         correctness_scores = [score[0] for score in scores]
         completeness_scores = [score[1] for score in scores]
 
         return statistics.mean(correctness_scores), statistics.mean(completeness_scores)
 
-    def _correctness_completeness(self, key: str) -> t.Tuple[float, float]:
+    def _correctness_completeness(self, key: str, k: int) -> t.Tuple[float, float]:
         qrel = self.qrels[key]
         sorted_run = sorted(self.run[key].items(), key=lambda x: x[1], reverse=True)
-        run_ranking = {x[0]: i + 1 for i, x in enumerate(sorted_run)}
+        run_ranking = {x[0]: i + 1 for i, x in enumerate(sorted_run[:k])}
 
         orders = 0
         concordances = 0
@@ -124,11 +150,17 @@ class RetrievalEvaluation(AbstractEvaluation):
         query: model.Graph,
         config: EvaluationConfig,
         retrieved_cases: t.Sequence[retrieval_pb2.RetrievedCase],
+        limit: t.Optional[int],
     ) -> None:
         true_ranks = query.userdata["cbrEvaluations"][0]["ranking"]
         predicted_scores = {case.id: case.similarity for case in retrieved_cases}
         super().__init__(
-            cases, query, config, {"query": true_ranks}, {"query": predicted_scores}
+            cases,
+            query,
+            config,
+            {"query": true_ranks},
+            {"query": predicted_scores},
+            limit,
         )
 
         self.retrieved_cases = retrieved_cases
@@ -149,9 +181,10 @@ class RetrievalEvaluation(AbstractEvaluation):
     def compute_metrics(self) -> dict[str, float]:
         metrics = super().compute_metrics()
 
-        metrics["similarity"] = statistics.mean(
-            case.similarity for case in self.retrieved_cases
-        )
+        for k in cutoffs(self.limit):
+            metrics[f"similarity@{k}"] = statistics.mean(
+                case.similarity for case in self.retrieved_cases[:k]
+            )
 
         return metrics
 
@@ -196,7 +229,7 @@ class AdaptationEvaluation(AbstractEvaluation):
         if not run:
             raise ValueError("Computed adaptations are not present in user benchmark.")
 
-        super().__init__(cases, query, config, qrels, run)
+        super().__init__(cases, query, config, qrels, run, limit=None)
 
     @property
     def system_adaptations(self) -> dict[str, list[adaptation_pb2.Rule]]:
