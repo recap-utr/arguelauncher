@@ -17,8 +17,11 @@ typing-extensions = "^4.5.0"
 scikit-learn = "^1.2.2"
 ranx = "^0.3.6"
 numba = { version = "^0.57.0rc1", allow-prereleases = true }
-seaborn = "^0.12.2"
 pandas = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.22.0"
+seaborn = "^0.12.2"
 
 [build-system]
 requires = ["poetry"]

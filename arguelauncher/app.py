@@ -201,7 +201,16 @@ def main(config: CbrConfig) -> None:
 
     # EXPORT
     log.info("Exporting...")
-    evals_aggregated = exporter.get_aggregated(evaluation_responses, config.evaluation)
+    eval_export = exporter.get_aggregated(evaluation_responses, config.evaluation)
+    eval_export_simplified = {
+        stage: {
+            name.split("@")[0]: round(value, 3)
+            for name, value in metrics.items()
+            if name.endswith("@1000")
+        }
+        for stage, metrics in eval_export.items()
+    }
+
     durations = {
         "retrieval": retrieval_duration,
         "adaptation": adaptation_duration,
@@ -209,15 +218,18 @@ def main(config: CbrConfig) -> None:
     }
 
     print_json(
-        exporter.get_json({"evaluations": evals_aggregated, "durations": durations})
+        exporter.get_json(
+            {"evaluations": eval_export_simplified, "durations": durations}
+        )
     )
 
     eval_dump = {
         "durations": durations,
-        "aggregated": evals_aggregated,
+        "aggregated": eval_export_simplified,
         "individual": [
             exporter.get_named_individual(eval) for eval in evaluation_responses
         ],
     }
 
     exporter.get_file(eval_dump, output_folder / "eval.json")
+    exporter.get_dataframe(eval_export, output_folder / "eval.csv")

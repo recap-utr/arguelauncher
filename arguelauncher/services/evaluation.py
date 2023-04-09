@@ -35,7 +35,7 @@ def cutoffs(limit: t.Optional[int]) -> list[int]:
     if limit is None:
         return [1000]
 
-    return [limit // 4, limit // 2, 1000]
+    return list(sorted({limit // 10, limit // 5, limit // 3, limit // 2, 1000}))
 
 
 def cutoff_metrics(metrics: t.Iterable[str], limit: t.Optional[int]) -> list[str]:
