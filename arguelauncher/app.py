@@ -25,7 +25,26 @@ from arguelauncher.services.evaluation import (
 )
 from arguelauncher.services.retrieval import retrieve
 
-GRPC_OPTIONS = [("grpc.lb_policy_name", "round_robin")]
+
+def randomize_grpc_address(address: str) -> str:
+    """Randomize the order of the grpc addresses to speed up initial load balancing"""
+
+    if address.startswith("ipv4:"):
+        addr = address.removeprefix("ipv4:")
+        hosts = addr.split(",")
+        random.shuffle(hosts)
+        random_addr = ",".join(hosts)
+
+        return f"ipv4:{random_addr}"
+
+    return address
+
+
+def grpc_channel(address: str) -> grpc.Channel:
+    return grpc.insecure_channel(
+        randomize_grpc_address(address), [("grpc.lb_policy_name", "round_robin")]
+    )
+
 
 log = logging.getLogger(__name__)
 
@@ -40,16 +59,14 @@ def main(config: CbrConfig) -> None:
 
     adaptation_client = (
         adaptation_pb2_grpc.AdaptationServiceStub(
-            grpc.insecure_channel(config.adaptation.address, GRPC_OPTIONS)
+            grpc_channel(config.adaptation.address)
         )
         if config.adaptation
         else None
     )
 
     retrieval_client = (
-        retrieval_pb2_grpc.RetrievalServiceStub(
-            grpc.insecure_channel(config.retrieval.address, GRPC_OPTIONS)
-        )
+        retrieval_pb2_grpc.RetrievalServiceStub(grpc_channel(config.retrieval.address))
         if config.retrieval
         else None
     )
