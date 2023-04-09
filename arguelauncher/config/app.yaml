@@ -6,7 +6,7 @@ defaults:
 hydra:
   verbose: arguelauncher
   sweep:
-    subdir: ${hydra.job.override_dirname}
+    subdir: ${hydra.job.num} # ${hydra.job.override_dirname} does not work for long file names
 #   mode: MULTIRUN
 #   sweeper:
 #     params:
