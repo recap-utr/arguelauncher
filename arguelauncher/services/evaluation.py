@@ -203,7 +203,9 @@ class AdaptationEvaluation(AbstractEvaluation):
     ) -> None:
         # TODO: We only evaluate the first cbrEvaluation
         generalizations = query.userdata["cbrEvaluations"][0].get("generalizations")
-        assert generalizations is not None
+
+        if generalizations is None:
+            raise ValueError("No adaptations are present in user benchmark.")
 
         self.system_response = system_response
         self.user_adaptations = {

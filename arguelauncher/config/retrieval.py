@@ -27,5 +27,6 @@ class RetrievalConfig(DataClassDictMixin):
     scheme_handling: RetrievalSchemeHandling = RetrievalSchemeHandling.BINARY
     mapping_algorithm: RetrievalMappingAlgorithm = RetrievalMappingAlgorithm.ASTAR_1
     mac: bool = True
-    fac: bool = False
+    fac: bool = True
     limit: int = 10
+    astar_queue_limit: int = 1000

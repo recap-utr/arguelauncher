@@ -39,5 +39,6 @@ def retrieve(
     req.scheme_handling = config.retrieval.scheme_handling.value
     req.mapping_algorithm = config.retrieval.mapping_algorithm.value[0]
     req.mapping_algorithm_variant = config.retrieval.mapping_algorithm.value[1]
+    req.extras.update({"astar_queue_limit": config.retrieval.astar_queue_limit})
 
     return req, client.Retrieve(req)

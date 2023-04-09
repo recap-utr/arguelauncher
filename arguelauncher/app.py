@@ -90,6 +90,7 @@ def main(config: CbrConfig) -> None:
         for file in Path(config.path.requests).glob(config.path.requests_pattern)
     }
     ordered_requests = list(requests.values())
+    request_keys = list(requests.keys())
 
     # RETRIEVAL
     log.info("Retrieving...")
@@ -105,7 +106,9 @@ def main(config: CbrConfig) -> None:
     log.info("Adapting...")
 
     for i, res in enumerate(retrieval_responses):
-        log.debug(f"Adapting query {i+1}/{len(retrieval_responses)}...")
+        log.debug(
+            f"Adapting query {request_keys[i]} ({i+1}/{len(retrieval_responses)})..."
+        )
         _, adapt_response = adapt(
             adaptation_client,
             cases,
@@ -124,8 +127,6 @@ def main(config: CbrConfig) -> None:
     log.info("Evaluating...")
 
     if config.evaluation:
-        request_keys = list(requests.keys())
-
         for i, (retrieval_response, adaptation_response) in enumerate(
             zip(retrieval_responses, adaptation_responses)
         ):
