@@ -82,11 +82,13 @@ def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> pd.DataFrame
 
     data: defaultdict[str, list[t.Any]] = defaultdict(list)
 
-    for (eval_stage, stage_metrics), k in itertools.product(eval.items(), k_values):
+    for (eval_stage, stage_metrics), k in itertools.product(
+        eval.items(), sorted(k_values)
+    ):
         data["stage"].append(eval_stage)
         data["k"].append(k)
 
-        for metric_name in metric_names:
+        for metric_name in sorted(metric_names):
             metric_value = stage_metrics.get(f"{metric_name}@{k}", float("nan"))
             data[metric_name].append(metric_value)
 
