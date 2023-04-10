@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import itertools
 import logging
 import random
 import typing as t
@@ -13,7 +14,8 @@ from arg_services.cbr.v1beta import adaptation_pb2_grpc, retrieval_pb2_grpc
 from arg_services.cbr.v1beta.adaptation_pb2 import AdaptResponse
 from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
-from rich import print_json
+from rich import print, print_json
+from rich.table import Table
 
 from arguelauncher import model
 from arguelauncher.config.cbr import CbrConfig
@@ -210,6 +212,11 @@ def main(config: CbrConfig) -> None:
         }
         for stage, metrics in eval_export.items()
     }
+    available_metrics = set(
+        itertools.chain.from_iterable(
+            stage.keys() for stage in eval_export_simplified.values()
+        )
+    )
 
     durations = {
         "retrieval": retrieval_duration,
@@ -217,11 +224,21 @@ def main(config: CbrConfig) -> None:
         "evaluation": evaluation_duration,
     }
 
-    print_json(
-        exporter.get_json(
-            {"evaluations": eval_export_simplified, "durations": durations}
-        )
-    )
+    print("Durations:")
+    print_json(exporter.get_json(durations))
+
+    table = Table()
+
+    table.add_column("Stage")
+
+    for metric in available_metrics:
+        table.add_column(metric, justify="right")
+
+    for stage, metrics in eval_export_simplified.items():
+        metric_values = (str(metrics.get(name, "NaN")) for name in available_metrics)
+        table.add_row(stage, *metric_values)
+
+    print(table)
 
     eval_dump = {
         "durations": durations,
