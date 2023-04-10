@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import itertools
 import logging
 import random
 import typing as t
@@ -15,7 +14,6 @@ from arg_services.cbr.v1beta.adaptation_pb2 import AdaptResponse
 from hydra.core.config_store import ConfigStore
 from hydra.core.hydra_config import HydraConfig
 from rich import print, print_json
-from rich.table import Table
 
 from arguelauncher import model
 from arguelauncher.config.cbr import CbrConfig
@@ -204,19 +202,6 @@ def main(config: CbrConfig) -> None:
     # EXPORT
     log.info("Exporting...")
     eval_export = exporter.get_aggregated(evaluation_responses, config.evaluation)
-    eval_export_simplified = {
-        stage: {
-            name.split("@")[0]: round(value, 3)
-            for name, value in metrics.items()
-            if name.endswith("@1000")
-        }
-        for stage, metrics in eval_export.items()
-    }
-    available_metrics = set(
-        itertools.chain.from_iterable(
-            stage.keys() for stage in eval_export_simplified.values()
-        )
-    )
 
     durations = {
         "retrieval": retrieval_duration,
@@ -227,26 +212,15 @@ def main(config: CbrConfig) -> None:
     print("Durations:")
     print_json(exporter.get_json(durations))
 
-    table = Table()
-
-    table.add_column("Stage")
-
-    for metric in available_metrics:
-        table.add_column(metric, justify="right")
-
-    for stage, metrics in eval_export_simplified.items():
-        metric_values = (str(metrics.get(name, "NaN")) for name in available_metrics)
-        table.add_row(stage, *metric_values)
-
-    print(table)
+    eval_df = exporter.get_dataframe(eval_export, output_folder / "eval.csv")
+    print(exporter.df_to_table(eval_df))
 
     eval_dump = {
         "durations": durations,
-        "aggregated": eval_export_simplified,
+        "aggregated": eval_export,
         "individual": [
             exporter.get_named_individual(eval) for eval in evaluation_responses
         ],
     }
 
     exporter.get_file(eval_dump, output_folder / "eval.json")
-    exporter.get_dataframe(eval_export, output_folder / "eval.csv")

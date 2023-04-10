@@ -1,5 +1,6 @@
 from __future__ import absolute_import, annotations
 
+import itertools
 import json
 import logging
 import statistics
@@ -8,6 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
+from rich.table import Table
 
 from arguelauncher.config.cbr import EvaluationConfig
 from arguelauncher.services.evaluation import AbstractEvaluation
@@ -67,19 +69,65 @@ def get_file(
         f.write(get_json(value))
 
 
-def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> None:
+def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> pd.DataFrame:
+    metrics_at_k: set[str] = set().union(*[stage.keys() for stage in eval.values()])
+    k_values: set[int] = set()
+    metric_names: set[str] = set()
+
+    for metric_at_k in metrics_at_k:
+        metric_name, k = metric_at_k.split("@")
+
+        k_values.add(int(k))
+        metric_names.add(metric_name)
+
     data: defaultdict[str, list[t.Any]] = defaultdict(list)
 
-    for eval_stage, stage_metrics in eval.items():
-        for metric_k, metric_value in stage_metrics.items():
-            metric_name, k = metric_k.split("@")
+    for (eval_stage, stage_metrics), k in itertools.product(eval.items(), k_values):
+        data["stage"].append(eval_stage)
+        data["k"].append(k)
 
-            data["stage"].append(eval_stage)
-            data["metric"].append(metric_name)
-            data["k"].append(int(k))
-            data["value"].append(metric_value)
+        for metric_name in metric_names:
+            metric_value = stage_metrics.get(f"{metric_name}@{k}", float("nan"))
+            data[metric_name].append(metric_value)
 
     df = pd.DataFrame(data)
+    df.sort_values(["stage", "k"], ascending=True, inplace=True)
 
     with path.open("w") as f:
         df.to_csv(f, index=False, encoding="utf-8")
+
+    return df
+
+
+def df_to_table(
+    df: pd.DataFrame,
+    show_index: bool = False,
+    index_name: t.Optional[str] = None,
+) -> Table:
+    """Convert a pandas.DataFrame obj into a rich.Table obj.
+    https://gist.github.com/neelabalan/33ab34cf65b43e305c3f12ec6db05938
+
+    Args:
+        df: A Pandas DataFrame to be converted to a rich Table.
+        show_index: Add a column with a row count to the table. Defaults to True.
+        index_name: The column name to give to the index column. Defaults to None, showing no value.
+    Returns:
+        The rich Table instance, populated with the DataFrame values."""
+
+    rich_table = Table()
+
+    if show_index:
+        index_name = str(index_name) if index_name else ""
+        rich_table.add_column(index_name)
+
+    for column in df.columns:
+        rich_table.add_column(str(column))
+
+    for index, value_list in enumerate(df.values.tolist()):
+        row = [str(index)] if show_index else []
+        row += [
+            "{:.3f}".format(x) if isinstance(x, float) else str(x) for x in value_list
+        ]
+        rich_table.add_row(*row)
+
+    return rich_table
