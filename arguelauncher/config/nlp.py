@@ -12,6 +12,7 @@ class NlpConfig(Enum):
     DEFAULT = auto()
     SBERT = auto()
     USE = auto()
+    OPENAI = auto()
 
 
 NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
@@ -35,6 +36,16 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
             nlp_pb2.EmbeddingModel(
                 model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_TENSORFLOW_HUB,
                 model_name="https://tfhub.dev/google/universal-sentence-encoder/4",
+                pooling_type=nlp_pb2.Pooling.POOLING_MEAN,
+            )
+        ],
+    ),
+    NlpConfig.OPENAI: nlp_pb2.NlpConfig(
+        language="en",
+        embedding_models=[
+            nlp_pb2.EmbeddingModel(
+                model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_OPENAI,
+                model_name="text-embedding-ada-002",
                 pooling_type=nlp_pb2.Pooling.POOLING_MEAN,
             )
         ],
