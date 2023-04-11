@@ -41,7 +41,7 @@ class RelatedConceptWeight(DataClassDictMixin):
 class LoaderConfig(DataClassDictMixin):
     heuristic_pos_tags: tuple[str, ...] = ("NOUN", "VERB")
     enforce_node_paths: bool = True
-    filter_synsets_based_on_nodes: bool = True
+    synset_similarity_threshold: float = 0.0
 
 
 @dataclass
@@ -72,15 +72,15 @@ class AdaptationConfig(DataClassDictMixin):
 class ScoreConfig(DataClassDictMixin):
     related_atoms_semantic_similarity: float = 0
     related_lemmas_semantic_similarity: float = 0
-    keyword_weight: float = 0
-    hypernym_proximity: float = 0
-    major_claim_proximity: float = 0
+    keyword_weight: float = 1
+    hypernym_proximity: float = 1
+    major_claim_proximity: float = 1
     synsets_path_similarity: float = 0
     synsets_semantic_similarity: float = 1
     synsets_wup_similarity: float = 1
     query_atoms_semantic_similarity: float = 0
     query_lemma_semantic_similarity: float = 0
-    query_synsets_semantic_similarity: float = 0
+    query_synsets_semantic_similarity: float = 1
 
 
 @dataclass
