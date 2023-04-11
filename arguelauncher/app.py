@@ -43,7 +43,12 @@ def randomize_grpc_address(address: str) -> str:
 
 def grpc_channel(address: str) -> grpc.Channel:
     return grpc.insecure_channel(
-        randomize_grpc_address(address), [("grpc.lb_policy_name", "round_robin")]
+        randomize_grpc_address(address),
+        [
+            ("grpc.lb_policy_name", "round_robin"),
+            ("grpc.max_send_message_length", -1),
+            ("grpc.max_receive_message_length", -1),
+        ],
     )
 
 
