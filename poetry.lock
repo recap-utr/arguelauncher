@@ -2624,14 +2624,14 @@ cffi = {version = "*", markers = "implementation_name == \"pypy\""}
 
 [[package]]
 name = "ranx"
-version = "0.3.6"
+version = "0.3.7"
 description = "ranx: A Blazing-Fast Python Library for Ranking Evaluation, Comparison, and Fusion"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ranx-0.3.6-py3-none-any.whl", hash = "sha256:cf8456e0dae8f5b3b22266b85e44cde4366a695acf4ccf7213d94a41b3f24b6a"},
-    {file = "ranx-0.3.6.tar.gz", hash = "sha256:ffc4630343006473913ab87e2c5d0e8a278d5dfb0da7132c94c81465ae6067b1"},
+    {file = "ranx-0.3.7-py3-none-any.whl", hash = "sha256:567fc36d74840250bdc5eebd3136d837d08026851de0034d39cd3d46f03e0a85"},
+    {file = "ranx-0.3.7.tar.gz", hash = "sha256:676a5796c96a985f7242dd401401fd9269737410a9348fc8b97ad7f36962e954"},
 ]
 
 [package.dependencies]
