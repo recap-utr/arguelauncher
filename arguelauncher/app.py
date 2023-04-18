@@ -166,6 +166,40 @@ def main(config: CbrConfig) -> None:
                         f"Cannot evaluate adaptation of query {request_keys[i]}: {e}"
                     )
 
+                cases_adapted = {
+                    name: model.Graph.from_protobuf(res.case, cases[name].userdata)
+                    for name, res in adaptation_response.cases.items()
+                }
+
+                _, retrieve_responses_adapted = retrieve(
+                    retrieval_client,
+                    cases_adapted,
+                    [current_request],
+                    config,
+                )
+
+                retrieve_response_adapted = retrieve_responses_adapted.query_responses[
+                    0
+                ]
+
+                if ranking := retrieve_response_adapted.semantic_ranking:
+                    eval_map["mac_adapted"] = RetrievalEvaluation(
+                        cases,
+                        current_request,
+                        config.evaluation,
+                        ranking,
+                        retrieval_limit,
+                    )
+
+                if ranking := retrieve_response_adapted.structural_ranking:
+                    eval_map["fac_adapted"] = RetrievalEvaluation(
+                        cases,
+                        current_request,
+                        config.evaluation,
+                        ranking,
+                        retrieval_limit,
+                    )
+
             evaluation_responses.append(eval_map)
 
     evaluation_duration = timer() - evaluation_start
