@@ -73,8 +73,8 @@ class ScoreConfig(DataClassDictMixin):
     related_atoms_semantic_similarity: float = 0
     related_lemmas_semantic_similarity: float = 0
     keyword_weight: float = 1
-    hypernym_proximity: float = 1
-    major_claim_proximity: float = 1
+    hypernym_proximity: float = 0
+    major_claim_proximity: float = 0
     synsets_path_similarity: float = 0
     synsets_semantic_similarity: float = 1
     synsets_wup_similarity: float = 1

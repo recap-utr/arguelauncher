@@ -85,12 +85,13 @@ def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> pd.DataFrame
     for (eval_stage, stage_metrics), k in itertools.product(
         eval.items(), sorted(k_values)
     ):
-        data["stage"].append(eval_stage)
-        data["k"].append(k)
+        if any(stage_metrics.get(f"{metric_name}@{k}") for metric_name in sorted(metric_names)):
+            data["stage"].append(eval_stage)
+            data["k"].append(k)
 
-        for metric_name in sorted(metric_names):
-            metric_value = stage_metrics.get(f"{metric_name}@{k}", float("nan"))
-            data[metric_name].append(metric_value)
+            for metric_name in sorted(metric_names):
+                metric_value = stage_metrics.get(f"{metric_name}@{k}", float("nan"))
+                data[metric_name].append(metric_value)
 
     df = pd.DataFrame(data)
     df.sort_values(["stage", "k"], ascending=True, inplace=True)
