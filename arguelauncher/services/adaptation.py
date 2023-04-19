@@ -44,7 +44,7 @@ def adapt(
     client: t.Optional[adaptation_pb2_grpc.AdaptationServiceStub],
     cases: t.Mapping[str, model.Graph],
     query: model.Graph,
-    retrieval: t.Optional[retrieval_pb2.QueryResponse],
+    retrieval: retrieval_pb2.QueryResponse,
     config: CbrConfig,
 ) -> tuple[adaptation_pb2.AdaptRequest, adaptation_pb2.AdaptResponse]:
     """Calculate similarity of queries and case base"""
@@ -52,11 +52,7 @@ def adapt(
     if config.adaptation is None or client is None:
         return adaptation_pb2.AdaptRequest(), adaptation_pb2.AdaptResponse()
 
-    ranking = (
-        (retrieval.structural_ranking or retrieval.semantic_ranking)
-        if retrieval
-        else None
-    )
+    ranking = retrieval.structural_ranking or retrieval.semantic_ranking
 
     # TODO: We only evaluate the first cbrEvaluation
     rules_per_case = query.userdata["cbrEvaluations"][0].get("generalizations")
@@ -82,6 +78,7 @@ def adapt(
         cases=proto_cases,
         query=query.to_protobuf(config.graph2text),
         nlp_config=NLP_CONFIG[config.nlp_config],
+        direction=adaptation_pb2.Direction.DIRECTION_GENERALIZATION,
     )
     req.extras.update(_get_extras(config.adaptation).to_dict())
 

@@ -7,12 +7,13 @@ import typing as t
 from abc import ABC, abstractmethod
 
 import ranx
-from arg_services.cbr.v1beta import adaptation_pb2, retrieval_pb2
+from arg_services.cbr.v1beta import adaptation_pb2, retrieval_pb2, retrieval_pb2_grpc
 from google.protobuf.json_format import MessageToDict
 from typing_extensions import override
 
 from arguelauncher import model
-from arguelauncher.config.cbr import EvaluationConfig
+from arguelauncher.config.cbr import CbrConfig, EvaluationConfig
+from arguelauncher.config.nlp import NLP_CONFIG
 from arguelauncher.model import parse_rules
 
 logger = logging.getLogger(__name__)
@@ -192,6 +193,8 @@ class RetrievalEvaluation(AbstractEvaluation):
 class AdaptationEvaluation(AbstractEvaluation):
     user_adaptations: dict[str, list[adaptation_pb2.Rule]]
     system_response: t.Mapping[str, adaptation_pb2.AdaptedCaseResponse]
+    retrieval_client: retrieval_pb2_grpc.RetrievalServiceStub
+    cbr_config: CbrConfig
 
     @override
     def __init__(
@@ -200,6 +203,8 @@ class AdaptationEvaluation(AbstractEvaluation):
         query: model.Graph,
         config: EvaluationConfig,
         system_response: t.Mapping[str, adaptation_pb2.AdaptedCaseResponse],
+        retrieval_client: retrieval_pb2_grpc.RetrievalServiceStub,
+        cbr_config: CbrConfig,
     ) -> None:
         # TODO: We only evaluate the first cbrEvaluation
         generalizations = query.userdata["cbrEvaluations"][0].get("generalizations")
@@ -208,6 +213,9 @@ class AdaptationEvaluation(AbstractEvaluation):
             raise ValueError("No adaptations are present in user benchmark.")
 
         self.system_response = system_response
+        self.retrieval_client = retrieval_client
+        self.cbr_config = cbr_config
+
         self.user_adaptations = {
             casename: list(parse_rules(adaptations))
             for casename, adaptations in generalizations.items()
@@ -234,11 +242,59 @@ class AdaptationEvaluation(AbstractEvaluation):
         super().__init__(cases, query, config, qrels, run, limit=None)
 
     @property
+    def adapted_cases(self) -> dict[str, model.Graph]:
+        return {
+            name: model.Graph.from_protobuf(
+                res.case, self.original_cases[name].userdata
+            )
+            for name, res in self.system_response.items()
+        }
+
+    @property
+    def original_cases(self) -> dict[str, model.Graph]:
+        return {name: self.cases[name] for name in self.system_response.keys()}
+
+    @property
     def system_adaptations(self) -> dict[str, list[adaptation_pb2.Rule]]:
         return {
             casename: list(result.applied_rules)
             for casename, result in self.system_response.items()
         }
+
+    @override
+    def compute_metrics(self) -> dict[str, float]:
+        metrics = super().compute_metrics()
+
+        original_similarities = self.retrieval_client.Similarities(
+            retrieval_pb2.SimilaritiesRequest(
+                cases=[
+                    case.to_protobuf(self.cbr_config.graph2text)
+                    for case in self.original_cases.values()
+                ],
+                query=self.query.to_protobuf(self.cbr_config.graph2text),
+                nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
+            )
+        ).similarities
+
+        adapted_similarities = self.retrieval_client.Similarities(
+            retrieval_pb2.SimilaritiesRequest(
+                cases=[
+                    case.to_protobuf(self.cbr_config.graph2text)
+                    for case in self.adapted_cases.values()
+                ],
+                query=self.query.to_protobuf(self.cbr_config.graph2text),
+                nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
+            )
+        ).similarities
+
+        metrics["similarity-original@99"] = statistics.mean(
+            x.semantic_similarity for x in original_similarities
+        )
+        metrics["similarity-adapted@99"] = statistics.mean(
+            x.semantic_similarity for x in adapted_similarities
+        )
+
+        return metrics
 
     @override
     def get_results(self) -> t.Any:

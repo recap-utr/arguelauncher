@@ -77,6 +77,8 @@ def main(config: CbrConfig) -> None:
         else None
     )
 
+    assert retrieval_client
+
     log.info("Initializing...")
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 
@@ -160,6 +162,8 @@ def main(config: CbrConfig) -> None:
                         current_request,
                         config.evaluation,
                         adaptation_response.cases,
+                        retrieval_client,
+                        config,
                     )
                 except ValueError as e:
                     log.info(

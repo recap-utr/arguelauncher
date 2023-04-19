@@ -94,7 +94,11 @@ def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> pd.DataFrame
                 data[metric_name].append(metric_value)
 
     df = pd.DataFrame(data)
-    df.sort_values(["stage", "k"], ascending=True, inplace=True)
+
+    try:
+        df.sort_values(["stage", "k"], ascending=True, inplace=True)
+    except KeyError:
+        pass
 
     with path.open("w") as f:
         df.to_csv(f, index=False, encoding="utf-8")

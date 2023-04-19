@@ -28,7 +28,11 @@ def retrieve(
         nlp_config=NLP_CONFIG[config.nlp_config],
     )
 
-    if config.retrieval is None or client is None:
+    if (
+        config.retrieval is None
+        or client is None
+        or (not config.retrieval.mac and not config.retrieval.fac)
+    ):
         return req, retrieval_pb2.RetrieveResponse(
             query_responses=[retrieval_pb2.QueryResponse() for _ in queries]
         )
