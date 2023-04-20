@@ -1198,6 +1198,21 @@ files = [
 data = ["language-data (>=1.1,<2.0)"]
 
 [[package]]
+name = "lemminflect"
+version = "0.2.3"
+description = "A python module for English lemmatization and inflection."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "lemminflect-0.2.3-py3-none-any.whl", hash = "sha256:1cf470efa783733ca5654cc1a6ee1de774e59031e61bf6210467625e84a8cf1c"},
+    {file = "lemminflect-0.2.3.tar.gz", hash = "sha256:5e125ab381b4156245a8c0b5bcdccb899950ead96546eb9735ea8641636a1af6"},
+]
+
+[package.dependencies]
+numpy = "*"
+
+[[package]]
 name = "llvmlite"
 version = "0.40.0rc1"
 description = "lightweight wrapper around basic LLVM functionality"
@@ -3451,4 +3466,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10, <3.12"
-content-hash = "7c1d2b9b2d1a9a0e6a2e3314e442f04e19fecf32306f988f3ed69db9e1c5cda0"
+content-hash = "64a5d9d1eebb65d463ee7662cb52461af6c5e1f06b6b9080c69a3c49e695f95a"

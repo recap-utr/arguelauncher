@@ -4,6 +4,7 @@ import itertools
 import logging
 import statistics
 import typing as t
+import warnings
 from abc import ABC, abstractmethod
 
 import ranx
@@ -32,18 +33,21 @@ RANX_METRICS: tuple[str, ...] = (
 )
 
 
-def cutoffs(limit: t.Optional[int]) -> list[int]:
-    if limit is None:
-        limit = 99
-
-    return list(filter(lambda x: x <= limit, [1, 3, 5, 10, 25, 50, 99]))
+def cutoffs(limit: t.Optional[int]) -> list[t.Optional[int]]:
+    return [
+        cutoff for cutoff in [1, 3, 5, 10, 25, 50] if limit is None or cutoff <= limit
+    ] + [None]
 
 
 def cutoff_metrics(metrics: t.Iterable[str], limit: t.Optional[int]) -> list[str]:
     return [
-        metric if k is None else f"{metric}@{k}"
+        metric_name(metric, k)
         for metric, k in itertools.product(metrics, cutoffs(limit))
     ]
+
+
+def metric_name(name: str, k: t.Optional[int]) -> str:
+    return name if k is None else f"{name}@{k}"
 
 
 class AbstractEvaluation(ABC):
@@ -52,7 +56,7 @@ class AbstractEvaluation(ABC):
     config: EvaluationConfig
     qrels: ranx.Qrels
     run: ranx.Run
-    limit: t.Optional[int]
+    limit: int | None
 
     def __init__(
         self,
@@ -66,25 +70,36 @@ class AbstractEvaluation(ABC):
         self.cases = cases
         self.query = query
         self.config = config
-        self.qrels = ranx.Qrels(qrels)
-        # self.qrels.set_relevance_level(self.config.relevance_levels)
-        self.run = ranx.Run(run)
         self.limit = limit
 
+        try:
+            self.qrels = ranx.Qrels(qrels)
+            self.run = ranx.Run(run)
+        except ValueError:
+            self.qrels = ranx.Qrels()
+            self.run = ranx.Run()
+
+    @property
+    def benchmark(self) -> model.CbrEvaluation:
+        return self.query.userdata["cbrEvaluations"][0]
+
     def compute_metrics(self) -> dict[str, float]:
-        eval_results = ranx.evaluate(
-            self.qrels,
-            self.run,
-            metrics=cutoff_metrics(RANX_METRICS, self.limit),
-        )
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+
+            eval_results = ranx.evaluate(
+                self.qrels,
+                self.run,
+                metrics=cutoff_metrics(RANX_METRICS, self.limit),
+            )
 
         assert isinstance(eval_results, dict)
 
         for k in cutoffs(self.limit):
             correctness, completeness = self.correctness_completeness(k)
 
-            eval_results[f"correctness@{k}"] = correctness
-            eval_results[f"completeness@{k}"] = completeness
+            eval_results[metric_name("correctness", k)] = correctness
+            eval_results[metric_name("completeness", k)] = completeness
 
         return eval_results
 
@@ -92,16 +107,23 @@ class AbstractEvaluation(ABC):
     def get_results(self) -> t.Any:
         ...
 
-    def correctness_completeness(self, k: int) -> t.Tuple[float, float]:
+    def correctness_completeness(self, k: t.Optional[int]) -> tuple[float, float]:
         keys = set(self.qrels.keys()).intersection(set(self.run.keys()))
 
         scores = [self._correctness_completeness(key, k) for key in keys]
         correctness_scores = [score[0] for score in scores]
         completeness_scores = [score[1] for score in scores]
 
-        return statistics.mean(correctness_scores), statistics.mean(completeness_scores)
+        try:
+            return statistics.mean(correctness_scores), statistics.mean(
+                completeness_scores
+            )
+        except statistics.StatisticsError:
+            return float("nan"), float("nan")
 
-    def _correctness_completeness(self, key: str, k: int) -> t.Tuple[float, float]:
+    def _correctness_completeness(
+        self, key: str, k: t.Optional[int]
+    ) -> t.Tuple[float, float]:
         qrel = self.qrels[key]
         sorted_run = sorted(self.run[key].items(), key=lambda x: x[1], reverse=True)
         run_ranking = {x[0]: i + 1 for i, x in enumerate(sorted_run[:k])}
@@ -183,7 +205,7 @@ class RetrievalEvaluation(AbstractEvaluation):
         metrics = super().compute_metrics()
 
         for k in cutoffs(self.limit):
-            metrics[f"similarity@{k}"] = statistics.mean(
+            metrics[metric_name("similarity", k)] = statistics.mean(
                 case.similarity for case in self.retrieved_cases[:k]
             )
 
@@ -236,9 +258,6 @@ class AdaptationEvaluation(AbstractEvaluation):
             if len(system_response[casename].applied_rules) > 0
         }
 
-        if not run:
-            raise ValueError("Computed adaptations are not present in user benchmark.")
-
         super().__init__(cases, query, config, qrels, run, limit=None)
 
     @property
@@ -287,10 +306,10 @@ class AdaptationEvaluation(AbstractEvaluation):
             )
         ).similarities
 
-        metrics["similarity-original@99"] = statistics.mean(
+        metrics["sim_original"] = statistics.mean(
             x.semantic_similarity for x in original_similarities
         )
-        metrics["similarity-adapted@99"] = statistics.mean(
+        metrics["sim_adapted"] = statistics.mean(
             x.semantic_similarity for x in adapted_similarities
         )
 
@@ -300,10 +319,14 @@ class AdaptationEvaluation(AbstractEvaluation):
     def get_results(self) -> t.Any:
         out = {}
 
-        for key, value in self.system_response.items():
+        for case_name, res in self.system_response.items():
             if not self.config.export_graph:
-                value.case.graph.Clear()
+                res.case.graph.Clear()
 
-            out[key] = MessageToDict(value)
+            out[case_name] = MessageToDict(res)
+            out[case_name]["expertRules"] = {
+                key: [MessageToDict(value) for value in values]
+                for key, values in self.user_adaptations.items()
+            }
 
         return out

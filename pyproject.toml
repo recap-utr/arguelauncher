@@ -18,6 +18,7 @@ scikit-learn = "^1.2.2"
 ranx = "^0.3.7"
 numba = { version = "^0.57.0rc1", allow-prereleases = true }
 pandas = "^2.0.0"
+lemminflect = "^0.2.3"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.22.0"

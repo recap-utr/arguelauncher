@@ -3,6 +3,7 @@ from __future__ import absolute_import, annotations
 import itertools
 import json
 import logging
+import math
 import statistics
 import typing as t
 from collections import defaultdict
@@ -23,6 +24,7 @@ def get_individual(
     return {
         "metrics": eval.compute_metrics(),
         "results": eval.get_results(),
+        "benchmark": eval.benchmark,
     }
 
 
@@ -32,7 +34,7 @@ def get_named_individual(eval_map: t.Mapping[str, AbstractEvaluation]):
 
 # One eval_map for each query
 def get_aggregated(
-    eval_maps: t.Iterable[t.Mapping[str, AbstractEvaluation]],
+    eval_maps: t.Mapping[str, t.Mapping[str, AbstractEvaluation]],
     config: t.Optional[EvaluationConfig] = None,
 ) -> dict[str, dict[str, float]]:
     if config is None:
@@ -42,10 +44,11 @@ def get_aggregated(
         lambda: defaultdict(list)
     )
 
-    for eval_map in eval_maps:
+    for eval_map in eval_maps.values():
         for eval_name, eval_value in eval_map.items():
             for metric_name, metric_value in eval_value.compute_metrics().items():
-                metrics[eval_name][metric_name].append(metric_value)
+                if not math.isnan(metric_value):
+                    metrics[eval_name][metric_name].append(metric_value)
 
     return {
         eval_name: {
@@ -69,29 +72,40 @@ def get_file(
         f.write(get_json(value))
 
 
+def get_metric_name(name: str, k: int | float) -> str:
+    return name if isinstance(k, float) else f"{name}@{k}"
+
+
 def get_dataframe(eval: dict[str, dict[str, float]], path: Path) -> pd.DataFrame:
     metrics_at_k: set[str] = set().union(*[stage.keys() for stage in eval.values()])
-    k_values: set[int] = set()
-    metric_names: set[str] = set()
+    k_values: set[int | float] = {float("inf")}
+    metrics: set[str] = set()
 
     for metric_at_k in metrics_at_k:
-        metric_name, k = metric_at_k.split("@")
+        if "@" in metric_at_k:
+            metric, k = metric_at_k.split("@")
 
-        k_values.add(int(k))
-        metric_names.add(metric_name)
+            k_values.add(int(k))
+            metrics.add(metric)
+        else:
+            metrics.add(metric_at_k)
 
     data: defaultdict[str, list[t.Any]] = defaultdict(list)
 
     for (eval_stage, stage_metrics), k in itertools.product(
         eval.items(), sorted(k_values)
     ):
-        if any(stage_metrics.get(f"{metric_name}@{k}") for metric_name in sorted(metric_names)):
+        metrics_dict = {
+            metric: stage_metrics.get(get_metric_name(metric, k), float("nan"))
+            for metric in sorted(metrics)
+        }
+
+        if not all(math.isnan(value) for value in metrics_dict.values()):
             data["stage"].append(eval_stage)
             data["k"].append(k)
 
-            for metric_name in sorted(metric_names):
-                metric_value = stage_metrics.get(f"{metric_name}@{k}", float("nan"))
-                data[metric_name].append(metric_value)
+            for key, value in metrics_dict.items():
+                data[key].append(value)
 
     df = pd.DataFrame(data)
 
@@ -132,9 +146,16 @@ def df_to_table(
 
     for index, value_list in enumerate(df.values.tolist()):
         row = [str(index)] if show_index else []
-        row += [
-            "{:.3f}".format(x) if isinstance(x, float) else str(x) for x in value_list
-        ]
+
+        for val in value_list:
+            if isinstance(val, float):
+                if val < 1:
+                    row.append("{:.3f}".format(val))
+                else:
+                    row.append("{:.0f}".format(val))
+            else:
+                row.append(str(val))
+
         rich_table.add_row(*row)
 
     return rich_table

@@ -129,7 +129,7 @@ def main(config: CbrConfig) -> None:
 
     # EVALUATION
     evaluation_start = timer()
-    evaluation_responses: list[dict[str, AbstractEvaluation]] = []
+    evaluation_responses: dict[str, dict[str, AbstractEvaluation]] = {}
     retrieval_limit = config.retrieval.limit if config.retrieval else None
     log.info("Evaluating...")
 
@@ -156,19 +156,14 @@ def main(config: CbrConfig) -> None:
                 )
 
             if adaptation_response.cases:
-                try:
-                    eval_map["adaptation"] = AdaptationEvaluation(
-                        cases,
-                        current_request,
-                        config.evaluation,
-                        adaptation_response.cases,
-                        retrieval_client,
-                        config,
-                    )
-                except ValueError as e:
-                    log.info(
-                        f"Cannot evaluate adaptation of query {request_keys[i]}: {e}"
-                    )
+                eval_map["adaptation"] = AdaptationEvaluation(
+                    cases,
+                    current_request,
+                    config.evaluation,
+                    adaptation_response.cases,
+                    retrieval_client,
+                    config,
+                )
 
                 cases_adapted = {
                     name: model.Graph.from_protobuf(res.case, cases[name].userdata)
@@ -204,7 +199,7 @@ def main(config: CbrConfig) -> None:
                         retrieval_limit,
                     )
 
-            evaluation_responses.append(eval_map)
+            evaluation_responses[request_keys[i]] = eval_map
 
     evaluation_duration = timer() - evaluation_start
 
@@ -227,9 +222,10 @@ def main(config: CbrConfig) -> None:
     eval_dump = {
         "durations": durations,
         "aggregated": eval_export,
-        "individual": [
-            exporter.get_named_individual(eval) for eval in evaluation_responses
-        ],
+        "individual": {
+            key: exporter.get_named_individual(value)
+            for key, value in evaluation_responses.items()
+        },
     }
 
     exporter.get_file(eval_dump, output_folder / "eval.json")

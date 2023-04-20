@@ -3,27 +3,68 @@ from __future__ import annotations
 import typing as t
 
 import arguebuf
+import lemminflect
 from arg_services.cbr.v1beta import adaptation_pb2
+from arg_services.cbr.v1beta.adaptation_pb2 import Pos
 from arg_services.cbr.v1beta.model_pb2 import AnnotatedGraph
 from typing_extensions import Required, TypedDict
 
 from arguelauncher.algorithms.graph2text import Graph2TextAlgorithm, graph2text
 
-pos2proto = {
-    "noun": adaptation_pb2.Pos.POS_NOUN,
-    "verb": adaptation_pb2.Pos.POS_VERB,
-    "adjective": adaptation_pb2.Pos.POS_ADJECTIVE,
-    "adverb": adaptation_pb2.Pos.POS_ADVERB,
+ADDITIONAL_INFLECTIONS: dict[str, dict[str, list[str]]] = {
+    "prove": {"VPN": ["proven"]},
+    "journey": {"NN": ["journeying"]},
+    "relinquish": {"NN": ["relinquishing"]},
+    "impedimentum": {"NNS": ["impedimenta"]},
+    "be": {"VBZ": ["'s"]},
+}
+
+
+def _lemma_parts(text: str, pos: str) -> t.List[str]:
+    tokens: t.List[str] = text.split()
+
+    *parts, tail = tokens
+    tail_lemmas = t.cast(tuple[str, ...], lemminflect.getLemma(tail, pos))
+
+    if len(tail_lemmas) > 0:
+        parts.append(tail_lemmas[0])
+
+    return parts
+
+
+def inflect(text: str, pos: str, lemmatize: bool) -> str:
+    """Return the lemma of `text` and all inflected forms of `text`."""
+
+    lemma_parts = _lemma_parts(text, pos) if lemmatize else text.split()
+
+    return " ".join(lemma_parts)
+
+
+pos2proto: dict[str, Pos.ValueType] = {
+    "noun": Pos.POS_NOUN,
+    "verb": Pos.POS_VERB,
+    "adjective": Pos.POS_ADJECTIVE,
+    "adverb": Pos.POS_ADVERB,
+}
+
+pos2spacy: dict[Pos.ValueType, str] = {
+    Pos.POS_NOUN: "NOUN",
+    Pos.POS_VERB: "VERB",
+    Pos.POS_ADJECTIVE: "ADJ",
+    Pos.POS_ADVERB: "ADV",
 }
 
 AdaptationRules = dict[str, str]
 
 
 def str2concept(text: str) -> adaptation_pb2.Concept:
-    concept = text.strip().lower()
-    lemma, pos = concept.split("/")
+    text = text.strip().lower()
+    raw_lemma, raw_pos = text.split("/")
 
-    return adaptation_pb2.Concept(lemma=lemma, pos=pos2proto[pos])
+    pos = pos2proto[raw_pos]
+    lemma = inflect(raw_lemma, pos2spacy[pos], lemmatize=True)
+
+    return adaptation_pb2.Concept(lemma=lemma, pos=pos)
 
 
 def parse_rules(rules: AdaptationRules) -> t.Iterator[adaptation_pb2.Rule]:
