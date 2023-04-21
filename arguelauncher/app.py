@@ -228,4 +228,7 @@ def main(config: CbrConfig) -> None:
         },
     }
 
-    exporter.get_file(eval_dump, output_folder / "eval.json")
+    eval_file = output_folder / "eval.json"
+    exporter.get_file(eval_dump, eval_file)
+
+    print(f"Exported evaluation to '{eval_file}'")

@@ -326,9 +326,10 @@ class AdaptationEvaluation(AbstractEvaluation):
                 res.case.graph.Clear()
 
             out[case_name] = MessageToDict(res)
-            out[case_name]["expertRules"] = {
-                key: [MessageToDict(value) for value in values]
-                for key, values in self.user_adaptations.items()
-            }
+
+            if expert_rules := self.user_adaptations.get(case_name):
+                out[case_name]["expertRules"] = [
+                    MessageToDict(rule) for rule in expert_rules
+                ]
 
         return out
