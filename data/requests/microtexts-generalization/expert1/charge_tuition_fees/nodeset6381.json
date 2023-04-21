@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f4753ce4-a927-11ed-bb11-acde48001122": {
+    "454010c0-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should all educational institution for learning in Germany charge fees independent from time periods?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.849624Z",
-        "updated": "2023-02-10T09:47:38.849624Z"
+        "created": "2023-04-21T09:52:47.342834Z",
+        "updated": "2023-04-21T09:52:47.342834Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.849594Z",
-    "updated": "2023-02-10T09:47:38.849594Z"
+    "created": "2023-04-21T09:52:47.342795Z",
+    "updated": "2023-04-21T09:52:47.342795Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6381": {
-            "studies/noun": "learning/noun",
-            "studying/verb": "learning/verb",
-            "durations/noun": "time periods/noun",
-            "tuition fees/noun": "fees/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6388": 2.0,
           "microtexts/nodeset6407": 2.0,
@@ -34,6 +26,26 @@
           "microtexts/nodeset6456": 2.0,
           "microtexts/nodeset6447": 2.0,
           "microtexts/nodeset6394": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6381": [
+            {
+              "target": "learning/verb",
+              "source": "studying/verb"
+            },
+            {
+              "target": "learning/noun",
+              "source": "studies/noun"
+            },
+            {
+              "target": "fees/noun",
+              "source": "tuition fees/noun"
+            },
+            {
+              "target": "time periods/noun",
+              "source": "durations/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

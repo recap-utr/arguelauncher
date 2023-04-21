@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f47c7b6c-a927-11ed-bb11-acde48001122": {
+    "454704b6-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should Germany introduce the corporal punishment or should wrongdoers have the possibility to make compensations for their inhuman treatments?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.897100Z",
-        "updated": "2023-02-10T09:47:38.897100Z"
+        "created": "2023-04-21T09:52:47.388398Z",
+        "updated": "2023-04-21T09:52:47.388398Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.897067Z",
-    "updated": "2023-02-10T09:47:38.897067Z"
+    "created": "2023-04-21T09:52:47.388365Z",
+    "updated": "2023-04-21T09:52:47.388365Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6391": {
-            "chance/noun": "possibility/noun",
-            "capital punishment/noun": "corporal punishment/noun",
-            "atrocity/noun": "inhuman treatment/noun",
-            "amends/noun": "compensations/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6366": 2.0,
           "microtexts/nodeset6464": 2.0,
@@ -36,6 +28,26 @@
           "microtexts/nodeset6450": 2.0,
           "microtexts/nodeset6383": 2.0,
           "microtexts/nodeset6391": 1.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6391": [
+            {
+              "target": "corporal punishment/noun",
+              "source": "capital punishment/noun"
+            },
+            {
+              "target": "compensations/noun",
+              "source": "amends/noun"
+            },
+            {
+              "target": "inhuman treatment/noun",
+              "source": "atrocity/noun"
+            },
+            {
+              "target": "possibility/noun",
+              "source": "chance/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

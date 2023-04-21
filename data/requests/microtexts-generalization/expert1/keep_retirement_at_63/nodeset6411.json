@@ -1,40 +1,24 @@
 {
   "nodes": {
-    "f47446cc-a927-11ed-bb11-acde48001122": {
+    "453ee628-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should the statutory ending period remain at 63 time periods in the future despite the regular payment spendings or should it be dependent on the activities of social groups?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.843325Z",
-        "updated": "2023-02-10T09:47:38.843325Z"
+        "created": "2023-04-21T09:52:47.335186Z",
+        "updated": "2023-04-21T09:52:47.335186Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.843292Z",
-    "updated": "2023-02-10T09:47:38.843292Z"
+    "created": "2023-04-21T09:52:47.335155Z",
+    "updated": "2023-04-21T09:52:47.335155Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6411": {
-            "costs/noun": "spendings/noun",
-            "wear/noun": "unsoundness/noun",
-            "personnel/noun": "social group/noun",
-            "birth rate/noun": "magnitude relation/noun",
-            "age/noun": "period/noun",
-            "professions/noun": "social group/noun",
-            "years/noun": "time periods/noun",
-            "workload/noun": "activity/noun",
-            "occupations/noun": "activities/noun",
-            "healthcare/noun": "activity/noun",
-            "retirement/noun": "ending/noun",
-            "pension/noun": "regular payment/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6409": 2.0,
           "microtexts/nodeset6382": 2.0,
@@ -42,6 +26,58 @@
           "microtexts/nodeset6411": 1.0,
           "microtexts/nodeset6421": 2.0,
           "microtexts/nodeset6461": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6411": [
+            {
+              "target": "time periods/noun",
+              "source": "years/noun"
+            },
+            {
+              "target": "period/noun",
+              "source": "age/noun"
+            },
+            {
+              "target": "ending/noun",
+              "source": "retirement/noun"
+            },
+            {
+              "target": "activity/noun",
+              "source": "workload/noun"
+            },
+            {
+              "target": "activities/noun",
+              "source": "occupations/noun"
+            },
+            {
+              "target": "activity/noun",
+              "source": "healthcare/noun"
+            },
+            {
+              "target": "regular payment/noun",
+              "source": "pension/noun"
+            },
+            {
+              "target": "magnitude relation/noun",
+              "source": "birth rate/noun"
+            },
+            {
+              "target": "social group/noun",
+              "source": "professions/noun"
+            },
+            {
+              "target": "social group/noun",
+              "source": "personnel/noun"
+            },
+            {
+              "target": "unsoundness/noun",
+              "source": "wear/noun"
+            },
+            {
+              "target": "spendings/noun",
+              "source": "costs/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

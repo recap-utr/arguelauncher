@@ -1,36 +1,42 @@
 {
   "nodes": {
-    "f461865e-a927-11ed-bb11-acde48001122": {
+    "452d38f6-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Would dispending birth control devices without medical advice result in a decrease of contraceptives?\n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.720439Z",
-        "updated": "2023-02-10T09:47:38.720439Z"
+        "created": "2023-04-21T09:52:47.219341Z",
+        "updated": "2023-04-21T09:52:47.219341Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.720388Z",
-    "updated": "2023-02-10T09:47:38.720388Z"
+    "created": "2023-04-21T09:52:47.219310Z",
+    "updated": "2023-04-21T09:52:47.219310Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6402": {
-            "condoms/noun": " contraceptives/noun",
-            "morning-after pill/noun": "  birth control device/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6368": 2.0,
           "microtexts/nodeset6397": 2.0,
           "microtexts/nodeset6406": 2.0,
           "microtexts/nodeset6414": 2.0,
           "microtexts/nodeset6402": 1.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6402": [
+            {
+              "target": "  birth control device/noun",
+              "source": "morning-after pill/noun"
+            },
+            {
+              "target": " contraceptives/noun",
+              "source": "condoms/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

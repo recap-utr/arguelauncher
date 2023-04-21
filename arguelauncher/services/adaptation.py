@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 def build_case_request(
     case_key: str,
     cases: t.Mapping[str, model.Graph],
-    rules_per_case: t.Optional[dict[str, dict[str, str]]],
+    rules_per_case: t.Optional[dict[str, model.AdaptationRules]],
     config: CbrConfig,
 ) -> adaptation_pb2.AdaptedCaseRequest:
     assert config.adaptation is not None
@@ -30,12 +30,8 @@ def build_case_request(
     )
 
     if rules_per_case and (case_rules := rules_per_case.get(case_key)):
-        parsed_rules = list(model.parse_rules(case_rules))
-
-        if rules_limit is not None:
-            parsed_rules = parsed_rules[:rules_limit]
-
-        proto_case.rules.extend(parsed_rules)
+        parsed_rules = model.parse_rules(case_rules)
+        proto_case.rules.extend(parsed_rules[:rules_limit])
 
     return proto_case
 

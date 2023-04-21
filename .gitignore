@@ -229,7 +229,6 @@ poetry.toml
 *.ipynb
 
 /.idea/
-/parse_adaptations.py
 /data/private/
 
 # Config

@@ -1,31 +1,24 @@
 {
   "nodes": {
-    "f4787e04-a927-11ed-bb11-acde48001122": {
+    "454313ba-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should markets and retail stores generally be allowed to open on holidays and rest days?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.870952Z",
-        "updated": "2023-02-10T09:47:38.870952Z"
+        "created": "2023-04-21T09:52:47.362569Z",
+        "updated": "2023-04-21T09:52:47.362569Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.870921Z",
-    "updated": "2023-02-10T09:47:38.870921Z"
+    "created": "2023-04-21T09:52:47.362534Z",
+    "updated": "2023-04-21T09:52:47.362534Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6462": {
-            "shopping centres/noun": "retail stores/noun",
-            "supermarkets/noun": "markets/noun",
-            "day off/noun": "time off/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6451": 2.0,
           "microtexts/nodeset6457": 2.0,
@@ -35,6 +28,22 @@
           "microtexts/nodeset6419": 2.0,
           "microtexts/nodeset6449": 2.0,
           "microtexts/nodeset6462": 1.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6462": [
+            {
+              "target": "retail stores/noun",
+              "source": "shopping centres/noun"
+            },
+            {
+              "target": "markets/noun",
+              "source": "supermarkets/noun"
+            },
+            {
+              "target": "time off/noun",
+              "source": "day off/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

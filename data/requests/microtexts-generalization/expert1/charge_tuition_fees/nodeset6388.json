@@ -1,34 +1,24 @@
 {
   "nodes": {
-    "f4759f36-a927-11ed-bb11-acde48001122": {
+    "454068e0-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should all educational institutions for higher cognitive process in Germany charge fees from enrollees or are there other possible acts?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.852143Z",
-        "updated": "2023-02-10T09:47:38.852143Z"
+        "created": "2023-04-21T09:52:47.345087Z",
+        "updated": "2023-04-21T09:52:47.345087Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.852106Z",
-    "updated": "2023-02-10T09:47:38.852106Z"
+    "created": "2023-04-21T09:52:47.345052Z",
+    "updated": "2023-04-21T09:52:47.345052Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6388": {
-            "means/noun": "acts/noun",
-            "circumstances/noun": "conditions/noun",
-            "studying/noun": "higher cognitive process/noun",
-            "students/noun": "enrollees/noun",
-            "universities/noun": "educational institution/noun",
-            "tuition fees/noun": "fees/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6388": 1.0,
           "microtexts/nodeset6407": 2.0,
@@ -36,6 +26,34 @@
           "microtexts/nodeset6456": 2.0,
           "microtexts/nodeset6447": 2.0,
           "microtexts/nodeset6394": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6388": [
+            {
+              "target": "educational institution/noun",
+              "source": "universities/noun"
+            },
+            {
+              "target": "higher cognitive process/noun",
+              "source": "studying/noun"
+            },
+            {
+              "target": "enrollees/noun",
+              "source": "students/noun"
+            },
+            {
+              "target": "conditions/noun",
+              "source": "circumstances/noun"
+            },
+            {
+              "target": "fees/noun",
+              "source": "tuition fees/noun"
+            },
+            {
+              "target": "acts/noun",
+              "source": "means/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

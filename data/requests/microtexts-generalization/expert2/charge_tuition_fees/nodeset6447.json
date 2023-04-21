@@ -1,33 +1,24 @@
 {
   "nodes": {
-    "f45e174e-a927-11ed-bb11-acde48001122": {
+    "452ac8b4-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should German citizens finance the awards of educational institutions of other citizens?\n\n\n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.697928Z",
-        "updated": "2023-02-10T09:47:38.697928Z"
+        "created": "2023-04-21T09:52:47.203361Z",
+        "updated": "2023-04-21T09:52:47.203361Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.697881Z",
-    "updated": "2023-02-10T09:47:38.697881Z"
+    "created": "2023-04-21T09:52:47.203328Z",
+    "updated": "2023-04-21T09:52:47.203328Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6447": {
-            "degree/noun": " award/noun",
-            "academic/noun": " professional/noun",
-            "student/noun": " individual/noun",
-            "tuition fees/noun": " fees/noun",
-            "universities/noun": " educational institutions/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6388": 2.0,
           "microtexts/nodeset6407": 2.0,
@@ -35,6 +26,30 @@
           "microtexts/nodeset6456": 2.0,
           "microtexts/nodeset6447": 1.0,
           "microtexts/nodeset6394": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6447": [
+            {
+              "target": " fees/noun",
+              "source": "tuition fees/noun"
+            },
+            {
+              "target": " educational institutions/noun",
+              "source": "universities/noun"
+            },
+            {
+              "target": " individual/noun",
+              "source": "student/noun"
+            },
+            {
+              "target": " professional/noun",
+              "source": "academic/noun"
+            },
+            {
+              "target": " award/noun",
+              "source": "degree/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

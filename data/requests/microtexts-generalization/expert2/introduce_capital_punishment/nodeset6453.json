@@ -1,30 +1,24 @@
 {
   "nodes": {
-    "f465e9a6-a927-11ed-bb11-acde48001122": {
+    "45310b7a-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should Germany introduce corporal punishment?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.749189Z",
-        "updated": "2023-02-10T09:47:38.749189Z"
+        "created": "2023-04-21T09:52:47.244396Z",
+        "updated": "2023-04-21T09:52:47.244396Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.749157Z",
-    "updated": "2023-02-10T09:47:38.749157Z"
+    "created": "2023-04-21T09:52:47.244352Z",
+    "updated": "2023-04-21T09:52:47.244352Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6453": {
-            "death penalty/noun": " corporal punishment/noun",
-            "capital punishment/noun": " corporal punishment/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6366": 2.0,
           "microtexts/nodeset6464": 2.0,
@@ -34,6 +28,18 @@
           "microtexts/nodeset6450": 2.0,
           "microtexts/nodeset6383": 2.0,
           "microtexts/nodeset6391": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6453": [
+            {
+              "target": " corporal punishment/noun",
+              "source": "death penalty/noun"
+            },
+            {
+              "target": " corporal punishment/noun",
+              "source": "capital punishment/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

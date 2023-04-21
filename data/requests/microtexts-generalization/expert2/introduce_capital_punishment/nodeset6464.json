@@ -1,31 +1,24 @@
 {
   "nodes": {
-    "f465928a-a927-11ed-bb11-acde48001122": {
+    "4530aefa-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should we re-introduce corporal punishment to prevent murder?\n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.746960Z",
-        "updated": "2023-02-10T09:47:38.746960Z"
+        "created": "2023-04-21T09:52:47.242023Z",
+        "updated": "2023-04-21T09:52:47.242023Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.746927Z",
-    "updated": "2023-02-10T09:47:38.746927Z"
+    "created": "2023-04-21T09:52:47.241992Z",
+    "updated": "2023-04-21T09:52:47.241992Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6464": {
-            "murderer/noun": " criminal/noun",
-            "death penalty/noun": " corporal punishment/noun",
-            "capital punishment/noun": " corporal punishment/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6366": 2.0,
           "microtexts/nodeset6464": 1.0,
@@ -35,6 +28,22 @@
           "microtexts/nodeset6450": 2.0,
           "microtexts/nodeset6383": 2.0,
           "microtexts/nodeset6391": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6464": [
+            {
+              "target": " corporal punishment/noun",
+              "source": "death penalty/noun"
+            },
+            {
+              "target": " corporal punishment/noun",
+              "source": "capital punishment/noun"
+            },
+            {
+              "target": " criminal/noun",
+              "source": "murderer/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

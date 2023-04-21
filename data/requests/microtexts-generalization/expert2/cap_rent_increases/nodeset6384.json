@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f45984c2-a927-11ed-bb11-acde48001122": {
+    "45263eb6-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Would imposing a limit on cost increases when changing payers work? \n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.667965Z",
-        "updated": "2023-02-10T09:47:38.667965Z"
+        "created": "2023-04-21T09:52:47.173612Z",
+        "updated": "2023-04-21T09:52:47.173612Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.667906Z",
-    "updated": "2023-02-10T09:47:38.667906Z"
+    "created": "2023-04-21T09:52:47.173581Z",
+    "updated": "2023-04-21T09:52:47.173581Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6384": {
-            "rent/noun": " cost/noun",
-            "size/noun": " property/noun",
-            "residences/noun": " location/noun",
-            "flat/noun": " object/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6455": 2.0,
           "microtexts/nodeset6465": 2.0,
@@ -34,6 +26,26 @@
           "microtexts/nodeset6377": 2.0,
           "microtexts/nodeset6384": 1.0,
           "microtexts/nodeset6418": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6384": [
+            {
+              "target": " cost/noun",
+              "source": "rent/noun"
+            },
+            {
+              "target": " location/noun",
+              "source": "residences/noun"
+            },
+            {
+              "target": " object/noun",
+              "source": "flat/noun"
+            },
+            {
+              "target": " property/noun",
+              "source": "size/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

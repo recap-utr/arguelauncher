@@ -54,8 +54,6 @@ pos2spacy: dict[Pos.ValueType, str] = {
     Pos.POS_ADVERB: "ADV",
 }
 
-AdaptationRules = dict[str, str]
-
 
 def str2concept(text: str) -> adaptation_pb2.Concept:
     text = text.strip().lower()
@@ -67,11 +65,12 @@ def str2concept(text: str) -> adaptation_pb2.Concept:
     return adaptation_pb2.Concept(lemma=lemma, pos=pos)
 
 
-def parse_rules(rules: AdaptationRules) -> t.Iterator[adaptation_pb2.Rule]:
-    for source, target in rules.items():
-        yield adaptation_pb2.Rule(
-            source=str2concept(source), target=str2concept(target)
-        )
+class AdaptationRule(TypedDict):
+    source: str
+    target: str
+
+
+AdaptationRules = list[AdaptationRule]
 
 
 class CbrEvaluation(TypedDict, total=False):
@@ -83,6 +82,15 @@ class CbrEvaluation(TypedDict, total=False):
 
 class Userdata(TypedDict):
     cbrEvaluations: list[CbrEvaluation]
+
+
+def parse_rules(rules: AdaptationRules) -> list[adaptation_pb2.Rule]:
+    return [
+        adaptation_pb2.Rule(
+            source=str2concept(rule["source"]), target=str2concept(rule["target"])
+        )
+        for rule in rules
+    ]
 
 
 class Graph(arguebuf.Graph):

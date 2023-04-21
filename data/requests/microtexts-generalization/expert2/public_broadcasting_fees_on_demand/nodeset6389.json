@@ -1,31 +1,24 @@
 {
   "nodes": {
-    "f45575a8-a927-11ed-bb11-acde48001122": {
+    "4522dc80-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should we all require all households equally to pay TV and radio costs?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.641378Z",
-        "updated": "2023-02-10T09:47:38.641378Z"
+        "created": "2023-04-21T09:52:47.151438Z",
+        "updated": "2023-04-21T09:52:47.151438Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.641331Z",
-    "updated": "2023-02-10T09:47:38.641331Z"
+    "created": "2023-04-21T09:52:47.151405Z",
+    "updated": "2023-04-21T09:52:47.151405Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6389": {
-            "broadcaster/noun": " communicator/noun",
-            "broadcasting/noun": " telecommunication/noun",
-            "license fee/noun": " cost/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6454": 2.0,
           "microtexts/nodeset6446": 2.0,
@@ -34,6 +27,22 @@
           "microtexts/nodeset6470": 2.0,
           "microtexts/nodeset6364": 2.0,
           "microtexts/nodeset6374": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6389": [
+            {
+              "target": " cost/noun",
+              "source": "license fee/noun"
+            },
+            {
+              "target": " telecommunication/noun",
+              "source": "broadcasting/noun"
+            },
+            {
+              "target": " communicator/noun",
+              "source": "broadcaster/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f47d27c4-a927-11ed-bb11-acde48001122": {
+    "4547bdd4-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should Germany introduce corporal punishment for wrongdoings to wrongdoers instead of putting them into penal facilities?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.901514Z",
-        "updated": "2023-02-10T09:47:38.901514Z"
+        "created": "2023-04-21T09:52:47.393146Z",
+        "updated": "2023-04-21T09:52:47.393146Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.901477Z",
-    "updated": "2023-02-10T09:47:38.901477Z"
+    "created": "2023-04-21T09:52:47.393092Z",
+    "updated": "2023-04-21T09:52:47.393092Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6469": {
-            "death penalty/noun": "corporal punishment/noun",
-            "criminals/noun": "wrongdoers/noun",
-            "prisons/noun": "penal facility/noun",
-            "crimes/noun": "wrongdoings/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6366": 2.0,
           "microtexts/nodeset6464": 2.0,
@@ -36,6 +28,26 @@
           "microtexts/nodeset6450": 2.0,
           "microtexts/nodeset6383": 2.0,
           "microtexts/nodeset6391": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6469": [
+            {
+              "target": "corporal punishment/noun",
+              "source": "death penalty/noun"
+            },
+            {
+              "target": "wrongdoers/noun",
+              "source": "criminals/noun"
+            },
+            {
+              "target": "wrongdoings/noun",
+              "source": "crimes/noun"
+            },
+            {
+              "target": "penal facility/noun",
+              "source": "prisons/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f45300fc-a927-11ed-bb11-acde48001122": {
+    "45207616-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should insurance companies cover care with non-medical practitioners."
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.625266Z",
-        "updated": "2023-02-10T09:47:38.625266Z"
+        "created": "2023-04-21T09:52:47.135709Z",
+        "updated": "2023-04-21T09:52:47.135709Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.625239Z",
-    "updated": "2023-02-10T09:47:38.625239Z"
+    "created": "2023-04-21T09:52:47.135677Z",
+    "updated": "2023-04-21T09:52:47.135677Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6386": {
-            "relief/noun": " pleasure/noun",
-            "treatment/noun": " care/noun",
-            "health insurance/noun": " insurance/noun",
-            "medication/noun": " drug/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6385": 2.0,
           "microtexts/nodeset6412": 2.0,
@@ -36,6 +28,26 @@
           "microtexts/nodeset6386": 1.0,
           "microtexts/nodeset6378": 2.0,
           "microtexts/nodeset6373": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6386": [
+            {
+              "target": " insurance/noun",
+              "source": "health insurance/noun"
+            },
+            {
+              "target": " drug/noun",
+              "source": "medication/noun"
+            },
+            {
+              "target": " care/noun",
+              "source": "treatment/noun"
+            },
+            {
+              "target": " pleasure/noun",
+              "source": "relief/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

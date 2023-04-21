@@ -1,33 +1,24 @@
 {
   "nodes": {
-    "f47c25d6-a927-11ed-bb11-acde48001122": {
+    "4546aa3e-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should Germany introduce corporal punishment for wrongdoings as legal act for wrongdoers for changing the state of others or should not it touch beingnesses?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.894908Z",
-        "updated": "2023-02-10T09:47:38.894908Z"
+        "created": "2023-04-21T09:52:47.386083Z",
+        "updated": "2023-04-21T09:52:47.386083Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.894878Z",
-    "updated": "2023-02-10T09:47:38.894878Z"
+    "created": "2023-04-21T09:52:47.386048Z",
+    "updated": "2023-04-21T09:52:47.386048Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6453": {
-            "lives/noun": "beingnesses/noun",
-            "capital punishment/noun": "corporal punishment/noun",
-            "criminals/noun": "wrongdoers/noun",
-            "murder/noun": "change of state/noun",
-            "crimes/noun": "wrongdoings/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6366": 2.0,
           "microtexts/nodeset6464": 2.0,
@@ -37,6 +28,30 @@
           "microtexts/nodeset6450": 2.0,
           "microtexts/nodeset6383": 2.0,
           "microtexts/nodeset6391": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6453": [
+            {
+              "target": "corporal punishment/noun",
+              "source": "capital punishment/noun"
+            },
+            {
+              "target": "change of state/noun",
+              "source": "murder/noun"
+            },
+            {
+              "target": "wrongdoers/noun",
+              "source": "criminals/noun"
+            },
+            {
+              "target": "wrongdoings/noun",
+              "source": "crimes/noun"
+            },
+            {
+              "target": "beingnesses/noun",
+              "source": "lives/noun"
+            }
+          ]
         },
         "name": "expert1"
       }

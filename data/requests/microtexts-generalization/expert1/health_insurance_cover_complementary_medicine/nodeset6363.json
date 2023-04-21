@@ -1,32 +1,24 @@
 {
   "nodes": {
-    "f469b554-a927-11ed-bb11-acde48001122": {
+    "4534b284-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should (public) insurance include aid in each practice of medicine?"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.774069Z",
-        "updated": "2023-02-10T09:47:38.774069Z"
+        "created": "2023-04-21T09:52:47.268328Z",
+        "updated": "2023-04-21T09:52:47.268328Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.774024Z",
-    "updated": "2023-02-10T09:47:38.774024Z"
+    "created": "2023-04-21T09:52:47.268297Z",
+    "updated": "2023-04-21T09:52:47.268297Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6363": {
-            "cover/verb": "include/verb",
-            "treatment/noun": "aid/noun",
-            "complementary medicine/noun": "practice of medicine/noun",
-            "Health insurance/noun": "insurance/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6385": 2.0,
           "microtexts/nodeset6412": 2.0,
@@ -36,6 +28,26 @@
           "microtexts/nodeset6386": 2.0,
           "microtexts/nodeset6378": 2.0,
           "microtexts/nodeset6373": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6363": [
+            {
+              "target": "practice of medicine/noun",
+              "source": "complementary medicine/noun"
+            },
+            {
+              "target": "insurance/noun",
+              "source": "Health insurance/noun"
+            },
+            {
+              "target": "aid/noun",
+              "source": "treatment/noun"
+            },
+            {
+              "target": "include/verb",
+              "source": "cover/verb"
+            }
+          ]
         },
         "name": "expert1"
       }

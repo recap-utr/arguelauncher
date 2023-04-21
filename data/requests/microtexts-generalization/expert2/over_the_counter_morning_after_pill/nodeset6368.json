@@ -1,36 +1,42 @@
 {
   "nodes": {
-    "f461e7de-a927-11ed-bb11-acde48001122": {
+    "452d791a-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should professional advice by a medical practitioner be required to be prescribed a birth control device?\n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.722938Z",
-        "updated": "2023-02-10T09:47:38.722938Z"
+        "created": "2023-04-21T09:52:47.220982Z",
+        "updated": "2023-04-21T09:52:47.220982Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.722866Z",
-    "updated": "2023-02-10T09:47:38.722866Z"
+    "created": "2023-04-21T09:52:47.220952Z",
+    "updated": "2023-04-21T09:52:47.220952Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6368": {
-            "doctor/noun": "  medical practitioner/noun",
-            "morning-after pill/noun": " birth control device/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6368": 1.0,
           "microtexts/nodeset6397": 2.0,
           "microtexts/nodeset6406": 2.0,
           "microtexts/nodeset6414": 2.0,
           "microtexts/nodeset6402": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6368": [
+            {
+              "target": " birth control device/noun",
+              "source": "morning-after pill/noun"
+            },
+            {
+              "target": "  medical practitioner/noun",
+              "source": "doctor/noun"
+            }
+          ]
         },
         "name": "expert2"
       }

@@ -1,31 +1,24 @@
 {
   "nodes": {
-    "f4526fac-a927-11ed-bb11-acde48001122": {
+    "451fd72e-e02a-11ed-8fa7-acde48001122": {
       "atom": {
         "text": "Should companies cover care with complementary drugs?\n"
       },
       "metadata": {
-        "created": "2023-02-10T09:47:38.621546Z",
-        "updated": "2023-02-10T09:47:38.621546Z"
+        "created": "2023-04-21T09:52:47.131642Z",
+        "updated": "2023-04-21T09:52:47.131642Z"
       }
     }
   },
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
+  "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-02-10T09:47:38.621518Z",
-    "updated": "2023-02-10T09:47:38.621518Z"
+    "created": "2023-04-21T09:52:47.131608Z",
+    "updated": "2023-04-21T09:52:47.131608Z"
   },
   "userdata": {
     "cbrEvaluations": [
       {
-        "generalizations": {
-          "microtexts/nodeset6363": {
-            "treatment/noun": " care/noun",
-            "therapies/noun": " medical aid/noun",
-            "medicine/noun": " drug/noun"
-          }
-        },
         "ranking": {
           "microtexts/nodeset6385": 2.0,
           "microtexts/nodeset6412": 2.0,
@@ -35,6 +28,22 @@
           "microtexts/nodeset6386": 2.0,
           "microtexts/nodeset6378": 2.0,
           "microtexts/nodeset6373": 2.0
+        },
+        "generalizations": {
+          "microtexts/nodeset6363": [
+            {
+              "target": " drug/noun",
+              "source": "medicine/noun"
+            },
+            {
+              "target": " care/noun",
+              "source": "treatment/noun"
+            },
+            {
+              "target": " medical aid/noun",
+              "source": "therapies/noun"
+            }
+          ]
         },
         "name": "expert2"
       }
