@@ -313,6 +313,8 @@ class AdaptationEvaluation(AbstractEvaluation):
             x.semantic_similarity for x in adapted_similarities
         )
 
+        metrics["adaptedRatio"] = 1 if self.run.size > 0 else 0
+
         return metrics
 
     @override
