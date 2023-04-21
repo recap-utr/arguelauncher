@@ -25,14 +25,14 @@ files = [
 
 [[package]]
 name = "arg-services"
-version = "1.3.0"
+version = "1.3.1"
 description = "gRPC definitions for microservice-based argumentation machines"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "arg_services-1.3.0-py3-none-any.whl", hash = "sha256:8e8e65a9e1e3027173a3692f51ac6cdd87e511ed2cdcdde303ca17e48ec8cfef"},
-    {file = "arg_services-1.3.0.tar.gz", hash = "sha256:7c4535ff47fb484de1652ca10693a7f3a5af3becc833438d9ebfedbb99f5cdda"},
+    {file = "arg_services-1.3.1-py3-none-any.whl", hash = "sha256:a7a70917b7c9241f30bedc874aa56dcf6f95398c603e3d4c833555a4fba4386e"},
+    {file = "arg_services-1.3.1.tar.gz", hash = "sha256:9d7048a969611dbe911353bb9fb0e6734f3ed9b6df40feb05864d9742bf2379d"},
 ]
 
 [package.dependencies]
@@ -2413,14 +2413,14 @@ email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "pygments"
-version = "2.15.0"
+version = "2.15.1"
 description = "Pygments is a syntax highlighting package written in Python."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "Pygments-2.15.0-py3-none-any.whl", hash = "sha256:77a3299119af881904cd5ecd1ac6a66214b6e9bed1f2db16993b54adede64094"},
-    {file = "Pygments-2.15.0.tar.gz", hash = "sha256:f7e36cffc4c517fbc252861b9a6e4644ca0e5abadf9a113c72d1358ad09b9500"},
+    {file = "Pygments-2.15.1-py3-none-any.whl", hash = "sha256:db2db3deb4b4179f399a09054b023b6a586b76499d36965813c71aa8ed7b5fd1"},
+    {file = "Pygments-2.15.1.tar.gz", hash = "sha256:8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"},
 ]
 
 [package.extras]
@@ -2886,14 +2886,14 @@ stats = ["scipy (>=1.3)", "statsmodels (>=0.10)"]
 
 [[package]]
 name = "setuptools"
-version = "67.6.1"
+version = "67.7.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "setuptools-67.6.1-py3-none-any.whl", hash = "sha256:e728ca814a823bf7bf60162daf9db95b93d532948c4c0bea762ce62f60189078"},
-    {file = "setuptools-67.6.1.tar.gz", hash = "sha256:257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a"},
+    {file = "setuptools-67.7.0-py3-none-any.whl", hash = "sha256:888be97fde8cc3afd60f7784e678fa29ee13c4e5362daa7104a93bba33646c50"},
+    {file = "setuptools-67.7.0.tar.gz", hash = "sha256:b7e53a01c6c654d26d2999ee033d8c6125e5fa55f03b7b193f937ae7ac999f22"},
 ]
 
 [package.extras]
@@ -3466,4 +3466,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10, <3.12"
-content-hash = "64a5d9d1eebb65d463ee7662cb52461af6c5e1f06b6b9080c69a3c49e695f95a"
+content-hash = "d2030fff9054d3dacb0ae90c9805e49640295627c44d75af40ee676db062738c"
