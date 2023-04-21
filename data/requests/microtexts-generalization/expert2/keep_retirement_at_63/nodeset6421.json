@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "45297810-e02a-11ed-8fa7-acde48001122": {
+    "d7efe7be-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Should the age of termination for workers be set to 63 years?"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.194745Z",
-        "updated": "2023-04-21T09:52:47.194745Z"
+        "created": "2023-04-21T13:38:47.841189Z",
+        "updated": "2023-04-21T13:38:47.841189Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.194707Z",
-    "updated": "2023-04-21T09:52:47.194707Z"
+    "created": "2023-04-21T13:38:47.841146Z",
+    "updated": "2023-04-21T13:38:47.841146Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -30,15 +30,15 @@
         "generalizations": {
           "microtexts/nodeset6421": [
             {
-              "target": " termination/noun",
+              "target": "termination/noun",
               "source": "retirement/noun"
             },
             {
-              "target": " leave/verb",
+              "target": "leave/verb",
               "source": "retire/verb"
             },
             {
-              "target": " worker/noun",
+              "target": "worker/noun",
               "source": "employee/noun"
             }
           ]

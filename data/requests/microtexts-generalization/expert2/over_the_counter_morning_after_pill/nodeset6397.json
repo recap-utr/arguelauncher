@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "452cef54-e02a-11ed-8fa7-acde48001122": {
+    "d7f41a50-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Should all birth control devices ought to be available over-the-counter in pharmacies?"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.217456Z",
-        "updated": "2023-04-21T09:52:47.217456Z"
+        "created": "2023-04-21T13:38:47.868698Z",
+        "updated": "2023-04-21T13:38:47.868698Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.217423Z",
-    "updated": "2023-04-21T09:52:47.217423Z"
+    "created": "2023-04-21T13:38:47.868658Z",
+    "updated": "2023-04-21T13:38:47.868658Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -29,15 +29,15 @@
         "generalizations": {
           "microtexts/nodeset6397": [
             {
-              "target": "  birth control device/noun",
+              "target": "birth control device/noun",
               "source": "morning-after pill/noun"
             },
             {
-              "target": " devices/noun",
+              "target": "devices/noun",
               "source": "contraceptives/noun"
             },
             {
-              "target": " condition/noun",
+              "target": "condition/noun",
               "source": "pregnancy/noun"
             }
           ]

@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "4522dc80-e02a-11ed-8fa7-acde48001122": {
+    "d7e7b8fa-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Should we all require all households equally to pay TV and radio costs?"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.151438Z",
-        "updated": "2023-04-21T09:52:47.151438Z"
+        "created": "2023-04-21T13:38:47.787561Z",
+        "updated": "2023-04-21T13:38:47.787561Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.151405Z",
-    "updated": "2023-04-21T09:52:47.151405Z"
+    "created": "2023-04-21T13:38:47.787524Z",
+    "updated": "2023-04-21T13:38:47.787524Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -31,15 +31,15 @@
         "generalizations": {
           "microtexts/nodeset6389": [
             {
-              "target": " cost/noun",
+              "target": "cost/noun",
               "source": "license fee/noun"
             },
             {
-              "target": " telecommunication/noun",
+              "target": "telecommunication/noun",
               "source": "broadcasting/noun"
             },
             {
-              "target": " communicator/noun",
+              "target": "communicator/noun",
               "source": "broadcaster/noun"
             }
           ]

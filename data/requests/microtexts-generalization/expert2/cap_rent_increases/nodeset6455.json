@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "4526f95a-e02a-11ed-8fa7-acde48001122": {
+    "d7ece6b8-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "How do we enable owners to make a profit while also protecting new payers entering a contract?\n"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.178393Z",
-        "updated": "2023-04-21T09:52:47.178393Z"
+        "created": "2023-04-21T13:38:47.821504Z",
+        "updated": "2023-04-21T13:38:47.821504Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.178358Z",
-    "updated": "2023-04-21T09:52:47.178358Z"
+    "created": "2023-04-21T13:38:47.821458Z",
+    "updated": "2023-04-21T13:38:47.821458Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -30,19 +30,19 @@
         "generalizations": {
           "microtexts/nodeset6455": [
             {
-              "target": " cost/noun",
+              "target": "cost/noun",
               "source": "rent/noun"
             },
             {
-              "target": " owners/noun",
+              "target": "owners/noun",
               "source": "landlords/noun"
             },
             {
-              "target": " object/noun",
+              "target": "object/noun",
               "source": "flat/noun"
             },
             {
-              "target": " payers/noun",
+              "target": "payers/noun",
               "source": "tenants/noun"
             }
           ]

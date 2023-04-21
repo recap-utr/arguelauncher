@@ -25,7 +25,7 @@ for folder in input.glob("*/*/*"):
             reader = csv.reader(fp, delimiter=",")
 
             for row in reader:
-                adaptations.append({"source": row[0], "target": row[1]})
+                adaptations.append({"source": row[0].strip(), "target": row[1].strip()})
 
         query.userdata = {
             "cbrEvaluations": [

@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "453246ac-e02a-11ed-8fa7-acde48001122": {
+    "d7fa727e-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Do we need coporal punishment for offenders in Germany?\n"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.252461Z",
-        "updated": "2023-04-21T09:52:47.252461Z"
+        "created": "2023-04-21T13:38:47.910277Z",
+        "updated": "2023-04-21T13:38:47.910277Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.252427Z",
-    "updated": "2023-04-21T09:52:47.252427Z"
+    "created": "2023-04-21T13:38:47.910236Z",
+    "updated": "2023-04-21T13:38:47.910236Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -32,19 +32,19 @@
         "generalizations": {
           "microtexts/nodeset6450": [
             {
-              "target": " corporal punishment/noun",
+              "target": "corporal punishment/noun",
               "source": "death penalty/noun"
             },
             {
-              "target": " corporal punishment/noun",
+              "target": "corporal punishment/noun",
               "source": "capital punishment/noun"
             },
             {
-              "target": " modification/noun",
+              "target": "modification/noun",
               "source": "death/noun"
             },
             {
-              "target": " offender/noun",
+              "target": "offender/noun",
               "source": "felon/noun"
             }
           ]

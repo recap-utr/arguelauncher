@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "45219352-e02a-11ed-8fa7-acde48001122": {
+    "d7e6398a-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Should only the people who follow the programming pay for it when considering the commercialism on television?"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.143011Z",
-        "updated": "2023-04-21T09:52:47.143011Z"
+        "created": "2023-04-21T13:38:47.777747Z",
+        "updated": "2023-04-21T13:38:47.777747Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.142978Z",
-    "updated": "2023-04-21T09:52:47.142978Z"
+    "created": "2023-04-21T13:38:47.777703Z",
+    "updated": "2023-04-21T13:38:47.777703Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -31,11 +31,11 @@
         "generalizations": {
           "microtexts/nodeset6454": [
             {
-              "target": " communicator/noun",
+              "target": "communicator/noun",
               "source": "broadcaster/noun"
             },
             {
-              "target": " commercialism/noun",
+              "target": "commercialism/noun",
               "source": "advertising/noun"
             }
           ]

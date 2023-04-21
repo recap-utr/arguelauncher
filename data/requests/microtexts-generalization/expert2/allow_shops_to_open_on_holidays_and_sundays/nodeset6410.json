@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "452ffe4c-e02a-11ed-8fa7-acde48001122": {
+    "d7f7c4a2-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Why are public and private establishments (bureaucracy, shops, ..) not allowed to open on weekends?\n\n"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.237499Z",
-        "updated": "2023-04-21T09:52:47.237499Z"
+        "created": "2023-04-21T13:38:47.892718Z",
+        "updated": "2023-04-21T13:38:47.892718Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.237469Z",
-    "updated": "2023-04-21T09:52:47.237469Z"
+    "created": "2023-04-21T13:38:47.892680Z",
+    "updated": "2023-04-21T13:38:47.892680Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -32,15 +32,15 @@
         "generalizations": {
           "microtexts/nodeset6410": [
             {
-              "target": " establishments/noun",
+              "target": "establishments/noun",
               "source": "supermarkets/noun"
             },
             {
-              "target": " establishment/noun",
+              "target": "establishment/noun",
               "source": "shopping centres/noun"
             },
             {
-              "target": " institutions/noun",
+              "target": "institutions/noun",
               "source": "companies/noun"
             }
           ]

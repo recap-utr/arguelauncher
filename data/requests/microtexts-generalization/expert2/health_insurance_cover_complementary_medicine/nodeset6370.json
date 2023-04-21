@@ -1,20 +1,20 @@
 {
   "nodes": {
-    "451d793e-e02a-11ed-8fa7-acde48001122": {
+    "d7e1307a-e049-11ed-a981-acde48001122": {
       "atom": {
         "text": "Should alternative care be administered only by medical practitioners?\n"
       },
       "metadata": {
-        "created": "2023-04-21T09:52:47.116144Z",
-        "updated": "2023-04-21T09:52:47.116144Z"
+        "created": "2023-04-21T13:38:47.744761Z",
+        "updated": "2023-04-21T13:38:47.744761Z"
       }
     }
   },
   "schemaVersion": 1,
   "libraryVersion": "1.3.1",
   "metadata": {
-    "created": "2023-04-21T09:52:47.116025Z",
-    "updated": "2023-04-21T09:52:47.116025Z"
+    "created": "2023-04-21T13:38:47.744627Z",
+    "updated": "2023-04-21T13:38:47.744627Z"
   },
   "userdata": {
     "cbrEvaluations": [
@@ -32,15 +32,15 @@
         "generalizations": {
           "microtexts/nodeset6370": [
             {
-              "target": " care/noun",
+              "target": "care/noun",
               "source": "treatment/noun"
             },
             {
-              "target": " drug/noun",
+              "target": "drug/noun",
               "source": "medicine/noun"
             },
             {
-              "target": " medical practitioner/noun",
+              "target": "medical practitioner/noun",
               "source": "doctor/noun"
             }
           ]
