@@ -204,7 +204,7 @@ def main(config: CbrConfig) -> None:
     evaluation_duration = timer() - evaluation_start
 
     # EXPORT
-    log.info("Exporting...")
+    log.info("Aggregating...")
     eval_export = exporter.get_aggregated(evaluation_responses, config.evaluation)
 
     durations = {

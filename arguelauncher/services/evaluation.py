@@ -314,6 +314,10 @@ class AdaptationEvaluation(AbstractEvaluation):
         )
 
         metrics["adaptedRatio"] = 1 if self.run.size > 0 else 0
+        metrics["ruleRatio"] = statistics.mean(
+            len(self.system_adaptations[casename]) / len(user_rules)
+            for casename, user_rules in self.user_adaptations.items()
+        )
 
         return metrics
 
