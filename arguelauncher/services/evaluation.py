@@ -312,9 +312,10 @@ class AdaptationEvaluation(AbstractEvaluation):
         metrics["sim_adapted"] = statistics.mean(
             x.semantic_similarity for x in adapted_similarities
         )
+        metrics["sim_improvement"] = (metrics["sim_adapted"] / metrics["sim_original"]) - 1
 
-        metrics["adaptedRatio"] = 1 if self.run.size > 0 else 0
-        metrics["ruleRatio"] = statistics.mean(
+        metrics["adapted_ratio"] = 1 if self.run.size > 0 else 0
+        metrics["rule_ratio"] = statistics.mean(
             len(self.system_adaptations[casename]) / len(user_rules)
             for casename, user_rules in self.user_adaptations.items()
         )

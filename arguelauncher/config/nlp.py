@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 class NlpConfig(Enum):
     DEFAULT = auto()
-    SBERT = auto()
+    STRF = auto()
     USE = auto()
     OPENAI = auto()
 
@@ -20,7 +20,7 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
         language="en",
         spacy_model="en_core_web_lg",
     ),
-    NlpConfig.SBERT: nlp_pb2.NlpConfig(
+    NlpConfig.STRF: nlp_pb2.NlpConfig(
         language="en",
         embedding_models=[
             nlp_pb2.EmbeddingModel(
