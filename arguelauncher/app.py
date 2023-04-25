@@ -77,8 +77,6 @@ def main(config: CbrConfig) -> None:
         else None
     )
 
-    assert retrieval_client
-
     log.info("Initializing...")
     output_folder = Path(HydraConfig.get().runtime.output_dir)
 

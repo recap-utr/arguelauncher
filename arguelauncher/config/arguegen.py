@@ -40,7 +40,7 @@ class RelatedConceptWeight(DataClassDictMixin):
 @dataclass
 class LoaderConfig(DataClassDictMixin):
     heuristic_pos_tags: tuple[str, ...] = ("NOUN", "VERB")
-    enforce_user_rule_paths: bool = True
+    enforce_user_rule_paths: bool = False
     synset_similarity_threshold: float = 0.0
     rules_from_mc_only: bool = False
 

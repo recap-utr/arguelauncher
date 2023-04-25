@@ -215,7 +215,7 @@ class RetrievalEvaluation(AbstractEvaluation):
 class AdaptationEvaluation(AbstractEvaluation):
     user_adaptations: dict[str, list[adaptation_pb2.Rule]]
     system_response: t.Mapping[str, adaptation_pb2.AdaptedCaseResponse]
-    retrieval_client: retrieval_pb2_grpc.RetrievalServiceStub
+    retrieval_client: t.Optional[retrieval_pb2_grpc.RetrievalServiceStub]
     cbr_config: CbrConfig
 
     @override
@@ -225,7 +225,7 @@ class AdaptationEvaluation(AbstractEvaluation):
         query: model.Graph,
         config: EvaluationConfig,
         system_response: t.Mapping[str, adaptation_pb2.AdaptedCaseResponse],
-        retrieval_client: retrieval_pb2_grpc.RetrievalServiceStub,
+        retrieval_client: t.Optional[retrieval_pb2_grpc.RetrievalServiceStub],
         cbr_config: CbrConfig,
     ) -> None:
         # TODO: We only evaluate the first cbrEvaluation
@@ -284,35 +284,38 @@ class AdaptationEvaluation(AbstractEvaluation):
     def compute_metrics(self) -> dict[str, float]:
         metrics = super().compute_metrics()
 
-        original_similarities = self.retrieval_client.Similarities(
-            retrieval_pb2.SimilaritiesRequest(
-                cases=[
-                    case.to_protobuf(self.cbr_config.graph2text)
-                    for case in self.original_cases.values()
-                ],
-                query=self.query.to_protobuf(self.cbr_config.graph2text),
-                nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
-            )
-        ).similarities
+        if self.retrieval_client:
+            original_similarities = self.retrieval_client.Similarities(
+                retrieval_pb2.SimilaritiesRequest(
+                    cases=[
+                        case.to_protobuf(self.cbr_config.graph2text)
+                        for case in self.original_cases.values()
+                    ],
+                    query=self.query.to_protobuf(self.cbr_config.graph2text),
+                    nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
+                )
+            ).similarities
 
-        adapted_similarities = self.retrieval_client.Similarities(
-            retrieval_pb2.SimilaritiesRequest(
-                cases=[
-                    case.to_protobuf(self.cbr_config.graph2text)
-                    for case in self.adapted_cases.values()
-                ],
-                query=self.query.to_protobuf(self.cbr_config.graph2text),
-                nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
-            )
-        ).similarities
+            adapted_similarities = self.retrieval_client.Similarities(
+                retrieval_pb2.SimilaritiesRequest(
+                    cases=[
+                        case.to_protobuf(self.cbr_config.graph2text)
+                        for case in self.adapted_cases.values()
+                    ],
+                    query=self.query.to_protobuf(self.cbr_config.graph2text),
+                    nlp_config=NLP_CONFIG[self.cbr_config.nlp_config],
+                )
+            ).similarities
 
-        metrics["sim_original"] = statistics.mean(
-            x.semantic_similarity for x in original_similarities
-        )
-        metrics["sim_adapted"] = statistics.mean(
-            x.semantic_similarity for x in adapted_similarities
-        )
-        metrics["sim_improvement"] = (metrics["sim_adapted"] / metrics["sim_original"]) - 1
+            metrics["sim_original"] = statistics.mean(
+                x.semantic_similarity for x in original_similarities
+            )
+            metrics["sim_adapted"] = statistics.mean(
+                x.semantic_similarity for x in adapted_similarities
+            )
+            metrics["sim_improvement"] = (
+                metrics["sim_adapted"] / metrics["sim_original"]
+            ) - 1
 
         metrics["adapted_ratio"] = 1 if self.run.size > 0 else 0
         metrics["rule_ratio"] = statistics.mean(

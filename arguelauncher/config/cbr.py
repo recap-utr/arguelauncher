@@ -12,9 +12,9 @@ from arguelauncher.model import Graph2TextAlgorithm
 
 @dataclass
 class PathConfig(DataClassDictMixin):
-    cases: Path = Path("data/cases/microtexts")
-    cases_pattern: str = "*.json"
-    requests: Path = Path("data/requests/microtexts-retrieval-complex")
+    cases: Path = Path("data/cases")
+    cases_pattern: str = "**/*.json"
+    requests: Path = Path("data/requests")
     requests_pattern: str = "**/*.json"
 
 
