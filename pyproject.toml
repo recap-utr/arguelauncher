@@ -16,7 +16,7 @@ rich = "^13.3.4"
 typing-extensions = "^4.5.0"
 scikit-learn = "^1.2.2"
 ranx = "^0.3.7"
-numba = { version = "^0.57.0rc1", allow-prereleases = true }
+numba = { version = "^0.57.0-rc.1", allow-prereleases = true }
 pandas = "^2.0.0"
 lemminflect = "^0.2.3"
 
