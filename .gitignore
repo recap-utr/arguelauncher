@@ -237,3 +237,9 @@ poetry.toml
 # Hydra
 /multirun/
 /outputs/
+
+# Nix
+.devenv/
+.direnv/
+/result
+.envrc
