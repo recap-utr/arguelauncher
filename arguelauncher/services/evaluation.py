@@ -25,9 +25,6 @@ RANX_METRICS: tuple[str, ...] = (
     "precision",
     "recall",
     "f1",
-    "hits",
-    "hit_rate",
-    "mrr",
     "map",
     "ndcg",
 )
