@@ -111,9 +111,11 @@ def main(config: CbrConfig) -> None:
     log.info("Adapting...")
 
     for i, res in enumerate(retrieval_responses):
-        log.debug(
-            f"Adapting query {request_keys[i]} ({i+1}/{len(retrieval_responses)})..."
-        )
+        if config.adaptation:
+            log.debug(
+                "Adapting query"
+                f" {request_keys[i]} ({i+1}/{len(retrieval_responses)})..."
+            )
         _, adapt_response = adapt(
             adaptation_client,
             cases,
@@ -135,12 +137,7 @@ def main(config: CbrConfig) -> None:
         for i, (retrieval_response, adaptation_response) in enumerate(
             zip(retrieval_responses, adaptation_responses)
         ):
-            log.debug(
-                "Evaluating query"
-                f" {request_keys[i]} ({i+1}/{len(retrieval_responses)})..."
-            )
             current_request = ordered_requests[i]
-
             eval_map: dict[str, AbstractEvaluation] = {}
 
             if ranking := retrieval_response.semantic_ranking:
