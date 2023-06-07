@@ -19,9 +19,11 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
     NlpConfig.DEFAULT: nlp_pb2.NlpConfig(
         language="en",
         spacy_model="en_core_web_lg",
+        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
     ),
     NlpConfig.STRF: nlp_pb2.NlpConfig(
         language="en",
+        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
         embedding_models=[
             nlp_pb2.EmbeddingModel(
                 model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_SENTENCE_TRANSFORMERS,
@@ -32,6 +34,7 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
     ),
     NlpConfig.USE: nlp_pb2.NlpConfig(
         language="en",
+        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
         embedding_models=[
             nlp_pb2.EmbeddingModel(
                 model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_TENSORFLOW_HUB,
@@ -42,6 +45,7 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
     ),
     NlpConfig.OPENAI: nlp_pb2.NlpConfig(
         language="en",
+        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
         embedding_models=[
             nlp_pb2.EmbeddingModel(
                 model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_OPENAI,
