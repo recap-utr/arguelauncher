@@ -108,7 +108,9 @@ def main(config: CbrConfig) -> None:
     # ADAPTATION
     adaptation_start = timer()
     adaptation_responses: list[AdaptResponse] = []
-    log.info("Adapting...")
+
+    if config.adaptation:
+        log.info("Adapting...")
 
     for i, res in enumerate(retrieval_responses):
         if config.adaptation:
@@ -131,9 +133,10 @@ def main(config: CbrConfig) -> None:
     evaluation_start = timer()
     evaluation_responses: dict[str, dict[str, AbstractEvaluation]] = {}
     retrieval_limit = config.retrieval.limit if config.retrieval else None
-    log.info("Evaluating...")
 
     if config.evaluation:
+        log.info("Evaluating...")
+
         for i, (retrieval_response, adaptation_response) in enumerate(
             zip(retrieval_responses, adaptation_responses)
         ):
