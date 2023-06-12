@@ -7,12 +7,12 @@ from mashumaro import DataClassDictMixin
 
 
 class RetrievalMappingAlgorithm(Enum):
-    ASTAR_1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 1)
-    ASTAR_2 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 2)
-    ASTAR_3 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 3)
-    GREEDY_1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_GREEDY, 1)
-    GREEDY_2 = (PbMappingAlgorithm.MAPPING_ALGORITHM_GREEDY, 2)
-    ISOMORPHISM_1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ISOMORPHISM, 1)
+    ASTAR1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 1)
+    ASTAR2 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 2)
+    ASTAR3 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ASTAR, 3)
+    GREEDY1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_GREEDY, 1)
+    GREEDY2 = (PbMappingAlgorithm.MAPPING_ALGORITHM_GREEDY, 2)
+    ISOMORPHISM1 = (PbMappingAlgorithm.MAPPING_ALGORITHM_ISOMORPHISM, 1)
 
 
 class RetrievalSchemeHandling(Enum):
@@ -25,7 +25,7 @@ class RetrievalSchemeHandling(Enum):
 class RetrievalConfig(DataClassDictMixin):
     address: str = "127.0.0.1:50200"
     scheme_handling: RetrievalSchemeHandling = RetrievalSchemeHandling.BINARY
-    mapping_algorithm: RetrievalMappingAlgorithm = RetrievalMappingAlgorithm.ASTAR_1
+    mapping_algorithm: RetrievalMappingAlgorithm = RetrievalMappingAlgorithm.ASTAR1
     mac: bool = True
     fac: bool = True
     limit: int = 10
