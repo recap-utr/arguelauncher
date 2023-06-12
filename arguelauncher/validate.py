@@ -1,3 +1,4 @@
+# type: ignore
 import itertools
 import statistics
 import typing as t
