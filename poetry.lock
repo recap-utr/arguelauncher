@@ -2044,14 +2044,14 @@ files = [
 
 [[package]]
 name = "ranx"
-version = "0.3.12"
+version = "0.3.13"
 description = "ranx: A Blazing-Fast Python Library for Ranking Evaluation, Comparison, and Fusion"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ranx-0.3.12-py3-none-any.whl", hash = "sha256:146aed7f9f44d3a57092d9ff98ad1c83ef374da7d5a4bb370509245e75568c8a"},
-    {file = "ranx-0.3.12.tar.gz", hash = "sha256:77f2f2efb783e242513bf6c190201ea8fd8b4de7d323eaf90f2daca7e9fa55dd"},
+    {file = "ranx-0.3.13-py3-none-any.whl", hash = "sha256:7c09517d69aa02fea9ef3f4c8fbbf24944bbdffd543ff63d278949760df64fa1"},
+    {file = "ranx-0.3.13.tar.gz", hash = "sha256:67c9f849ce9edf4d4f37849e11f6ee7e3a82bb504f09c148e28876268fc845ee"},
 ]
 
 [package.dependencies]
