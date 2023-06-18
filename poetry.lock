@@ -31,26 +31,26 @@ protobuf = ">=4.22.1,<5.0.0"
 
 [[package]]
 name = "arguebuf"
-version = "2.0.0b23"
+version = "2.0.0b25"
 description = "A library for loading argument graphs in various formats (e.g., AIF)."
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "arguebuf-2.0.0b23-py3-none-any.whl", hash = "sha256:3a774a0ba74dbb2f9b10c6ae10aa270762024a9d1708e1e5e136dae18c05e262"},
-    {file = "arguebuf-2.0.0b23.tar.gz", hash = "sha256:18616a2a567064d71038fb1987e43c9250dfc0a9ebfb3ce9e17c63854953c18c"},
+    {file = "arguebuf-2.0.0b25-py3-none-any.whl", hash = "sha256:9e87b4510413d80bf835711117e11491046fed951014cd24fdce305f084a231a"},
+    {file = "arguebuf-2.0.0b25.tar.gz", hash = "sha256:80082f9e96ff6c914a58dfcdb38aa9c25cc583a77332f6e8375e5ae3b295a823"},
 ]
 
 [package.dependencies]
-arg-services = ">=1.1.0,<2.0.0"
+arg-services = ">=1.3.2,<2.0.0"
 graphviz = ">=0.20.1,<0.21.0"
 lxml = ">=4.9.2,<5.0.0"
 networkx = ">=2.8.8,<4.0"
 pendulum = ">=2.1.2,<3.0.0"
 
 [package.extras]
-cli = ["deepl (>=1.13.0,<2.0.0)", "multimethod (>=1.9.1,<2.0.0)", "typer[all] (>=0.7.0,<0.8.0)"]
-graphviz = ["pygraphviz (>=1.10,<2.0)"]
+cli = ["deepl (>=1.15.0,<2.0.0)", "multimethod (>=1.9.1,<2.0.0)", "typer[all] (>=0.9.0,<0.10.0)"]
+graphviz = ["pygraphviz (>=1.11,<2.0)"]
 
 [[package]]
 name = "beautifulsoup4"
@@ -2822,4 +2822,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10, <3.12"
-content-hash = "0fba10270c9743665a71e375112d16782a0f0075b188167b284a8b520bd8da1d"
+content-hash = "fd6c97165c37aa41ca75a13728f123080cf56357027d412a0d7c78142b6f0c9a"
