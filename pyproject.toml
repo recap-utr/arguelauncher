@@ -19,7 +19,7 @@ ranx = "^0.3.14"
 numba = "^0.57.1"
 pandas = "^2.0.3"
 lemminflect = "^0.2.3"
-orjson = "3.9.1"
+orjson = "3.9.10"
 matplotlib = "^3.7.2"
 seaborn = "^0.12.2"
 
