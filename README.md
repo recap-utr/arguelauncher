@@ -29,3 +29,7 @@ adaptation:
 ```
 
 More documentation will follow for the final version.
+
+## Benchmark Data
+
+Requests may contain a ranking with a value between 1 and 3 for each query where 1 is the best and 3 is the worst value.

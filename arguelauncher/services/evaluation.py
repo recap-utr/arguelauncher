@@ -173,12 +173,14 @@ class RetrievalEvaluation(AbstractEvaluation):
         limit: t.Optional[int],
     ) -> None:
         true_ranks = query.userdata["cbrEvaluations"][0]["ranking"]
+        max_rank = max(true_ranks.values())
+        qrels = {key: max_rank - rank + 1 for key, rank in true_ranks.items()}
         predicted_scores = {case.id: case.similarity for case in retrieved_cases}
         super().__init__(
             cases,
             query,
             config,
-            {"query": true_ranks},
+            {"query": qrels},
             {"query": predicted_scores},
             limit,
         )
