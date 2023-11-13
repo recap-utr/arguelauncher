@@ -11,7 +11,6 @@ log = logging.getLogger(__name__)
 class NlpConfig(Enum):
     DEFAULT = auto()
     STRF = auto()
-    USE = auto()
     OPENAI = auto()
 
 
@@ -28,17 +27,6 @@ NLP_CONFIG: dict[NlpConfig, nlp_pb2.NlpConfig] = {
             nlp_pb2.EmbeddingModel(
                 model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_SENTENCE_TRANSFORMERS,
                 model_name="multi-qa-MiniLM-L6-cos-v1",
-                pooling_type=nlp_pb2.Pooling.POOLING_MEAN,
-            )
-        ],
-    ),
-    NlpConfig.USE: nlp_pb2.NlpConfig(
-        language="en",
-        similarity_method=nlp_pb2.SimilarityMethod.SIMILARITY_METHOD_COSINE,
-        embedding_models=[
-            nlp_pb2.EmbeddingModel(
-                model_type=nlp_pb2.EmbeddingType.EMBEDDING_TYPE_TENSORFLOW_HUB,
-                model_name="https://tfhub.dev/google/universal-sentence-encoder/4",
                 pooling_type=nlp_pb2.Pooling.POOLING_MEAN,
             )
         ],
