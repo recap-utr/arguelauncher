@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import typing as t
 
 import arguebuf
@@ -107,7 +105,7 @@ class Graph(arguebuf.Graph):
     @classmethod
     def from_protobuf(
         cls, obj: AnnotatedGraph, userdata: t.Optional[Userdata]
-    ) -> Graph:
+    ) -> "Graph":
         g = t.cast(
             Graph,
             arguebuf.load.protobuf(

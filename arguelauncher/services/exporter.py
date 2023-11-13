@@ -1,5 +1,3 @@
-from __future__ import absolute_import, annotations
-
 import itertools
 import json
 import logging
@@ -150,9 +148,9 @@ def df_to_table(
         for val in value_list:
             if isinstance(val, float):
                 if val < 1:
-                    row.append("{:.3f}".format(val))
+                    row.append(f"{val:.3f}")
                 else:
-                    row.append("{:.0f}".format(val))
+                    row.append(f"{val:.0f}")
             else:
                 row.append(str(val))
 

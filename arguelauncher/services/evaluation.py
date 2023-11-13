@@ -1,5 +1,3 @@
-from __future__ import absolute_import, annotations
-
 import itertools
 import logging
 import statistics
@@ -120,7 +118,7 @@ class AbstractEvaluation(ABC):
 
     def _correctness_completeness(
         self, key: str, k: t.Optional[int]
-    ) -> t.Tuple[float, float]:
+    ) -> tuple[float, float]:
         qrel = self.qrels[key]
         sorted_run = sorted(self.run[key].items(), key=lambda x: x[1], reverse=True)
         run_ranking = {x[0]: i + 1 for i, x in enumerate(sorted_run[:k])}

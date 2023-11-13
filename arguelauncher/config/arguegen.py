@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import typing as t
 from dataclasses import dataclass, field
 from enum import Enum
@@ -103,7 +101,7 @@ class ExtrasConfig(DataClassDictMixin):
     type: str = "wordnet"
 
     @classmethod
-    def from_extras(cls, extras: Struct) -> ExtrasConfig:
+    def from_extras(cls, extras: Struct) -> "ExtrasConfig":
         if len(extras) == 0:
             return cls()
 
